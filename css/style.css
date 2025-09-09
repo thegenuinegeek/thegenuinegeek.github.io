@@ -1,1 +1,30 @@
+/* Custom Styles for The Field Manual | GenuineGeek
+  This file contains styles that are not covered by Tailwind's utility classes.
+*/
+
+body {
+    font-family: 'Inter', sans-serif;
+    background-color: #0a0a0a;
+    color: #e5e5e5;
+}
+
+.font-roboto-mono {
+    font-family: 'Roboto Mono', monospace;
+}
+
+.glass-effect {
+    background: rgba(10, 10, 10, 0.6);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.card-hover-effect {
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.card-hover-effect:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+}
 
