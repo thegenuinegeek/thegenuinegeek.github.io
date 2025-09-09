@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Field Manual | GenuineGeek</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Roboto+Mono:wght@400;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #0a0a0a;
+            color: #e5e5e5;
+        }
+        .font-roboto-mono {
+            font-family: 'Roboto Mono', monospace;
+        }
+        .glass-effect {
+            background: rgba(10, 10, 10, 0.6);
+            backdrop-filter: blur(10px);
+            -webkit-backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+        .card-hover-effect {
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        .card-hover-effect:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+        }
+    </style>
+</head>
+<body class="antialiased">
+
+    <!-- Header -->
+    <header class="fixed top-0 left-0 right-0 z-50 glass-effect">
+        <div class="container mx-auto px-6 py-4">
+            <div class="flex items-center justify-between">
+                <a href="#" class="font-bold text-xl tracking-wider text-white">GenuineGeek</a>
+                <nav class="hidden md:flex items-center space-x-6">
+                    <a href="#garage" class="hover:text-amber-400 transition-colors">The Garage</a>
+                    <a href="#gallery" class="hover:text-amber-400 transition-colors">The Gallery</a>
+                    <a href="#armory" class="hover:text-amber-400 transition-colors">The Armory</a>
+                    <a href="#forge" class="hover:text-amber-400 transition-colors">The Forge</a>
+                    <a href="#logbook" class="hover:text-amber-400 transition-colors">Logbook</a>
+                </nav>
+                 <!-- Mobile Menu Button -->
+                <button id="mobile-menu-button" class="md:hidden focus:outline-none">
+                    <svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7"></path></svg>
+                </button>
+            </div>
+        </div>
+         <!-- Mobile Menu -->
+        <div id="mobile-menu" class="hidden md:hidden">
+            <a href="#garage" class="block py-2 px-6 text-sm hover:bg-gray-800">The Garage</a>
+            <a href="#gallery" class="block py-2 px-6 text-sm hover:bg-gray-800">The Gallery</a>
+            <a href="#armory" class="block py-2 px-6 text-sm hover:bg-gray-800">The Armory</a>
+            <a href="#forge" class="block py-2 px-6 text-sm hover:bg-gray-800">The Forge</a>
+            <a href="#logbook" class="block py-2 px-6 text-sm hover:bg-gray-800">Logbook</a>
+        </div>
+    </header>
+
+    <main>
+        <!-- Hero Section -->
+        <section class="min-h-screen flex items-center justify-center bg-cover bg-center bg-no-repeat" style="background-image: url('https://images.unsplash.com/photo-1618042164219-62c820f10723?q=80&w=2500&auto=format&fit=crop');">
+            <div class="absolute inset-0 bg-black/70"></div>
+            <div class="relative text-center text-white p-6">
+                <h1 class="text-5xl md:text-7xl font-bold tracking-tighter mb-4">THE FIELD MANUAL</h1>
+                <p class="text-lg md:text-xl text-neutral-300 max-w-2xl mx-auto">The official hub for Genuine Geek Media. A document of projects, passions, and fatherhood.</p>
+            </div>
+        </section>
+
+        <!-- Live Status Section -->
+        <section id="status" class="py-20 md:py-28 bg-black">
+            <div class="container mx-auto px-6">
+                <div class="text-center mb-12">
+                    <h2 class="font-roboto-mono text-sm uppercase text-amber-400 tracking-widest">Live Status</h2>
+                    <p class="text-3xl md:text-4xl font-bold mt-2 text-white">What I'm Up To Right Now</p>
+                </div>
+
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                    <!-- Card 1: Garage -->
+                    <div id="garage" class="bg-neutral-900 rounded-lg overflow-hidden card-hover-effect">
+                        <img src="https://placehold.co/600x400/111827/FFFFFF?text=Project+Car" alt="Greasy car part" class="w-full h-48 object-cover">
+                        <div class="p-6">
+                            <h3 class="font-roboto-mono text-xs uppercase text-amber-400 tracking-widest mb-2">In the Garage</h3>
+                            <p class="text-neutral-300 mb-4">Currently wrenching on the E36's coilover install. A lesson in patience and rusty bolts.</p>
+                            <a href="#" class="font-semibold text-amber-400 hover:text-amber-300 transition-colors">Read the Build Log &rarr;</a>
+                        </div>
+                    </div>
+                    
+                    <!-- Card 2: Photography -->
+                    <div id="gallery" class="bg-neutral-900 rounded-lg overflow-hidden card-hover-effect">
+                        <img src="https://placehold.co/600x400/4f46e5/FFFFFF?text=Motorsport+Photo" alt="Motorsport photography shot" class="w-full h-48 object-cover">
+                        <div class="p-6">
+                            <h3 class="font-roboto-mono text-xs uppercase text-green-400 tracking-widest mb-2">Through the Lens</h3>
+                            <p class="text-neutral-300 mb-4">Latest shoot: Capturing motion blur and dramatic light at the local drift event.</p>
+                            <a href="#" class="font-semibold text-green-400 hover:text-green-300 transition-colors">View Gallery &rarr;</a>
+                        </div>
+                    </div>
+
+                    <!-- Card 3: Music -->
+                    <div class="bg-neutral-900 rounded-lg overflow-hidden card-hover-effect">
+                        <img src="https://placehold.co/600x400/be185d/FFFFFF?text=Album+Art" alt="Album art" class="w-full h-48 object-cover">
+                        <div class="p-6">
+                            <h3 class="font-roboto-mono text-xs uppercase text-pink-400 tracking-widest mb-2">On the Speakers</h3>
+                            <p class="text-neutral-300 mb-4">Soundtrack for the week: André 3000's "New Blue Sun". Meditative and perfect for focus.</p>
+                            <a href="#" class="font-semibold text-pink-400 hover:text-pink-300 transition-colors">My Music Log &rarr;</a>
+                        </div>
+                    </div>
+
+                    <!-- Card 4: Gaming -->
+                    <div id="armory" class="bg-neutral-900 rounded-lg overflow-hidden card-hover-effect">
+                        <img src="https://placehold.co/600x400/d97706/FFFFFF?text=Cyberpunk+Screenshot" alt="Cyberpunk 2077 screenshot" class="w-full h-48 object-cover">
+                        <div class="p-6">
+                            <h3 class="font-roboto-mono text-xs uppercase text-orange-400 tracking-widest mb-2">Now Playing</h3>
+                            <p class="text-neutral-300 mb-4">Diving deep into Night City with the Phantom Liberty expansion. The world design is incredible.</p>
+                            <a href="#" class="font-semibold text-orange-400 hover:text-orange-300 transition-colors">See Gaming Journal &rarr;</a>
+                        </div>
+                    </div>
+
+                    <!-- Card 5: Fitness -->
+                    <div id="forge" class="bg-neutral-900 rounded-lg overflow-hidden card-hover-effect">
+                        <img src="https://placehold.co/600x400/059669/FFFFFF?text=Barbell" alt="Barbell with weights" class="w-full h-48 object-cover">
+                        <div class="p-6">
+                            <h3 class="font-roboto-mono text-xs uppercase text-emerald-400 tracking-widest mb-2">At the Forge</h3>
+                            <p class="text-neutral-300 mb-4">New milestone: Just hit a 315lb deadlift for the first time! The grind is paying off.</p>
+                            <a href="#" class="font-semibold text-emerald-400 hover:text-emerald-300 transition-colors">My Training Philosophy &rarr;</a>
+                        </div>
+                    </div>
+
+                    <!-- Card 6: Fatherhood -->
+                    <div class="bg-neutral-900 rounded-lg overflow-hidden card-hover-effect">
+                        <img src="https://placehold.co/600x400/6d28d9/FFFFFF?text=Family+Gaming" alt="Father and son gaming together" class="w-full h-48 object-cover">
+                        <div class="p-6">
+                            <h3 class="font-roboto-mono text-xs uppercase text-violet-400 tracking-widest mb-2">Co-op Mode</h3>
+                            <p class="text-neutral-300 mb-4">Latest adventure: We finally beat Portal 2's co-op campaign! So proud of my oldest son.</p>
+                            <a href="#" class="font-semibold text-violet-400 hover:text-violet-300 transition-colors">More Family Moments &rarr;</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <!-- Logbook Section -->
+        <section id="logbook" class="py-20 md:py-28 bg-neutral-900">
+            <div class="container mx-auto px-6">
+                 <div class="text-center mb-12">
+                    <h2 class="font-roboto-mono text-sm uppercase text-amber-400 tracking-widest">From the Logbook</h2>
+                    <p class="text-3xl md:text-4xl font-bold mt-2 text-white">Where the Passions Intersect</p>
+                </div>
+                <div class="space-y-12">
+                    <!-- Log Entry 1 -->
+                    <div class="grid md:grid-cols-12 gap-8 items-center group">
+                         <div class="md:col-span-4">
+                            <div class="aspect-video bg-neutral-800 rounded-lg overflow-hidden">
+                                 <img src="https://placehold.co/600x400/1e293b/FFFFFF?text=Joy-Cons" alt="Gaming controllers" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300">
+                            </div>
+                         </div>
+                         <div class="md:col-span-8">
+                             <p class="font-roboto-mono text-xs text-neutral-400 mb-2">SEPTEMBER 08, 2025 | GAMING & FATHERHOOD</p>
+                             <h3 class="text-2xl font-bold text-white mb-3">Co-Op Guide: The Best Couch Games to Play With Your Kids</h3>
+                             <p class="text-neutral-400 mb-4">Finding great local co-op games is harder than it looks. After hours of "research" with my two sons, here are our top five picks that are fun for both kids and adults...</p>
+                             <a href="#" class="font-semibold text-amber-400 hover:text-amber-300 transition-colors">Read More &rarr;</a>
+                         </div>
+                    </div>
+                     <!-- Log Entry 2 -->
+                    <div class="grid md:grid-cols-12 gap-8 items-center group">
+                         <div class="md:col-span-4">
+                            <div class="aspect-video bg-neutral-800 rounded-lg overflow-hidden">
+                                 <img src="https://placehold.co/600x400/1e293b/FFFFFF?text=Camera+Lens" alt="Camera lens" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300">
+                            </div>
+                         </div>
+                         <div class="md:col-span-8">
+                             <p class="font-roboto-mono text-xs text-neutral-400 mb-2">SEPTEMBER 05, 2025 | CARS & PHOTOGRAPHY</p>
+                             <h3 class="text-2xl font-bold text-white mb-3">Finding the Shot: A Trackside Photography Breakdown</h3>
+                             <p class="text-neutral-400 mb-4">The key to a great panning shot isn't just a slow shutter speed; it's about anticipation. Here’s a look at one of my favorite photos from last weekend and the story behind it...</p>
+                             <a href="#" class="font-semibold text-amber-400 hover:text-amber-300 transition-colors">Read More &rarr;</a>
+                         </div>
+                    </div>
+                     <!-- Log Entry 3 -->
+                    <div class="grid md:grid-cols-12 gap-8 items-center group">
+                         <div class="md:col-span-4">
+                            <div class="aspect-video bg-neutral-800 rounded-lg overflow-hidden">
+                                 <img src="https://placehold.co/600x400/1e293b/FFFFFF?text=Kettlebell" alt="Kettlebell" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300">
+                            </div>
+                         </div>
+                         <div class="md:col-span-8">
+                             <p class="font-roboto-mono text-xs text-neutral-400 mb-2">SEPTEMBER 02, 2025 | FITNESS & FATHERHOOD</p>
+                             <h3 class="text-2xl font-bold text-white mb-3">Gym Philosophy: How Lifting Weights Makes Me a Better Dad</h3>
+                             <p class="text-neutral-400 mb-4">It’s not just about physical strength. The discipline, patience, and stress relief I find in the gym directly translates to how I show up for my family every single day...</p>
+                             <a href="#" class="font-semibold text-amber-400 hover:text-amber-300 transition-colors">Read More &rarr;</a>
+                         </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+    
+    <!-- Footer -->
+    <footer class="bg-black py-12">
+        <div class="container mx-auto px-6 text-center text-neutral-500">
+             <div class="flex justify-center space-x-6 mb-4">
+                <a href="#" class="hover:text-white transition-colors">
+                    <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M12.315 2c2.43 0 2.784.013 3.808.06 1.064.049 1.791.218 2.427.465a4.902 4.902 0 011.772 1.153 4.902 4.902 0 011.153 1.772c.247.636.416 1.363.465 2.427.048 1.024.06 1.378.06 3.808s-.012 2.784-.06 3.808c-.049 1.064-.218 1.791-.465 2.427a4.902 4.902 0 01-1.153 1.772 4.902 4.902 0 01-1.772 1.153c-.636.247-1.363.416-2.427.465-1.024.048-1.378.06-3.808.06s-2.784-.012-3.808-.06c-1.064-.049-1.791-.218-2.427-.465a4.902 4.902 0 01-1.772-1.153 4.902 4.902 0 01-1.153-1.772c-.247-.636-.416-1.363-.465-2.427-.048-1.024-.06-1.378-.06-3.808s.012-2.784.06-3.808c.049-1.064.218-1.791.465-2.427a4.902 4.902 0 011.153-1.772A4.902 4.902 0 016.345 2.525c.636-.247 1.363-.416 2.427-.465C9.795 2.013 10.148 2 12.315 2zm0 1.624c-2.378 0-2.698.01-3.648.058-1.002.045-1.504.207-1.857.344-.467.182-.86.399-1.242.782a3.25 3.25 0 00-.782 1.242c-.137.353-.3.855-.344 1.857-.048.95-.058 1.27-.058 3.648s.01 2.698.058 3.648c.045 1.002.207 1.504.344 1.857.182.466.399.86.782 1.242a3.25 3.25 0 001.242.782c.353.137.855.3 1.857.344.95.048 1.27.058 3.648.058s2.698-.01 3.648-.058c1.002-.045 1.504-.207 1.857-.344.467-.182.86-.399 1.242-.782a3.25 3.25 0 00.782-1.242c.137-.353.3-.855.344-1.857.048-.95.058-1.27.058-3.648s-.01-2.698-.058-3.648c-.045-1.002-.207-1.504-.344-1.857a3.25 3.25 0 00-.782-1.242 3.25 3.25 0 00-1.242-.782c-.353-.137-.855-.3-1.857-.344-.95-.048-1.27-.058-3.648-.058zM12 6.865a5.135 5.135 0 100 10.27 5.135 5.135 0 000-10.27zm0 1.624a3.51 3.51 0 110 7.02 3.51 3.51 0 010-7.02zM16.531 6.402a1.2 1.2 0 100 2.4 1.2 1.2 0 000-2.4z" clip-rule="evenodd" /></svg>
+                </a>
+                <a href="#" class="hover:text-white transition-colors">
+                     <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path d="M22.46 6c-.77.35-1.6.58-2.46.69.88-.53 1.56-1.37 1.88-2.38-.83.5-1.75.85-2.72 1.05C18.37 4.5 17.26 4 16 4c-2.35 0-4.27 1.92-4.27 4.29 0 .34.04.67.11.98-3.56-.18-6.73-1.89-8.84-4.48-.37.63-.58 1.37-.58 2.15 0 1.49.75 2.81 1.91 3.56-.71 0-1.37-.22-1.95-.55v.05c0 2.08 1.48 3.82 3.44 4.21a4.22 4.22 0 01-1.93.07 4.28 4.28 0 004 2.98 8.521 8.521 0 01-5.33 1.84c-.34 0-.68-.02-1.02-.06C3.44 20.29 5.7 21 8.12 21 16 21 20.33 14.5 20.33 8.79c0-.19 0-.37-.01-.56.84-.6 1.56-1.36 2.14-2.23z" /></svg>
+                </a>
+                 <a href="#" class="hover:text-white transition-colors">
+                   <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M10.25 2.25a.75.75 0 00-1.5 0v1.517a15.02 15.02 0 00-3.376.623.75.75 0 00-.5 1.096A13.52 13.52 0 017.5 12c0 2.975.96 5.734 2.625 7.983a.75.75 0 001.275-.862 12.02 12.02 0 01-2.01-6.121c.21.03.422.057.644.08a.75.75 0 00.52-.284l.146-.291a.75.75 0 00-.054-1.022A13.48 13.48 0 017.5 9c.786 0 1.55.108 2.28.31a.75.75 0 00.865-.333l.25-.5a.75.75 0 00-.36-1.037A14.96 14.96 0 0010.25 5.25V2.25zm-2.5 9.75a12.033 12.033 0 013.25-7.733.75.75 0 011.024.11L13 5.75a.75.75 0 010 .866 12.022 12.022 0 00-1.758 5.342.75.75 0 01-1.496-.118 13.532 13.532 0 01-.01-1.84zm5.546 2.06a.75.75 0 01.374-1.043 14.953 14.953 0 003.33-4.225.75.75 0 011.366.621 13.452 13.452 0 01-3.02 3.824.75.75 0 01-1.05-.221zM18.75 9.75a.75.75 0 00-1.5 0v.14a12.02 12.02 0 01-2.009 6.12.75.75 0 101.274.863A13.52 13.52 0 0016.5 12c0-.851-.08-1.685-.23-2.493a.75.75 0 00-1.02.243z" clip-rule="evenodd" /></svg>
+                </a>
+            </div>
+            <p class="text-sm">&copy; 2025 Genuine Geek Media LLC. All Rights Reserved.</p>
+        </div>
+    </footer>
+
+    <script>
+        // Wait for the DOM to be fully loaded before running the script
+        document.addEventListener('DOMContentLoaded', function() {
+            // Simple mobile menu toggle
+            const mobileMenuButton = document.getElementById('mobile-menu-button');
+            const mobileMenu = document.getElementById('mobile-menu');
+
+            // Make sure the elements exist before adding an event listener
+            if (mobileMenuButton && mobileMenu) {
+                mobileMenuButton.addEventListener('click', () => {
+                    mobileMenu.classList.toggle('hidden');
+                });
+            }
+        });
+    </script>
+
+</body>
+</html>
+
