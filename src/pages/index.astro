@@ -16,9 +16,9 @@ const allPaddock = (await getCollection('paddock')).sort((a, b) => b.data.pubDat
     <div class="relative text-center max-w-2xl">
       <div class="font-mono text-terminal text-xs tracking-[0.3em] mb-4">// BOOT SEQUENCE INITIATED</div>
 
-      <div id="typewriter" class="font-mono text-xl md:text-3xl font-bold text-chrome leading-tight min-h-[2.5em] flex flex-col items-center justify-center">
-        <div id="tw-line1"></div>
-        <div id="tw-line2" class="text-octane mt-2"></div>
+      <div id="typewriter" class="font-mono text-xl md:text-3xl font-bold text-chrome leading-tight flex flex-col items-center justify-center">
+        <div id="tw-line1" class="h-[1.3em]">&nbsp;</div>
+        <div id="tw-line2" class="text-octane mt-2 h-[1.3em]">&nbsp;</div>
       </div>
 
       <div class="mt-6 flex items-center justify-center gap-4 md:gap-8 font-mono text-[10px] md:text-xs text-steel">
@@ -133,9 +133,12 @@ const allPaddock = (await getCollection('paddock')).sort((a, b) => b.data.pubDat
     const line2 = document.getElementById('tw-line2');
     if (!line1 || !line2) return;
 
+    line1.textContent = '\u2588';
+    line2.textContent = '';
     await new Promise(r => setTimeout(r, 400));
     await typewrite(line1, 'IDENTIFYING: GENUINE GEEK...', 45);
     await new Promise(r => setTimeout(r, 300));
+    line2.textContent = '\u2588';
     await typewrite(line2, 'STATUS: AUTHENTIC.', 55);
   }
 
