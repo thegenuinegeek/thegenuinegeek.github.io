@@ -28,20 +28,19 @@ const { title, description = 'Genuine Geek Media — Silicon & Steel', activePyl
   <div class="crt-bezel">
     <!-- The "screen" area -->
     <div class="crt-screen">
-      <!-- Scanlines live on the screen glass -->
       <Scanlines />
-
-      <!-- Vignette / edge glow -->
       <div class="crt-vignette" aria-hidden="true"></div>
 
-      <!-- Screen content -->
-      <div class="crt-content">
-        <HUDHeader />
+      <!-- Screen layout: pylon left, content right -->
+      <div class="crt-layout">
         <Pylon active={activePylon} />
 
-        <main class="pt-10 lg:pl-56 min-h-screen p-2">
-          <slot />
-        </main>
+        <div class="crt-main">
+          <HUDHeader />
+          <main class="min-h-screen">
+            <slot />
+          </main>
+        </div>
       </div>
     </div>
 
@@ -105,10 +104,18 @@ const { title, description = 'Genuine Geek Media — Silicon & Steel', activePyl
     );
   }
 
-  .crt-content {
+  .crt-layout {
     position: relative;
     z-index: 1;
+    display: flex;
     min-height: 100%;
+  }
+
+  .crt-main {
+    flex: 1;
+    min-width: 0;
+    display: flex;
+    flex-direction: column;
   }
 
   .crt-brand {
