@@ -1,0 +1,43 @@
+---
+interface Props {
+  title: string;
+  description: string;
+  pubDate: Date;
+  href: string;
+  tags?: string[];
+  section: 'sprint' | 'workbench' | 'paddock';
+}
+
+const { title, description, pubDate, href, tags = [], section } = Astro.props;
+
+const sectionColors: Record<string, string> = {
+  sprint: 'text-octane border-octane',
+  workbench: 'text-terminal border-terminal',
+  paddock: 'text-amber-400 border-amber-400',
+};
+
+const sectionLabels: Record<string, string> = {
+  sprint: 'SPRINT',
+  workbench: 'WORKBENCH',
+  paddock: 'PADDOCK',
+};
+
+const color = sectionColors[section] || 'text-octane border-octane';
+const dateStr = pubDate.toLocaleDateString('en-US', { year: 'numeric', month: 'short', day: '2-digit' });
+---
+
+<a href={href} class="block border border-gunmetal bg-gunmetal/20 p-4 hover:bg-gunmetal/40 hover:border-octane/30 transition-all group">
+  <div class="flex items-center gap-3 mb-2 font-mono text-[10px] tracking-widest">
+    <span class:list={['border px-1.5 py-0.5 font-bold', color]}>{sectionLabels[section]}</span>
+    <span class="text-steel/50">{dateStr}</span>
+  </div>
+  <h3 class="font-mono font-bold text-chrome text-sm leading-snug group-hover:text-octane transition-colors">{title}</h3>
+  <p class="text-steel/70 text-xs mt-1.5 leading-relaxed line-clamp-2 font-sans">{description}</p>
+  {tags.length > 0 && (
+    <div class="flex gap-2 mt-3 flex-wrap">
+      {tags.map(tag => (
+        <span class="font-mono text-[9px] text-terminal/50 tracking-wider">#{tag}</span>
+      ))}
+    </div>
+  )}
+</a>

@@ -1,0 +1,28 @@
+---
+import Base from '../../layouts/Base.astro';
+import EpisodeCard from '../../components/EpisodeCard.astro';
+import { getCollection } from 'astro:content';
+
+const posts = (await getCollection('workbench')).sort((a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf());
+---
+
+<Base title="The Workbench" activePylon="/workbench">
+  <section class="px-6 py-12">
+    <div class="mb-8">
+      <h1 class="font-mono text-xl font-bold text-terminal tracking-wider">THE WORKBENCH</h1>
+      <p class="font-mono text-xs text-steel mt-1 tracking-wider">Deep dives into technical builds, cloud optimization, and hands-on projects.</p>
+    </div>
+    <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-4">
+      {posts.map(entry => (
+        <EpisodeCard
+          title={entry.data.title}
+          description={entry.data.description}
+          pubDate={entry.data.pubDate}
+          href={`/workbench/${entry.id}`}
+          tags={entry.data.tags}
+          section="workbench"
+        />
+      ))}
+    </div>
+  </section>
+</Base>

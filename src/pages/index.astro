@@ -1,0 +1,138 @@
+---
+import Base from '../layouts/Base.astro';
+import EpisodeCard from '../components/EpisodeCard.astro';
+import { getCollection } from 'astro:content';
+
+const allSprint = (await getCollection('sprint')).sort((a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf()).slice(0, 3);
+const allWorkbench = (await getCollection('workbench')).sort((a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf()).slice(0, 3);
+const allPaddock = (await getCollection('paddock')).sort((a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf()).slice(0, 3);
+---
+
+<Base title="Mission Control">
+  <!-- HERO -->
+  <section class="flex items-center justify-center min-h-[70vh] px-6 border-b border-gunmetal relative overflow-hidden">
+    <div class="absolute inset-0 opacity-[0.03]" style="background: radial-gradient(circle at 30% 40%, rgba(255,102,0,0.3) 0%, transparent 60%), radial-gradient(circle at 70% 60%, rgba(0,255,65,0.2) 0%, transparent 50%);"></div>
+
+    <div class="relative text-center max-w-2xl">
+      <div class="font-mono text-terminal text-xs tracking-[0.3em] mb-4">// BOOT SEQUENCE INITIATED</div>
+
+      <div id="typewriter" class="font-mono text-2xl md:text-4xl font-bold text-chrome leading-tight min-h-[3em] flex flex-col items-center justify-center">
+        <div id="tw-line1"></div>
+        <div id="tw-line2" class="text-octane mt-2"></div>
+      </div>
+
+      <div class="mt-8 flex items-center justify-center gap-6 font-mono text-xs text-steel">
+        <div class="flex items-center gap-2">
+          <span class="w-2 h-2 bg-terminal inline-block animate-pulse"></span>
+          <span>IT PRO SVCS</span>
+        </div>
+        <span class="text-gunmetal">|</span>
+        <div class="flex items-center gap-2">
+          <span class="w-2 h-2 bg-octane inline-block"></span>
+          <span>1986 TRANS AM</span>
+        </div>
+        <span class="text-gunmetal">|</span>
+        <div class="flex items-center gap-2">
+          <span class="w-2 h-2 bg-amber-400 inline-block"></span>
+          <span>PODCAST</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- LATEST FROM THE SPRINT -->
+  <section class="px-6 py-12 border-b border-gunmetal">
+    <div class="flex items-center justify-between mb-6">
+      <h2 class="font-mono text-xs tracking-[0.2em] text-octane font-bold">&#9656; THE SPRINT — LATEST</h2>
+      <a href="/sprint" class="font-mono text-[10px] text-steel hover:text-octane transition-colors tracking-wider">VIEW ALL &rarr;</a>
+    </div>
+    <div class="grid md:grid-cols-3 gap-4">
+      {allSprint.map(entry => (
+        <EpisodeCard
+          title={entry.data.title}
+          description={entry.data.description}
+          pubDate={entry.data.pubDate}
+          href={`/sprint/${entry.id}`}
+          tags={entry.data.tags}
+          section="sprint"
+        />
+      ))}
+    </div>
+  </section>
+
+  <!-- LATEST FROM THE WORKBENCH -->
+  <section class="px-6 py-12 border-b border-gunmetal">
+    <div class="flex items-center justify-between mb-6">
+      <h2 class="font-mono text-xs tracking-[0.2em] text-terminal font-bold">&#9656; THE WORKBENCH — LATEST</h2>
+      <a href="/workbench" class="font-mono text-[10px] text-steel hover:text-terminal transition-colors tracking-wider">VIEW ALL &rarr;</a>
+    </div>
+    <div class="grid md:grid-cols-3 gap-4">
+      {allWorkbench.map(entry => (
+        <EpisodeCard
+          title={entry.data.title}
+          description={entry.data.description}
+          pubDate={entry.data.pubDate}
+          href={`/workbench/${entry.id}`}
+          tags={entry.data.tags}
+          section="workbench"
+        />
+      ))}
+    </div>
+  </section>
+
+  <!-- LATEST FROM THE PADDOCK -->
+  <section class="px-6 py-12">
+    <div class="flex items-center justify-between mb-6">
+      <h2 class="font-mono text-xs tracking-[0.2em] text-amber-400 font-bold">&#9656; THE PADDOCK — LATEST</h2>
+      <a href="/paddock" class="font-mono text-[10px] text-steel hover:text-amber-400 transition-colors tracking-wider">VIEW ALL &rarr;</a>
+    </div>
+    <div class="grid md:grid-cols-3 gap-4">
+      {allPaddock.map(entry => (
+        <EpisodeCard
+          title={entry.data.title}
+          description={entry.data.description}
+          pubDate={entry.data.pubDate}
+          href={`/paddock/${entry.id}`}
+          tags={entry.data.tags}
+          section="paddock"
+        />
+      ))}
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="border-t border-gunmetal px-6 py-8 font-mono text-[10px] text-steel/40 tracking-wider flex items-center justify-between">
+    <span>&copy; 2025 GENUINE GEEK MEDIA LLC</span>
+    <span>SILICON &amp; STEEL</span>
+  </footer>
+</Base>
+
+<script>
+  function typewrite(el: HTMLElement, text: string, speed: number): Promise<void> {
+    return new Promise((resolve) => {
+      let i = 0;
+      const interval = setInterval(() => {
+        el.textContent = text.slice(0, i + 1) + '\u2588';
+        i++;
+        if (i >= text.length) {
+          clearInterval(interval);
+          el.textContent = text;
+          resolve();
+        }
+      }, speed);
+    });
+  }
+
+  async function boot() {
+    const line1 = document.getElementById('tw-line1');
+    const line2 = document.getElementById('tw-line2');
+    if (!line1 || !line2) return;
+
+    await new Promise(r => setTimeout(r, 400));
+    await typewrite(line1, 'IDENTIFYING: GENUINE GEEK...', 45);
+    await new Promise(r => setTimeout(r, 300));
+    await typewrite(line2, 'STATUS: AUTHENTIC.', 55);
+  }
+
+  boot();
+</script>

@@ -1,0 +1,30 @@
+---
+interface Props {
+  youtubeId?: string;
+  title?: string;
+}
+
+const { youtubeId, title = 'Video' } = Astro.props;
+---
+
+{youtubeId && (
+  <div class="relative border border-gunmetal bg-black overflow-hidden group">
+    <div class="absolute inset-0 pointer-events-none z-10 opacity-[0.03]"
+      style="background: repeating-linear-gradient(0deg, transparent, transparent 2px, rgba(0,255,65,0.08) 2px, rgba(0,255,65,0.08) 4px);">
+    </div>
+    <div class="absolute inset-0 pointer-events-none z-10 shadow-[inset_0_0_30px_rgba(255,102,0,0.15)]"></div>
+    <div class="aspect-video">
+      <iframe
+        src={`https://www.youtube.com/embed/${youtubeId}`}
+        title={title}
+        class="w-full h-full"
+        frameborder="0"
+        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+        allowfullscreen
+      ></iframe>
+    </div>
+    <div class="absolute bottom-0 left-0 right-0 h-6 bg-gradient-to-t from-black/60 to-transparent pointer-events-none z-10 flex items-end px-2 pb-1">
+      <span class="font-mono text-[10px] text-terminal/50 tracking-wider">▶ LIVE FEED</span>
+    </div>
+  </div>
+)}

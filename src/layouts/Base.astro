@@ -1,0 +1,34 @@
+---
+import '../styles/global.css';
+import HUDHeader from '../components/HUDHeader.astro';
+import Pylon from '../components/Pylon.astro';
+import Scanlines from '../components/Scanlines.astro';
+
+interface Props {
+  title: string;
+  description?: string;
+  activePylon?: string;
+}
+
+const { title, description = 'Genuine Geek Media — Silicon & Steel', activePylon } = Astro.props;
+---
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content={description} />
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+  <title>{title} | Genuine Geek Media</title>
+</head>
+<body class="bg-matte-black text-chrome font-sans antialiased">
+  <Scanlines />
+  <HUDHeader />
+  <Pylon active={activePylon} />
+
+  <main class="pt-8 lg:pl-56 min-h-screen">
+    <slot />
+  </main>
+</body>
+</html>

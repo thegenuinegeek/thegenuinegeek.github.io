@@ -1,0 +1,49 @@
+---
+import Base from '../../layouts/Base.astro';
+import CRTFrame from '../../components/CRTFrame.astro';
+import { getCollection, render } from 'astro:content';
+
+export async function getStaticPaths() {
+  const posts = await getCollection('workbench');
+  return posts.map(post => ({ params: { id: post.id }, props: { post } }));
+}
+
+const { post } = Astro.props;
+const { Content } = await render(post);
+const dateStr = post.data.pubDate.toLocaleDateString('en-US', { year: 'numeric', month: 'long', day: 'numeric' });
+---
+
+<Base title={post.data.title} activePylon="/workbench">
+  <article class="px-6 py-12 max-w-3xl">
+    <a href="/workbench" class="font-mono text-[10px] text-steel hover:text-terminal transition-colors tracking-wider">&larr; BACK TO THE WORKBENCH</a>
+    <div class="mt-6 mb-2 flex items-center gap-3 font-mono text-[10px] tracking-widest">
+      <span class="border border-terminal text-terminal px-1.5 py-0.5 font-bold">WORKBENCH</span>
+      <span class="text-steel/50">{dateStr}</span>
+      {post.data.series && <span class="text-amber-400/60">SERIES: {post.data.series}</span>}
+    </div>
+    <h1 class="font-mono text-2xl font-bold text-chrome mb-4">{post.data.title}</h1>
+
+    {post.data.youtubeId && (
+      <div class="mb-8">
+        <CRTFrame youtubeId={post.data.youtubeId} title={post.data.title} />
+      </div>
+    )}
+
+    <div class="prose prose-invert prose-sm max-w-none font-sans text-steel leading-relaxed
+      [&_h2]:font-mono [&_h2]:text-chrome [&_h2]:text-sm [&_h2]:tracking-wider [&_h2]:mt-8 [&_h2]:mb-3
+      [&_h3]:font-mono [&_h3]:text-chrome [&_h3]:text-xs
+      [&_strong]:text-chrome [&_a]:text-terminal [&_a:hover]:text-terminal/80
+      [&_code]:bg-gunmetal [&_code]:px-1 [&_code]:py-0.5 [&_code]:text-terminal [&_code]:text-xs [&_code]:font-mono
+      [&_ul]:list-none [&_ul]:pl-0 [&_li]:before:content-['▸'] [&_li]:before:text-terminal [&_li]:before:mr-2">
+      <Content />
+    </div>
+
+    {post.data.tags && post.data.tags.length > 0 && (
+      <div class="flex gap-2 mt-8 flex-wrap border-t border-gunmetal pt-4">
+        {post.data.tags.map(tag => (
+          <span class="font-mono text-[9px] text-terminal/50 tracking-wider">#{tag}</span>
+        ))}
+      </div>
+    )}
+  </article>
+</Base>
