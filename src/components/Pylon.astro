@@ -12,7 +12,8 @@ const links = [
 ];
 ---
 
-<aside id="pylon" class="hidden lg:flex w-60 shrink-0 bg-matte-black border-r border-gunmetal flex-col font-mono text-xs select-none rounded-l-lg">
+<!-- Desktop sidebar -->
+<aside class="hidden lg:flex w-60 shrink-0 bg-matte-black border-r border-gunmetal flex-col font-mono text-xs select-none rounded-l-lg">
   <a href="/" class="block px-6 py-7 border-b border-gunmetal">
     <div class="text-octane font-bold text-sm tracking-widest">GGM</div>
     <div class="text-steel mt-1.5 tracking-wider">GENUINE GEEK MEDIA</div>
@@ -43,46 +44,3 @@ const links = [
     <div class="mt-1">SILICON &amp; STEEL</div>
   </div>
 </aside>
-
-<button
-  id="pylon-toggle"
-  class="lg:hidden absolute top-2 left-2 z-50 bg-gunmetal border border-gunmetal text-octane font-mono text-xs px-3 py-1.5"
-  aria-label="Toggle navigation"
->
-  &#9776; NAV
-</button>
-
-<!-- Mobile overlay nav -->
-<nav id="pylon-mobile" class="hidden fixed inset-0 z-[200] bg-matte-black/95 backdrop-blur-sm flex flex-col font-mono text-xs select-none">
-  <div class="flex items-center justify-between px-6 py-5 border-b border-gunmetal">
-    <div class="text-octane font-bold text-sm tracking-widest">GGM</div>
-    <button id="pylon-close" class="text-steel hover:text-octane text-lg">&times;</button>
-  </div>
-  <div class="flex-1 py-6">
-    {links.map((link, i) => (
-      <a
-        href={link.href}
-        class:list={[
-          'group flex items-center gap-3 px-6 py-5 border-l-2 transition-colors',
-          active === link.href
-            ? 'border-octane bg-gunmetal/40 text-octane'
-            : 'border-transparent text-steel hover:text-octane hover:border-octane/50',
-        ]}
-      >
-        <span class="text-terminal font-bold w-4 text-right">{String(i + 1).padStart(2, '0')}</span>
-        <div>
-          <div class="font-bold tracking-wider text-sm">{link.label}</div>
-          <div class="text-[11px] text-steel/60 tracking-wide mt-0.5">{link.sub}</div>
-        </div>
-      </a>
-    ))}
-  </div>
-</nav>
-
-<script>
-  const toggle = document.getElementById('pylon-toggle');
-  const mobile = document.getElementById('pylon-mobile');
-  const close = document.getElementById('pylon-close');
-  toggle?.addEventListener('click', () => mobile?.classList.toggle('hidden'));
-  close?.addEventListener('click', () => mobile?.classList.add('hidden'));
-</script>

@@ -1,0 +1,60 @@
+---
+interface Props {
+  active?: string;
+}
+
+const { active } = Astro.props;
+
+const links = [
+  { href: '/sprint', label: 'THE SPRINT', sub: 'News' },
+  { href: '/workbench', label: 'THE WORKBENCH', sub: 'Deep Dives' },
+  { href: '/paddock', label: 'THE PADDOCK', sub: 'Guests' },
+];
+---
+
+<!-- Mobile top bar with nav toggle -->
+<div class="lg:hidden sticky top-0 z-50 bg-matte-black/90 backdrop-blur-sm border-b border-gunmetal px-4 py-2 flex items-center justify-between">
+  <a href="/" class="font-mono text-octane font-bold text-xs tracking-widest">GGM</a>
+  <button
+    id="pylon-toggle"
+    class="bg-gunmetal border border-gunmetal text-octane font-mono text-xs px-3 py-1.5"
+    aria-label="Toggle navigation"
+  >
+    &#9776; NAV
+  </button>
+</div>
+
+<!-- Mobile overlay nav -->
+<nav id="pylon-mobile" class="hidden fixed inset-0 z-[200] bg-matte-black/95 backdrop-blur-sm flex flex-col font-mono text-xs select-none">
+  <div class="flex items-center justify-between px-6 py-5 border-b border-gunmetal">
+    <a href="/" class="text-octane font-bold text-sm tracking-widest">GGM</a>
+    <button id="pylon-close" class="text-steel hover:text-octane text-lg">&times;</button>
+  </div>
+  <div class="flex-1 py-6">
+    {links.map((link, i) => (
+      <a
+        href={link.href}
+        class:list={[
+          'group flex items-center gap-3 px-6 py-5 border-l-2 transition-colors',
+          active === link.href
+            ? 'border-octane bg-gunmetal/40 text-octane'
+            : 'border-transparent text-steel hover:text-octane hover:border-octane/50',
+        ]}
+      >
+        <span class="text-terminal font-bold w-4 text-right">{String(i + 1).padStart(2, '0')}</span>
+        <div>
+          <div class="font-bold tracking-wider text-sm">{link.label}</div>
+          <div class="text-[11px] text-steel/60 tracking-wide mt-0.5">{link.sub}</div>
+        </div>
+      </a>
+    ))}
+  </div>
+</nav>
+
+<script>
+  const toggle = document.getElementById('pylon-toggle');
+  const mobile = document.getElementById('pylon-mobile');
+  const close = document.getElementById('pylon-close');
+  toggle?.addEventListener('click', () => mobile?.classList.toggle('hidden'));
+  close?.addEventListener('click', () => mobile?.classList.add('hidden'));
+</script>
