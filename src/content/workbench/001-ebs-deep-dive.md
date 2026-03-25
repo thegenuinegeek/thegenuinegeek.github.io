@@ -6,25 +6,27 @@ tags: ["aws", "ebs", "cost-optimization", "tutorial"]
 series: "Cloud Cost Masterclass"
 ---
 
-EBS volumes are the silent budget killer in most AWS environments. They don't show up in the "top 5 most expensive services" dashboards because the waste is spread across hundreds of small volumes. A $15 volume here, a $40 volume there. Multiply that across a few hundred instances and you're bleeding thousands a month on storage nobody is using.
+EBS volumes are the silent budget killer in most AWS environments.
 
-In this deep dive, we walk through the exact process our SBCO team uses to audit, rightsize, and eliminate orphaned EBS volumes. These aren't theoretical recommendations. This is the playbook.
+They don't show up in your "top 5 most expensive services" dashboard because the waste is spread thin. A $15 volume here. A $40 volume there. Multiply that across a few hundred instances and you're bleeding thousands a month on storage nobody is using.
+
+This is the exact playbook our SBCO team runs on every engagement. Not theory. Process.
 
 ## The Anatomy of EBS Waste
 
-EBS waste falls into three categories. Every single engagement we run hits all three.
+EBS waste falls into three categories. Every engagement we run hits all three.
 
-**Orphaned Volumes** - Volumes that aren't attached to any instance. Someone terminated an EC2 instance but left "Delete on Termination" unchecked. The instance is gone. The volume lives on. You're paying for it every hour.
+**Orphaned Volumes** - Volumes not attached to any instance. Someone terminated an EC2 box but left "Delete on Termination" unchecked. The instance is gone. The volume lives on. You're paying for it every hour.
 
-**Over-Provisioned Volumes** - A developer spun up a 500GB gp3 volume "just in case" and the application uses 43GB. That's 457GB of storage you're paying for that holds nothing but empty blocks.
+**Over-Provisioned Volumes** - A developer spun up a 500GB gp3 volume "just in case." The app uses 43GB. You're paying for 457GB of empty blocks.
 
-**Wrong Volume Type** - io2 volumes running workloads that don't need provisioned IOPS. gp2 volumes that should have been migrated to gp3 two years ago (gp3 is cheaper *and* faster at baseline). Magnetic volumes that somehow still exist in 2025.
+**Wrong Volume Type** - io2 volumes running workloads that don't need provisioned IOPS. gp2 volumes that should have been migrated to gp3 two years ago. Magnetic volumes that somehow still exist in 2025.
 
 ## Step 1: Find the Orphans
 
-This is the lowest-hanging fruit in all of cloud cost optimization. Unattached volumes cost you money and deliver zero value.
+Lowest-hanging fruit in all of cloud cost optimization. Unattached volumes cost money and deliver zero value.
 
-Pull every volume in the account and filter for `state: available` (not `in-use`). Here's the CLI one-liner:
+Pull every volume in the account and filter for `state: available`:
 
 ```bash
 aws ec2 describe-volumes \
@@ -33,38 +35,51 @@ aws ec2 describe-volumes \
   --output table
 ```
 
-On a recent engagement with a mid-size SaaS company, this query returned **147 orphaned volumes** totaling 12.4TB. That's roughly **$1,200/month** sitting in available state doing absolutely nothing.
+On a recent engagement with a mid-size SaaS company, this returned **147 orphaned volumes** totaling 12.4TB.
+
+That's roughly **$1,200/month** sitting in available state doing absolutely nothing.
 
 Before you delete anything, check for snapshots. Some teams leave volumes around as a "backup" instead of using proper snapshots. Confirm there's a recent snapshot or that the data is genuinely abandoned, then terminate.
 
-**Pro tip:** Tag every volume you find with `OrphanedDate` and the current date. Give the team two weeks to claim anything. Whatever's unclaimed gets deleted. This avoids the "who approved deleting my volume" conversation.
+**Pro tip:** Tag every orphan with `OrphanedDate` and the current date. Give the team two weeks to claim anything. Whatever's unclaimed gets deleted. This avoids the "who approved deleting my volume" conversation entirely.
 
 ## Step 2: Audit Volume Utilization
 
-This is where CloudWatch becomes your best friend. Every EBS volume reports these metrics:
+CloudWatch is your best friend here. Every EBS volume reports:
 
 - `VolumeReadBytes` / `VolumeWriteBytes` - actual throughput
 - `VolumeReadOps` / `VolumeWriteOps` - IOPS consumed
 - `VolumeQueueLength` - how backed up the disk is
 
-Pull 14 days of CloudWatch data for every attached volume. What you're looking for:
+Pull 14 days of data for every attached volume.
 
-**Storage utilization** - CloudWatch doesn't tell you how full a disk is (that's an OS-level metric). You need the CloudWatch Agent or SSM to pull filesystem usage. But you can infer a lot from I/O patterns. A 1TB volume with near-zero read/write bytes over two weeks is either massively over-provisioned or attached to something that's effectively idle.
+### What to look for: Storage
 
-**IOPS consumption vs. provisioned** - If you're running io2 volumes provisioned at 10,000 IOPS and your peak usage over two weeks is 800 IOPS, you're paying for 9,200 IOPS you'll never use. Drop to gp3, set the IOPS to 3,000 (the free baseline), and pocket the difference.
+CloudWatch doesn't tell you how full a disk is. That's an OS-level metric, so you need the CloudWatch Agent or SSM for filesystem usage.
 
-On the same engagement, we found **23 io2 volumes** that averaged under 1,000 IOPS. Migrating those to gp3 saved **$3,400/month** with zero performance impact.
+But you can infer a lot from I/O patterns. A 1TB volume with near-zero read/write bytes over two weeks? Either massively over-provisioned or attached to something that's effectively idle.
+
+### What to look for: IOPS
+
+If you're running io2 volumes provisioned at 10,000 IOPS and your peak over two weeks is 800 IOPS, you're paying for 9,200 IOPS you'll never touch.
+
+Drop to gp3. Set IOPS to 3,000 (the free baseline). Pocket the difference.
+
+On this engagement, we found **23 io2 volumes** averaging under 1,000 IOPS. Migrating those to gp3 saved **$3,400/month** with zero performance impact.
 
 ## Step 3: The gp2 to gp3 Migration
 
 If you still have gp2 volumes in your environment, stop reading and go fix that first. Seriously.
 
 gp3 gives you:
-- 3,000 IOPS baseline (gp2 gives you 3 IOPS per GB, so you need a 1TB volume to match)
-- 125 MB/s baseline throughput (gp2 caps at 250 MB/s but only on large volumes)
+
+- 3,000 IOPS baseline (gp2 needs a 1TB volume to match that)
+- 125 MB/s baseline throughput
 - **20% cheaper per GB** than gp2
 
-The migration is non-destructive. You can modify a gp2 volume to gp3 in-place with zero downtime:
+Better performance. Lower price. There is no reason to stay on gp2.
+
+The migration is non-destructive. Modify in-place, zero downtime:
 
 ```bash
 aws ec2 modify-volume \
@@ -72,50 +87,65 @@ aws ec2 modify-volume \
   --volume-type gp3
 ```
 
-The volume stays attached. The instance keeps running. AWS handles the conversion in the background. You can't modify the same volume again for six hours, so batch your changes accordingly.
+Volume stays attached. Instance keeps running. AWS handles the conversion in the background.
 
-On this engagement, the customer had **312 gp2 volumes** across three accounts. Converting all of them to gp3 saved **$2,800/month**. The entire migration took one afternoon.
+One caveat: you can't modify the same volume again for six hours, so batch accordingly.
+
+This customer had **312 gp2 volumes** across three accounts. Converting them all saved **$2,800/month**. The entire migration took one afternoon.
 
 ## Step 4: Rightsize What's Left
 
-Now that you've cleaned up orphans, fixed volume types, and tuned IOPS, look at raw storage allocation.
+Orphans cleaned. Volume types fixed. IOPS tuned. Now look at raw storage allocation.
 
-Sort your remaining volumes by size descending. The top 20% of volumes by size typically represent 80% of your storage spend. Focus there.
+Sort your remaining volumes by size, descending. The top 20% by size typically represents 80% of your storage spend. Focus there.
 
-For each large volume, answer two questions:
-- How full is the filesystem? (Pull from CloudWatch Agent or SSM)
+For each large volume, two questions:
+
+- How full is the filesystem?
 - What's the growth rate over the last 90 days?
 
-If a 500GB volume is 15% full and growing at 2GB/month, it doesn't need to be 500GB. It needs to be 100GB with a calendar reminder to check it in six months.
+A 500GB volume that's 15% full and growing at 2GB/month doesn't need to be 500GB. It needs to be 100GB with a reminder to revisit in six months.
 
-EBS volumes can be expanded in-place but **cannot be shrunk**. To rightsize a volume down, you need to:
+Important: EBS volumes can be expanded in-place but **cannot be shrunk**. To rightsize down:
+
 1. Create a snapshot
 2. Create a new, smaller volume from the snapshot
 3. Swap the volumes on the instance
 4. Extend the filesystem if needed
 
-It's more work than a type conversion, so prioritize the biggest offenders. A 2TB volume that's 8% full is worth the effort. A 100GB volume that's 60% full is not.
+More work than a type conversion, so prioritize the biggest offenders. A 2TB volume at 8% utilization is worth it. A 100GB volume at 60% is not.
 
 ## The Scoreboard
 
-Here's the final tally from that engagement:
+Final tally from that engagement:
 
-| Action | Volumes Affected | Monthly Savings |
-|--------|-----------------|----------------|
+| Action | Volumes | Monthly Savings |
+|--------|---------|-----------------|
 | Orphan cleanup | 147 | $1,200 |
 | io2 to gp3 migration | 23 | $3,400 |
 | gp2 to gp3 conversion | 312 | $2,800 |
 | Volume rightsizing | 18 | $1,100 |
 | **Total** | **500** | **$8,500/mo** |
 
-That's **$102,000 in annualized savings** from EBS alone. The entire audit and remediation took less than two weeks. No application changes. No architecture redesign. Just cleaning up storage that should have been managed years ago.
+**$102,000 in annualized savings.** From EBS alone. In under two weeks.
+
+No application changes. No architecture redesign. Just cleaning up storage that should have been managed years ago.
 
 ## The Genuine Geek Take
 
-EBS optimization isn't glamorous. Nobody's writing conference talks about deleting orphaned volumes. But dollar for dollar, it's consistently the highest-ROI activity in cloud cost optimization.
+EBS optimization isn't glamorous. Nobody's writing conference talks about deleting orphaned volumes.
 
-Every environment we touch has this waste. Every single one. The volumes accumulate slowly, a dev environment here, a failed deployment there, a "temporary" volume from 2023 that's still running. Nobody notices because no single volume is expensive enough to trigger an alarm.
+But dollar for dollar, it's consistently the highest-ROI work in cloud cost optimization.
 
-The fix isn't a tool or a platform. It's a process. Run this audit quarterly. Tag your volumes. Set up a CloudWatch alarm for unattached volumes older than 7 days. Make gp3 the default in your IaC templates.
+Every environment we touch has this waste. Every single one. The volumes accumulate slowly. A dev environment here. A failed deployment there. A "temporary" volume from 2023 that's still running.
+
+Nobody notices because no single volume is expensive enough to trigger an alarm.
+
+The fix isn't a tool. It's a process:
+
+- Run this audit quarterly
+- Tag your volumes
+- Set up a CloudWatch alarm for unattached volumes older than 7 days
+- Make gp3 the default in your IaC templates
 
 The cloud doesn't clean up after itself. That's your job.
