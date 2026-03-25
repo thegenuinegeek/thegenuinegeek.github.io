@@ -20,9 +20,7 @@ Right now, NPC dialog in most games is a tree. You pick option A, B, or C, and t
 NVIDIA's SLM approach flips this. Instead of one giant AI model running in the cloud processing every conversation, you'd have small, purpose-built models running locally:
 
 - **A shopkeeper** with a fine-tuned model that knows its inventory, local gossip, and has a personality template (grumpy, friendly, shady)
-
 - **A quest-giver** that can actually *listen* to what you say and adjust the mission briefing based on context
-
 - **Guard NPCs** that remember you caused trouble last time and reference it naturally
 
 Each one runs a lightweight model tuned for its role. No cloud round-trip. No 10-second thinking delay. Just real-time conversation that feels human.
@@ -42,13 +40,9 @@ Option two is probably where games land first. Keep the reliable game logic, bol
 Imagine a game where:
 
 - You can **ask any NPC anything** and get a contextually aware answer, not a menu
-
 - A merchant **haggles with you** based on your reputation, not a fixed price list
-
 - Enemy soldiers **taunt you** with references to what you actually did in the last mission
-
 - Your companion **remembers your conversations** and brings things up hours later
-
 - Townsfolk **spread rumors** about your actions that mutate as they pass between NPCs
 
 None of this requires cloud infrastructure. NVIDIA's whole point is that small models, fine-tuned for specific roles, can run on consumer hardware. Your RTX 4070 isn't just rendering frames, it's running a dozen tiny AI brains simultaneously.
