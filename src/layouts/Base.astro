@@ -84,6 +84,8 @@ const { title, description = 'Genuine Geek Media — Silicon & Steel', activePyl
     border: 1px solid #1f1f1f;
     border-radius: 8px;
     overflow: hidden;
+    display: flex;
+    flex-direction: column;
     box-shadow:
       0 0 40px rgba(255, 102, 0, 0.03),
       0 0 80px rgba(0, 255, 65, 0.02),
@@ -108,7 +110,7 @@ const { title, description = 'Genuine Geek Media — Silicon & Steel', activePyl
     position: relative;
     z-index: 1;
     display: flex;
-    min-height: 100%;
+    flex: 1;
   }
 
   .crt-main {
