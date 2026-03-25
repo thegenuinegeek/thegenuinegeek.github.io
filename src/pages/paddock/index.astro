@@ -7,12 +7,12 @@ const posts = (await getCollection('paddock')).sort((a, b) => b.data.pubDate.val
 ---
 
 <Base title="The Paddock" activePylon="/paddock">
-  <section class="px-6 py-12">
-    <div class="mb-8">
+  <section class="px-8 md:px-12 py-14">
+    <div class="mb-10">
       <h1 class="font-mono text-xl font-bold text-amber-400 tracking-wider">THE PADDOCK</h1>
-      <p class="font-mono text-xs text-steel mt-1 tracking-wider">Conversations with guests from the tech, motorsport, and geek communities.</p>
+      <p class="font-mono text-xs text-steel mt-2 tracking-wider">Conversations with guests from the tech, motorsport, and geek communities.</p>
     </div>
-    <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-4">
+    <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-5">
       {posts.map(entry => (
         <EpisodeCard
           title={entry.data.title}

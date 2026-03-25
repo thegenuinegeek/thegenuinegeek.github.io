@@ -12,18 +12,18 @@ const links = [
 ];
 ---
 
-<nav id="pylon" class="fixed left-0 top-8 bottom-0 w-56 bg-matte-black border-r border-gunmetal z-40 flex flex-col font-mono text-xs select-none hidden lg:flex">
-  <a href="/" class="block px-4 py-6 border-b border-gunmetal">
+<nav id="pylon" class="fixed left-[var(--bezel-left,0px)] top-[var(--bezel-top,0px)] bottom-[var(--bezel-bottom,0px)] w-56 bg-matte-black/95 backdrop-blur-sm border-r border-gunmetal z-40 flex flex-col font-mono text-xs select-none hidden lg:flex rounded-l-lg">
+  <a href="/" class="block px-5 py-6 border-b border-gunmetal">
     <div class="text-octane font-bold text-sm tracking-widest">GGM</div>
     <div class="text-steel mt-1 tracking-wider">GENUINE GEEK MEDIA</div>
   </a>
 
-  <div class="flex-1 py-4">
+  <div class="flex-1 py-6">
     {links.map((link, i) => (
       <a
         href={link.href}
         class:list={[
-          'group flex items-center gap-3 px-4 py-3 border-l-2 transition-colors',
+          'group flex items-center gap-3 px-5 py-4 border-l-2 transition-colors',
           active === link.href
             ? 'border-octane bg-gunmetal/40 text-octane'
             : 'border-transparent text-steel hover:text-octane hover:border-octane/50 hover:bg-gunmetal/20',
@@ -32,24 +32,24 @@ const links = [
         <span class="text-terminal font-bold w-4 text-right">{String(i + 1).padStart(2, '0')}</span>
         <div>
           <div class="font-bold tracking-wider text-[11px]">{link.label}</div>
-          <div class="text-[10px] text-steel/60 tracking-wide">{link.sub}</div>
+          <div class="text-[10px] text-steel/60 tracking-wide mt-0.5">{link.sub}</div>
         </div>
       </a>
     ))}
   </div>
 
-  <div class="px-4 py-4 border-t border-gunmetal text-[10px] text-steel/40 tracking-wider">
-    <div>© 2025 GGM LLC</div>
-    <div class="mt-1">SILICON & STEEL</div>
+  <div class="px-5 py-5 border-t border-gunmetal text-[10px] text-steel/40 tracking-wider">
+    <div>&copy; 2025 GGM LLC</div>
+    <div class="mt-1">SILICON &amp; STEEL</div>
   </div>
 </nav>
 
 <button
   id="pylon-toggle"
-  class="lg:hidden fixed top-10 left-2 z-50 bg-gunmetal border border-gunmetal text-octane font-mono text-xs px-2 py-1"
+  class="lg:hidden fixed top-12 left-4 z-50 bg-gunmetal border border-gunmetal text-octane font-mono text-xs px-3 py-1.5"
   aria-label="Toggle navigation"
 >
-  ☰ NAV
+  &#9776; NAV
 </button>
 
 <script>

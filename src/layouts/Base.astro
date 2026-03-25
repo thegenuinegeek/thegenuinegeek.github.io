@@ -22,13 +22,101 @@ const { title, description = 'Genuine Geek Media — Silicon & Steel', activePyl
   <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
   <title>{title} | Genuine Geek Media</title>
 </head>
-<body class="bg-matte-black text-chrome font-sans antialiased">
-  <Scanlines />
-  <HUDHeader />
-  <Pylon active={activePylon} />
+<body class="bg-[#050505] text-chrome font-sans antialiased">
 
-  <main class="pt-8 lg:pl-56 min-h-screen">
-    <slot />
-  </main>
+  <!-- CRT MONITOR HOUSING -->
+  <div class="crt-bezel">
+    <!-- The "screen" area -->
+    <div class="crt-screen">
+      <!-- Scanlines live on the screen glass -->
+      <Scanlines />
+
+      <!-- Vignette / edge glow -->
+      <div class="crt-vignette" aria-hidden="true"></div>
+
+      <!-- Screen content -->
+      <div class="crt-content">
+        <HUDHeader />
+        <Pylon active={activePylon} />
+
+        <main class="pt-10 lg:pl-56 min-h-screen p-2">
+          <slot />
+        </main>
+      </div>
+    </div>
+
+    <!-- Monitor brand plate -->
+    <div class="crt-brand">
+      <span class="font-mono text-[10px] text-steel/30 tracking-[0.3em]">GENUINE GEEK MEDIA</span>
+      <div class="flex items-center gap-3 mt-1">
+        <span class="w-1.5 h-1.5 rounded-full bg-terminal/40"></span>
+        <span class="font-mono text-[8px] text-steel/20 tracking-wider">PWR</span>
+      </div>
+    </div>
+  </div>
+
 </body>
 </html>
+
+<style is:global>
+  .crt-bezel {
+    min-height: 100vh;
+    padding: 12px;
+    display: flex;
+    flex-direction: column;
+  }
+
+  @media (min-width: 768px) {
+    .crt-bezel {
+      padding: 20px 24px 16px;
+    }
+  }
+
+  @media (min-width: 1280px) {
+    .crt-bezel {
+      padding: 28px 36px 20px;
+    }
+  }
+
+  .crt-screen {
+    flex: 1;
+    position: relative;
+    background: #0a0a0a;
+    border: 1px solid #1f1f1f;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow:
+      0 0 40px rgba(255, 102, 0, 0.03),
+      0 0 80px rgba(0, 255, 65, 0.02),
+      inset 0 0 60px rgba(0, 0, 0, 0.5);
+  }
+
+  .crt-vignette {
+    position: absolute;
+    inset: 0;
+    pointer-events: none;
+    z-index: 90;
+    border-radius: 8px;
+    background: radial-gradient(
+      ellipse at center,
+      transparent 50%,
+      rgba(0, 0, 0, 0.3) 80%,
+      rgba(0, 0, 0, 0.6) 100%
+    );
+  }
+
+  .crt-content {
+    position: relative;
+    z-index: 1;
+    min-height: 100%;
+  }
+
+  .crt-brand {
+    flex-shrink: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 16px;
+    padding: 10px 0 2px;
+  }
+</style>

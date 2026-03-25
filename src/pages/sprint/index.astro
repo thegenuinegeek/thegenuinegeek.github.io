@@ -7,12 +7,12 @@ const posts = (await getCollection('sprint')).sort((a, b) => b.data.pubDate.valu
 ---
 
 <Base title="The Sprint" activePylon="/sprint">
-  <section class="px-6 py-12">
-    <div class="mb-8">
+  <section class="px-8 md:px-12 py-14">
+    <div class="mb-10">
       <h1 class="font-mono text-xl font-bold text-octane tracking-wider">THE SPRINT</h1>
-      <p class="font-mono text-xs text-steel mt-1 tracking-wider">Quick-hit news from tech, motorsport, and geek culture.</p>
+      <p class="font-mono text-xs text-steel mt-2 tracking-wider">Quick-hit news from tech, motorsport, and geek culture.</p>
     </div>
-    <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-4">
+    <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-5">
       {posts.map(entry => (
         <EpisodeCard
           title={entry.data.title}

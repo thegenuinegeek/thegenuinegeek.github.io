@@ -7,12 +7,12 @@ const posts = (await getCollection('workbench')).sort((a, b) => b.data.pubDate.v
 ---
 
 <Base title="The Workbench" activePylon="/workbench">
-  <section class="px-6 py-12">
-    <div class="mb-8">
+  <section class="px-8 md:px-12 py-14">
+    <div class="mb-10">
       <h1 class="font-mono text-xl font-bold text-terminal tracking-wider">THE WORKBENCH</h1>
-      <p class="font-mono text-xs text-steel mt-1 tracking-wider">Deep dives into technical builds, cloud optimization, and hands-on projects.</p>
+      <p class="font-mono text-xs text-steel mt-2 tracking-wider">Deep dives into technical builds, cloud optimization, and hands-on projects.</p>
     </div>
-    <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-4">
+    <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-5">
       {posts.map(entry => (
         <EpisodeCard
           title={entry.data.title}
