@@ -11,13 +11,13 @@ This is finally happening. And honestly? It makes perfect sense.
 
 ## The Numbers
 
-The split-pricing model kicks off in May 2026. Here's what's confirmed so far:
+The split-pricing model kicks off in May 2026. Here's what's been confirmed:
 
-| Game | Digital | Physical | Release |
-|------|---------|----------|---------|
-| Yoshi and the Mysterious Book | $59.99 | $69.99 | May 21, 2026 |
-| Fire Emblem: Fortune's Weave | $69.99 | $79.99 | TBD 2026 |
-| Splatoon Raiders | $59.99 | $69.99 | TBD 2026 |
+**Yoshi and the Mysterious Book** - $59.99 digital / $69.99 physical (May 21, 2026)
+
+**Fire Emblem: Fortune's Weave** - $69.99 digital / $79.99 physical (TBD 2026)
+
+**Splatoon Raiders** - $59.99 digital / $69.99 physical (TBD 2026)
 
 Nintendo was quick to clarify that "the cost of physical games is not going up." They're framing this as passing manufacturing savings to digital buyers.
 
