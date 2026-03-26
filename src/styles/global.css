@@ -11,3 +11,118 @@
   --font-mono: 'JetBrains Mono', monospace;
   --font-sans: 'Inter', sans-serif;
 }
+
+/* Article body typography */
+.article-body p {
+  margin-bottom: 1.25em;
+}
+
+.article-body h2 {
+  font-family: var(--font-mono);
+  color: var(--color-octane);
+  font-size: 1rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.15em;
+  margin-top: 2.5em;
+  margin-bottom: 1em;
+  padding-bottom: 0.5em;
+  border-bottom: 1px solid var(--color-gunmetal);
+}
+
+.article-body h3 {
+  font-family: var(--font-mono);
+  color: var(--color-chrome);
+  font-size: 0.875rem;
+  font-weight: 700;
+  letter-spacing: 0.05em;
+  margin-top: 1.5em;
+  margin-bottom: 0.5em;
+}
+
+.article-body strong {
+  color: var(--color-chrome);
+}
+
+.article-body a {
+  color: var(--color-octane);
+}
+
+.article-body a:hover {
+  opacity: 0.8;
+}
+
+.article-body ul,
+.article-body ol {
+  list-style: none;
+  padding-left: 0;
+  margin-top: 0.75em;
+  margin-bottom: 1.25em;
+}
+
+.article-body li {
+  margin-bottom: 0.35em;
+}
+
+.article-body li::before {
+  content: '▸';
+  color: var(--color-octane);
+  margin-right: 0.5em;
+}
+
+.article-body ol li::before {
+  content: none;
+}
+
+.article-body ol {
+  list-style: decimal;
+  padding-left: 1.5em;
+}
+
+.article-body code {
+  background: var(--color-gunmetal);
+  padding: 0.125em 0.375em;
+  color: var(--color-terminal);
+  font-size: 0.75rem;
+  font-family: var(--font-mono);
+}
+
+.article-body pre {
+  background: var(--color-gunmetal);
+  padding: 1em;
+  overflow-x: auto;
+  margin-top: 1em;
+  margin-bottom: 1.25em;
+  border: 1px solid #2a2a2a;
+}
+
+.article-body pre code {
+  background: none;
+  padding: 0;
+}
+
+.article-body blockquote {
+  border-left: 2px solid var(--color-octane);
+  padding-left: 1em;
+  margin: 1.25em 0;
+  color: var(--color-steel);
+  font-style: italic;
+}
+
+.article-body hr {
+  border: none;
+  border-top: 1px solid var(--color-gunmetal);
+  margin: 2em 0;
+}
+
+/* Workbench accent color */
+.article-body--workbench h2 { color: var(--color-terminal); }
+.article-body--workbench a { color: var(--color-terminal); }
+.article-body--workbench li::before { color: var(--color-terminal); }
+.article-body--workbench blockquote { border-left-color: var(--color-terminal); }
+
+/* Paddock accent color */
+.article-body--paddock h2 { color: #fbbf24; }
+.article-body--paddock a { color: #fbbf24; }
+.article-body--paddock li::before { color: #fbbf24; }
+.article-body--paddock blockquote { border-left-color: #fbbf24; }
