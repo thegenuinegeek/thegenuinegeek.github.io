@@ -119,15 +119,15 @@ More work than a type conversion, so prioritize the biggest offenders. A 2TB vol
 
 Final tally from that engagement:
 
-| Action | Volumes | Monthly Savings |
-|--------|---------|-----------------|
-| Orphan cleanup | 147 | $1,200 |
-| io2 to gp3 migration | 23 | $3,400 |
-| gp2 to gp3 conversion | 312 | $2,800 |
-| Volume rightsizing | 18 | $1,100 |
-| **Total** | **500** | **$8,500/mo** |
+**Orphan cleanup** - 147 volumes - $1,200/mo saved
 
-**$102,000 in annualized savings.** From EBS alone. In under two weeks.
+**io2 to gp3 migration** - 23 volumes - $3,400/mo saved
+
+**gp2 to gp3 conversion** - 312 volumes - $2,800/mo saved
+
+**Volume rightsizing** - 18 volumes - $1,100/mo saved
+
+**Total: 500 volumes. $8,500/mo. $102,000 annualized.** In under two weeks.
 
 No application changes. No architecture redesign. Just cleaning up storage that should have been managed years ago.
 
