@@ -33,7 +33,7 @@ Now they're going bigger.
 
 In October 2025, Sony filed for an [OCC application to establish a national crypto bank charter](https://cryptonews.com/news/sony-bank-to-issue-usd-pegged-stablecoin-starting-early-2026-report/) in the US under a subsidiary called "Connectia Trust." The filing confirms Sony intends to issue dollar-pegged stablecoins and provide digital asset custody services.
 
-They also spun up a dedicated Web3 subsidiary called [BlockBloom](https://www.ainvest.com/news/sony-strategic-move-stablecoins-web3-payments-high-conviction-play-digital-entertainment-blockchain-convergence-2512/) with initial capital of 300 million yen.
+They also spun up a dedicated Web3 subsidiary called [BlockBloom](https://finance.yahoo.com/news/sony-bank-spins-off-web3-014122475.html) with initial capital of 300 million yen.
 
 Why does this matter? Because if Sony has their own bank, their own stablecoin, and their own wallet infrastructure, they don't have to pay Visa, Mastercard, Apple, or Google a cut on every transaction. Every PS Plus subscription. Every game purchase. Every microtransaction. Every movie rental.
 
@@ -47,11 +47,11 @@ Sony's not just filing paperwork. They already built the infrastructure.
 
 [Soneium](https://soneium.org/en/blog/introducing-soneium-by-sony-block-solutions-labs-for-the-future-of-web3/) is Sony's Ethereum Layer-2 blockchain, built on Optimism's OP Stack. It launched through Sony Block Solutions Labs, their Singapore-based subsidiary.
 
-Here's the key detail: [PSN accounts integrate natively with Soneium](https://games.gg/news/sony-launches-soneium-blockchain/). Players don't need MetaMask or any crypto wallet. Their PlayStation account *is* their wallet. With 123 million PSN accounts, that's instant scale.
+Here's the key detail: PSN accounts integrate natively with Soneium. Players don't need MetaMask or any crypto wallet. Their PlayStation account *is* their wallet. With 123 million PSN accounts, that's instant scale.
 
-[Startale Group has already launched a USD stablecoin (USDSC) on Soneium](https://www.blockhead.co/2025/12/03/sony-blockchain-partner-startale-launches-institutional-stablecoin-for-soneium-ecosystem/) in partnership with stablecoin platform M0. Square Enix moved their Web3 game Symbiogenesis onto the platform.
+[Startale Group has already launched a USD stablecoin (USDSC) on Soneium](https://www.coindesk.com/business/2025/12/03/sony-s-blockchain-partner-startale-launches-dollar-stablecoin-on-soneium) in partnership with stablecoin platform M0. [Sony Innovation Fund invested $13 million in Startale](https://www.theblock.co/post/387473/sony-innovation-fund-invests-13-million-in-soneium-l2-co-developer-startale-group), and the group recently [closed a $63 million Series A backed by SBI and Sony](https://www.coindesk.com/business/2026/03/25/sbi-sony-back-startale-s-usd63-million-push-to-expand-japan-s-tokenized-finance-stack). Square Enix moved their Web3 game Symbiogenesis onto the platform.
 
-Sony's [three-year Soneium roadmap](https://sosovalue.com/research/1829464575600971776) is telling: Year one, onboard Web3 developers. Year two, integrate Sony products (Music, Pictures, Bank). Year three, open it to enterprises and mainstream apps.
+Sony's three-year Soneium roadmap is telling. [CoinDesk reported](https://www.coindesk.com/tech/2024/08/23/sony-electronics-pioneer-behind-walkman-starts-own-blockchain-soneium) that year one focuses on onboarding Web3 developers. Year two, integrate Sony products (Music, Pictures, Bank). Year three, open it to enterprises and mainstream apps. They also partnered with [Japan's LINE to bridge mini-apps onto Soneium](https://www.coindesk.com/tech/2025/03/11/japanese-tech-giants-sony-and-line-join-forces-in-blockchain-deal).
 
 ## The Streaming Backbone: Project Cronos
 
@@ -65,9 +65,9 @@ Stream to a Bravia TV. Stream to an Xperia phone. Stream to a laptop. The consol
 
 ## The AI Play: Project Amethyst
 
-[Project Amethyst](https://www.technetbooks.com/2026/03/ps5-pro-pssr-ai-upscaling-update-sony.html) is Sony's collaboration with AMD on AI-powered graphics technology. The codename comes from combining PlayStation's blue with AMD's red.
+[Project Amethyst](https://www.noobfeed.com/articles/ps5-pro-updates-amd-pssr-2-ai) is Sony's collaboration with AMD on AI-powered graphics technology. The codename comes from combining PlayStation's blue with AMD's red.
 
-The first output is [PlayStation Spectral Super Resolution (PSSR)](https://dataconomy.com/2026/03/23/sony-confirms-ai-frame-generation-for-future-playstations/), an AI upscaling system that shipped in a March 2026 PS5 system update. AI frame generation is confirmed coming to future PlayStation platforms.
+The first output is PlayStation Spectral Super Resolution (PSSR), an AI upscaling system. Sony announced on the [PlayStation Blog](https://blog.playstation.com/2026/02/27/upgraded-pssr-upscaler-is-coming-to-ps5-pro/) that an upgraded PSSR is rolling out to PS5 Pro, with the algorithm and neural network stemming directly from the Amethyst partnership. AI frame generation is [confirmed coming to future PlayStation platforms](https://www.ibtimes.com/sony-confirms-ai-powered-frame-generation-coming-playstation-platforms-not-2026-3800003).
 
 This isn't just about prettier games. AI upscaling reduces the compute power needed to deliver high-quality visuals. That matters enormously for cloud streaming (Project Cronos), where every GPU cycle saved means lower server costs and better margins.
 
