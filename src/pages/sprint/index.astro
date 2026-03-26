@@ -21,6 +21,7 @@ const posts = (await getCollection('sprint')).sort((a, b) => b.data.pubDate.valu
           href={`/sprint/${entry.id}`}
           tags={entry.data.tags}
           section="sprint"
+          image={entry.data.image}
         />
       ))}
     </div>

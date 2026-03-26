@@ -60,6 +60,7 @@ const allPaddock = (await getCollection('paddock')).sort((a, b) => b.data.pubDat
           href={`/sprint/${entry.id}`}
           tags={entry.data.tags}
           section="sprint"
+          image={entry.data.image}
         />
       ))}
     </div>
@@ -80,6 +81,7 @@ const allPaddock = (await getCollection('paddock')).sort((a, b) => b.data.pubDat
           href={`/workbench/${entry.id}`}
           tags={entry.data.tags}
           section="workbench"
+          image={entry.data.image}
         />
       ))}
     </div>
@@ -100,6 +102,7 @@ const allPaddock = (await getCollection('paddock')).sort((a, b) => b.data.pubDat
           href={`/paddock/${entry.id}`}
           tags={entry.data.tags}
           section="paddock"
+          image={entry.data.image}
         />
       ))}
     </div>

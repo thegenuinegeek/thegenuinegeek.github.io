@@ -1,4 +1,6 @@
 ---
+import CardThumb from './CardThumb.astro';
+
 interface Props {
   title: string;
   description: string;
@@ -6,9 +8,10 @@ interface Props {
   href: string;
   tags?: string[];
   section: 'sprint' | 'workbench' | 'paddock';
+  image?: string;
 }
 
-const { title, description, pubDate, href, tags = [], section } = Astro.props;
+const { title, description, pubDate, href, tags = [], section, image } = Astro.props;
 
 const sectionColors: Record<string, string> = {
   sprint: 'text-octane border-octane',
@@ -26,18 +29,21 @@ const color = sectionColors[section] || 'text-octane border-octane';
 const dateStr = pubDate.toLocaleDateString('en-US', { year: 'numeric', month: 'short', day: '2-digit' });
 ---
 
-<a href={href} class="block border border-gunmetal bg-gunmetal/20 p-5 hover:bg-gunmetal/40 hover:border-octane/30 transition-all group">
-  <div class="flex items-center gap-3 mb-3 font-mono text-[10px] tracking-widest">
-    <span class:list={['border px-1.5 py-0.5 font-bold', color]}>{sectionLabels[section]}</span>
-    <span class="text-steel/50">{dateStr}</span>
-  </div>
-  <h3 class="font-mono font-bold text-chrome text-sm leading-snug group-hover:text-octane transition-colors">{title}</h3>
-  <p class="text-steel/70 text-xs mt-2 leading-relaxed line-clamp-2 font-sans">{description}</p>
-  {tags.length > 0 && (
-    <div class="flex gap-2 mt-4 flex-wrap">
-      {tags.map(tag => (
-        <span class="font-mono text-[9px] text-terminal/50 tracking-wider">#{tag}</span>
-      ))}
+<a href={href} class="block border border-gunmetal bg-gunmetal/20 overflow-hidden hover:bg-gunmetal/40 hover:border-octane/30 transition-all group">
+  <CardThumb title={title} image={image} section={section} />
+  <div class="p-5">
+    <div class="flex items-center gap-3 mb-3 font-mono text-[10px] tracking-widest">
+      <span class:list={['border px-1.5 py-0.5 font-bold', color]}>{sectionLabels[section]}</span>
+      <span class="text-steel/50">{dateStr}</span>
     </div>
-  )}
+    <h3 class="font-mono font-bold text-chrome text-sm leading-snug group-hover:text-octane transition-colors">{title}</h3>
+    <p class="text-steel/70 text-xs mt-2 leading-relaxed line-clamp-2 font-sans">{description}</p>
+    {tags.length > 0 && (
+      <div class="flex gap-2 mt-4 flex-wrap">
+        {tags.map(tag => (
+          <span class="font-mono text-[9px] text-terminal/50 tracking-wider">#{tag}</span>
+        ))}
+      </div>
+    )}
+  </div>
 </a>

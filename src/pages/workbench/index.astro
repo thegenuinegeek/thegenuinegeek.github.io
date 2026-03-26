@@ -21,6 +21,7 @@ const posts = (await getCollection('workbench')).sort((a, b) => b.data.pubDate.v
           href={`/workbench/${entry.id}`}
           tags={entry.data.tags}
           section="workbench"
+          image={entry.data.image}
         />
       ))}
     </div>

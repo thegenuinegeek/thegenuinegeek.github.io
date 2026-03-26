@@ -1,6 +1,7 @@
 ---
 import Base from '../../layouts/Base.astro';
 import CRTFrame from '../../components/CRTFrame.astro';
+import ArticleHero from '../../components/ArticleHero.astro';
 import { getCollection, render } from 'astro:content';
 
 export async function getStaticPaths() {
@@ -20,7 +21,9 @@ const dateStr = post.data.pubDate.toLocaleDateString('en-US', { year: 'numeric',
       <span class="border border-amber-400 text-amber-400 px-1.5 py-0.5 font-bold">PADDOCK</span>
       <span class="text-steel/50">{dateStr}</span>
     </div>
-    <h1 class="font-mono text-2xl font-bold text-chrome mb-4">{post.data.title}</h1>
+    <h1 class="font-mono text-2xl font-bold text-chrome mb-6">{post.data.title}</h1>
+
+    <ArticleHero title={post.data.title} image={post.data.image} section="paddock" />
 
     <div class="border border-gunmetal bg-gunmetal/20 p-3 mb-6 font-mono text-xs">
       <span class="text-steel/50">GUEST:</span>

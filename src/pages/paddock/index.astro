@@ -21,6 +21,7 @@ const posts = (await getCollection('paddock')).sort((a, b) => b.data.pubDate.val
           href={`/paddock/${entry.id}`}
           tags={entry.data.tags}
           section="paddock"
+          image={entry.data.image}
         />
       ))}
     </div>

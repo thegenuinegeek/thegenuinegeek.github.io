@@ -9,6 +9,7 @@ const sprint = defineCollection({
     pubDate: z.coerce.date(),
     tags: z.array(z.string()).default([]),
     youtubeId: z.string().optional(),
+    image: z.string().optional(),
   }),
 });
 
@@ -21,6 +22,7 @@ const workbench = defineCollection({
     tags: z.array(z.string()).default([]),
     youtubeId: z.string().optional(),
     series: z.string().optional(),
+    image: z.string().optional(),
   }),
 });
 
@@ -34,6 +36,7 @@ const paddock = defineCollection({
     guestTitle: z.string().optional(),
     tags: z.array(z.string()).default([]),
     youtubeId: z.string().optional(),
+    image: z.string().optional(),
   }),
 });
 

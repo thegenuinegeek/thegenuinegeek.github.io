@@ -1,0 +1,47 @@
+---
+interface Props {
+  title: string;
+  image?: string;
+  section: 'sprint' | 'workbench' | 'paddock';
+}
+
+const { title, image, section } = Astro.props;
+
+const sectionAccents: Record<string, string> = {
+  sprint: '#FF6600',
+  workbench: '#00FF41',
+  paddock: '#fbbf24',
+};
+
+const sectionLabels: Record<string, string> = {
+  sprint: 'THE SPRINT',
+  workbench: 'THE WORKBENCH',
+  paddock: 'THE PADDOCK',
+};
+
+const accent = sectionAccents[section];
+const label = sectionLabels[section];
+---
+
+{image ? (
+  <div class="relative w-full aspect-[21/9] overflow-hidden border border-gunmetal mb-8">
+    <img src={image} alt={title} class="w-full h-full object-cover" loading="eager" />
+    <div class="absolute inset-0 bg-gradient-to-t from-black/70 via-transparent to-transparent"></div>
+    <div class="absolute bottom-0 left-0 right-0 p-4 font-mono">
+      <span class="text-[10px] tracking-widest" style={`color: ${accent}`}>{label}</span>
+    </div>
+  </div>
+) : (
+  <div class="relative w-full aspect-[21/9] overflow-hidden border border-gunmetal mb-8 bg-matte-black flex items-center justify-center">
+    <div class="absolute inset-0 opacity-[0.04]" style={`background:
+      repeating-linear-gradient(0deg, transparent, transparent 2px, ${accent}08 2px, ${accent}08 4px),
+      radial-gradient(circle at 20% 50%, ${accent}15 0%, transparent 50%),
+      radial-gradient(circle at 80% 50%, ${accent}10 0%, transparent 40%);`}></div>
+    <div class="absolute top-4 left-4 font-mono text-[10px] tracking-widest" style={`color: ${accent}`}>{label}</div>
+    <div class="absolute top-4 right-4 font-mono text-[10px] tracking-widest text-steel/20">GGM</div>
+    <div class="relative px-8 max-w-xl text-center">
+      <h2 class="font-mono font-bold text-chrome text-base md:text-lg leading-snug tracking-wide">{title}</h2>
+    </div>
+    <div class="absolute bottom-0 left-0 right-0 h-px" style={`background: linear-gradient(90deg, transparent, ${accent}40, transparent);`}></div>
+  </div>
+)}

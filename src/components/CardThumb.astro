@@ -1,0 +1,34 @@
+---
+interface Props {
+  title: string;
+  image?: string;
+  section: 'sprint' | 'workbench' | 'paddock';
+}
+
+const { title, image, section } = Astro.props;
+
+const sectionAccents: Record<string, string> = {
+  sprint: '#FF6600',
+  workbench: '#00FF41',
+  paddock: '#fbbf24',
+};
+
+const accent = sectionAccents[section];
+---
+
+{image ? (
+  <div class="w-full aspect-[16/9] overflow-hidden">
+    <img src={image} alt={title} class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300" loading="lazy" />
+  </div>
+) : (
+  <div class="w-full aspect-[16/9] overflow-hidden bg-matte-black relative flex items-center justify-center">
+    <div class="absolute inset-0 opacity-[0.05]" style={`background:
+      repeating-linear-gradient(0deg, transparent, transparent 3px, ${accent}10 3px, ${accent}10 6px),
+      radial-gradient(circle at 30% 50%, ${accent}18 0%, transparent 50%);`}></div>
+    <div class="absolute top-2 right-2 font-mono text-[8px] tracking-widest text-steel/15">GGM</div>
+    <div class="relative px-4 text-center">
+      <p class="font-mono font-bold text-chrome/60 text-[10px] leading-snug tracking-wide line-clamp-3">{title}</p>
+    </div>
+    <div class="absolute bottom-0 left-0 right-0 h-px" style={`background: linear-gradient(90deg, transparent, ${accent}30, transparent);`}></div>
+  </div>
+)}
