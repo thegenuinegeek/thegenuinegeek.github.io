@@ -1,0 +1,114 @@
+---
+import Base from '../layouts/Base.astro';
+import { getCollection } from 'astro:content';
+
+const sprint = (await getCollection('sprint')).map(e => ({
+  title: e.data.title,
+  description: e.data.description,
+  tags: e.data.tags || [],
+  section: 'sprint' as const,
+  href: `/sprint/${e.id}`,
+  pubDate: e.data.pubDate.toISOString(),
+}));
+
+const workbench = (await getCollection('workbench')).map(e => ({
+  title: e.data.title,
+  description: e.data.description,
+  tags: e.data.tags || [],
+  section: 'workbench' as const,
+  href: `/workbench/${e.id}`,
+  pubDate: e.data.pubDate.toISOString(),
+}));
+
+const paddock = (await getCollection('paddock')).map(e => ({
+  title: e.data.title,
+  description: e.data.description,
+  tags: e.data.tags || [],
+  section: 'paddock' as const,
+  href: `/paddock/${e.id}`,
+  pubDate: e.data.pubDate.toISOString(),
+}));
+
+const allArticles = [...sprint, ...workbench, ...paddock].sort(
+  (a, b) => new Date(b.pubDate).valueOf() - new Date(a.pubDate).valueOf()
+);
+---
+
+<Base title="Search" description="Search all Genuine Geek Media articles." activePylon="/search">
+  <section class="px-8 md:px-12 py-14">
+    <h1 class="font-mono text-xs tracking-[0.2em] text-octane font-bold mb-8">&#9656; SEARCH</h1>
+
+    <div class="mb-10">
+      <input
+        id="search-input"
+        type="text"
+        placeholder="TYPE TO SEARCH..."
+        class="w-full bg-matte-black border border-gunmetal px-4 py-3 font-mono text-sm text-chrome placeholder:text-steel/40 tracking-wider focus:outline-none focus:border-octane transition-colors"
+        autocomplete="off"
+      />
+    </div>
+
+    <div id="search-results" class="space-y-3"></div>
+    <div id="search-empty" class="hidden font-mono text-sm text-steel/50 tracking-wider">NO RESULTS FOUND.</div>
+    <div id="search-prompt" class="font-mono text-sm text-steel/50 tracking-wider">ENTER A QUERY TO BEGIN.</div>
+  </section>
+</Base>
+
+<script define:vars={{ allArticles }}>
+  const sectionColors = {
+    sprint: { text: 'color: #FF6600', border: 'border-color: #FF6600' },
+    workbench: { text: 'color: #00FF41', border: 'border-color: #00FF41' },
+    paddock: { text: 'color: #fbbf24', border: 'border-color: #fbbf24' },
+  };
+
+  const sectionLabels = {
+    sprint: 'SPRINT',
+    workbench: 'WORKBENCH',
+    paddock: 'PADDOCK',
+  };
+
+  const input = document.getElementById('search-input');
+  const resultsEl = document.getElementById('search-results');
+  const emptyEl = document.getElementById('search-empty');
+  const promptEl = document.getElementById('search-prompt');
+
+  function renderResults(query) {
+    if (!query.trim()) {
+      resultsEl.innerHTML = '';
+      emptyEl.classList.add('hidden');
+      promptEl.classList.remove('hidden');
+      return;
+    }
+
+    promptEl.classList.add('hidden');
+    const q = query.toLowerCase();
+
+    const matches = allArticles.filter(a =>
+      a.title.toLowerCase().includes(q) ||
+      a.description.toLowerCase().includes(q) ||
+      a.tags.some(t => t.toLowerCase().includes(q))
+    );
+
+    if (matches.length === 0) {
+      resultsEl.innerHTML = '';
+      emptyEl.classList.remove('hidden');
+      return;
+    }
+
+    emptyEl.classList.add('hidden');
+    resultsEl.innerHTML = matches.map(a => {
+      const colors = sectionColors[a.section];
+      const label = sectionLabels[a.section];
+      return `<a href="${a.href}" class="block border border-gunmetal bg-gunmetal/20 p-5 hover:bg-gunmetal/40 hover:border-octane/30 transition-all" style="text-decoration:none;">
+        <div style="display:flex;align-items:center;gap:0.75rem;margin-bottom:0.5rem;font-family:'JetBrains Mono',monospace;font-size:10px;letter-spacing:0.1em;">
+          <span style="border:1px solid;padding:1px 6px;font-weight:700;${colors.text};${colors.border}">${label}</span>
+        </div>
+        <div style="font-family:'JetBrains Mono',monospace;font-weight:700;color:#e5e5e5;font-size:0.875rem;line-height:1.4;">${a.title}</div>
+        <div style="color:rgba(163,163,163,0.7);font-size:0.75rem;margin-top:0.5rem;line-height:1.6;font-family:'Inter',sans-serif;">${a.description}</div>
+      </a>`;
+    }).join('');
+  }
+
+  input.addEventListener('input', (e) => renderResults(e.target.value));
+  input.focus();
+</script>

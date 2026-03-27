@@ -1,0 +1,15 @@
+---
+import { nowPlaying } from '../data/nowPlaying';
+---
+
+<section class="px-8 md:px-12 py-6 border-b border-gunmetal">
+  <div class="flex flex-wrap items-center justify-center gap-6 md:gap-10">
+    {nowPlaying.map(item => (
+      <div class="flex items-center gap-2.5 font-mono text-xs">
+        <span class="text-sm">{item.icon}</span>
+        <span class="text-steel/50 text-[10px] tracking-[0.2em] font-bold">{item.label}</span>
+        <span class="text-octane">{item.value}</span>
+      </div>
+    ))}
+  </div>
+</section>

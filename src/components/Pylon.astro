@@ -10,6 +10,7 @@ const links = [
   { href: '/workbench', label: 'THE WORKBENCH', sub: 'Deep Dives' },
   { href: '/paddock', label: 'THE PADDOCK', sub: 'Guests' },
   { href: '/about', label: 'ABOUT', sub: 'The Geek' },
+  { href: '/search', label: 'SEARCH', sub: 'Find It' },
 ];
 ---
 
@@ -40,8 +41,15 @@ const links = [
     ))}
   </div>
 
-  <div class="px-6 py-6 border-t border-gunmetal text-[10px] text-steel/40 tracking-wider">
-    <div>&copy; 2025 GGM LLC</div>
-    <div class="mt-1">SILICON &amp; STEEL</div>
+  <div class="px-6 py-6 border-t border-gunmetal text-[10px] tracking-wider">
+    <div class="flex items-center gap-3 mb-3 font-mono text-[10px] text-steel/50 tracking-wider">
+      <a href="#" class="hover:text-octane transition-colors">YOUTUBE</a>
+      <span class="text-gunmetal">|</span>
+      <a href="#" class="hover:text-octane transition-colors">X</a>
+      <span class="text-gunmetal">|</span>
+      <a href="/rss.xml" class="hover:text-octane transition-colors">RSS</a>
+    </div>
+    <div class="text-steel/40">&copy; 2025 GGM LLC</div>
+    <div class="mt-1 text-steel/40">SILICON &amp; STEEL</div>
   </div>
 </aside>

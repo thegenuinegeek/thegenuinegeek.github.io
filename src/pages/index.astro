@@ -1,6 +1,7 @@
 ---
 import Base from '../layouts/Base.astro';
 import EpisodeCard from '../components/EpisodeCard.astro';
+import NowPlaying from '../components/NowPlaying.astro';
 import { getCollection } from 'astro:content';
 
 const allSprint = (await getCollection('sprint')).sort((a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf()).slice(0, 3);
@@ -44,6 +45,9 @@ const allPaddock = (await getCollection('paddock')).sort((a, b) => b.data.pubDat
       </div>
     </div>
   </section>
+
+  <!-- NOW PLAYING -->
+  <NowPlaying />
 
   <!-- LATEST FROM THE SPRINT -->
   <section class="px-8 md:px-12 py-14 border-b border-gunmetal">
