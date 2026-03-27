@@ -9,9 +9,13 @@ interface Props {
   title: string;
   description?: string;
   activePylon?: string;
+  image?: string;
 }
 
-const { title, description = 'Genuine Geek Media - Silicon & Steel', activePylon } = Astro.props;
+const { title, description = 'Genuine Geek Media - Silicon & Steel', activePylon, image } = Astro.props;
+const ogImage = image || '/favicon.svg';
+const canonicalUrl = Astro.url.href;
+const siteName = 'Genuine Geek Media';
 ---
 
 <!DOCTYPE html>
@@ -22,7 +26,23 @@ const { title, description = 'Genuine Geek Media - Silicon & Steel', activePylon
   <meta name="description" content={description} />
   <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
   <link rel="alternate" type="application/rss+xml" title="Genuine Geek Media" href="/rss.xml" />
-  <title>{title} | Genuine Geek Media</title>
+  <link rel="canonical" href={canonicalUrl} />
+
+  <!-- Open Graph -->
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content={canonicalUrl} />
+  <meta property="og:title" content={`${title} | ${siteName}`} />
+  <meta property="og:description" content={description} />
+  <meta property="og:image" content={new URL(ogImage, Astro.site).href} />
+  <meta property="og:site_name" content={siteName} />
+
+  <!-- Twitter -->
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content={`${title} | ${siteName}`} />
+  <meta name="twitter:description" content={description} />
+  <meta name="twitter:image" content={new URL(ogImage, Astro.site).href} />
+
+  <title>{title} | {siteName}</title>
 </head>
 <body class="bg-[#050505] text-chrome font-sans antialiased">
 
