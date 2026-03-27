@@ -10,13 +10,13 @@ const encodedUrl = encodeURIComponent(url);
 ---
 
 <div class="flex items-center gap-3 font-mono text-[10px] tracking-widest">
-  <span class="text-steel/30">SHARE:</span>
+  <span class="text-steel/50">SHARE:</span>
 
   <a
     href={`https://twitter.com/intent/tweet?text=${encodedTitle}&url=${encodedUrl}`}
     target="_blank"
     rel="noopener noreferrer"
-    class="text-steel/50 hover:text-octane transition-colors"
+    class="text-steel/70 hover:text-octane transition-colors"
     aria-label="Share on X"
   >X</a>
 
@@ -24,7 +24,7 @@ const encodedUrl = encodeURIComponent(url);
     href={`https://www.reddit.com/submit?url=${encodedUrl}&title=${encodedTitle}`}
     target="_blank"
     rel="noopener noreferrer"
-    class="text-steel/50 hover:text-octane transition-colors"
+    class="text-steel/70 hover:text-octane transition-colors"
     aria-label="Share on Reddit"
   >REDDIT</a>
 

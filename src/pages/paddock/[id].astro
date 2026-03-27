@@ -23,9 +23,9 @@ const articleUrl = new URL(`/paddock/${post.id}`, Astro.site).href;
     <a href="/paddock" class="font-mono text-[10px] text-steel hover:text-amber-400 transition-colors tracking-wider">&larr; BACK TO THE PADDOCK</a>
     <div class="mt-6 mb-2 flex items-center flex-wrap gap-3 font-mono text-[10px] tracking-widest">
       <span class="border border-amber-400 text-amber-400 px-1.5 py-0.5 font-bold">PADDOCK</span>
-      <span class="text-steel/50">{dateStr}</span>
-      <span class="text-steel/30">&middot;</span>
-      <span class="text-steel/40">{readTime}</span>
+      <span class="text-steel/80">{dateStr}</span>
+      <span class="text-steel/50">&middot;</span>
+      <span class="text-steel/70">{readTime}</span>
       <span class="flex-1"></span>
       <ShareButtons title={post.data.title} url={articleUrl} />
     </div>

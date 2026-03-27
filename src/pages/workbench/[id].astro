@@ -23,9 +23,9 @@ const articleUrl = new URL(`/workbench/${post.id}`, Astro.site).href;
     <a href="/workbench" class="font-mono text-[10px] text-steel hover:text-terminal transition-colors tracking-wider">&larr; BACK TO THE WORKBENCH</a>
     <div class="mt-6 mb-2 flex items-center flex-wrap gap-3 font-mono text-[10px] tracking-widest">
       <span class="border border-terminal text-terminal px-1.5 py-0.5 font-bold">WORKBENCH</span>
-      <span class="text-steel/50">{dateStr}</span>
-      <span class="text-steel/30">&middot;</span>
-      <span class="text-steel/40">{readTime}</span>
+      <span class="text-steel/80">{dateStr}</span>
+      <span class="text-steel/50">&middot;</span>
+      <span class="text-steel/70">{readTime}</span>
       {post.data.series && <span class="text-amber-400/60">SERIES: {post.data.series}</span>}
       <span class="flex-1"></span>
       <ShareButtons title={post.data.title} url={articleUrl} />
