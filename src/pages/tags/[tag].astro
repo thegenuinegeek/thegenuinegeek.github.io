@@ -1,0 +1,49 @@
+---
+import Base from '../../layouts/Base.astro';
+import EpisodeCard from '../../components/EpisodeCard.astro';
+import { getCollection } from 'astro:content';
+
+export async function getStaticPaths() {
+  const allSprint = (await getCollection('sprint')).map(p => ({ ...p, section: 'sprint' as const }));
+  const allWorkbench = (await getCollection('workbench')).map(p => ({ ...p, section: 'workbench' as const }));
+  const allPaddock = (await getCollection('paddock')).map(p => ({ ...p, section: 'paddock' as const }));
+  const allPosts = [...allSprint, ...allWorkbench, ...allPaddock];
+
+  const tags = [...new Set(allPosts.flatMap(p => p.data.tags))];
+
+  return tags.map(tag => ({
+    params: { tag },
+    props: {
+      tag,
+      posts: allPosts
+        .filter(p => p.data.tags.includes(tag))
+        .sort((a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf()),
+    },
+  }));
+}
+
+const { tag, posts } = Astro.props;
+---
+
+<Base title={`#${tag}`}>
+  <section class="px-8 md:px-12 py-14">
+    <div class="mb-10">
+      <a href="/" class="font-mono text-[10px] text-steel hover:text-octane transition-colors tracking-wider">&larr; BACK TO MISSION CONTROL</a>
+      <h1 class="font-mono text-xl font-bold text-octane tracking-wider mt-4">#{tag.toUpperCase()}</h1>
+      <p class="font-mono text-xs text-steel mt-2 tracking-wider">{posts.length} article{posts.length !== 1 ? 's' : ''} tagged</p>
+    </div>
+    <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-5">
+      {posts.map(entry => (
+        <EpisodeCard
+          title={entry.data.title}
+          description={entry.data.description}
+          pubDate={entry.data.pubDate}
+          href={`/${entry.section}/${entry.id}`}
+          tags={entry.data.tags}
+          section={entry.section}
+          image={entry.data.image}
+        />
+      ))}
+    </div>
+  </section>
+</Base>

@@ -4,6 +4,7 @@ import HUDHeader from '../components/HUDHeader.astro';
 import Pylon from '../components/Pylon.astro';
 import MobileNav from '../components/MobileNav.astro';
 import Scanlines from '../components/Scanlines.astro';
+import BackToTop from '../components/BackToTop.astro';
 
 interface Props {
   title: string;
@@ -63,6 +64,7 @@ const siteName = 'Genuine Geek Media';
           <main class="min-h-screen">
             <slot />
           </main>
+          <BackToTop />
         </div>
       </div>
     </div>

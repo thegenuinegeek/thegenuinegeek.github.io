@@ -2,7 +2,9 @@
 import Base from '../../layouts/Base.astro';
 import CRTFrame from '../../components/CRTFrame.astro';
 import ArticleHero from '../../components/ArticleHero.astro';
+import ShareButtons from '../../components/ShareButtons.astro';
 import { getCollection, render } from 'astro:content';
+import { getReadingTime } from '../../utils/readingTime';
 
 export async function getStaticPaths() {
   const posts = await getCollection('workbench');
@@ -12,6 +14,8 @@ export async function getStaticPaths() {
 const { post } = Astro.props;
 const { Content } = await render(post);
 const dateStr = post.data.pubDate.toLocaleDateString('en-US', { year: 'numeric', month: 'long', day: 'numeric' });
+const readTime = getReadingTime(post.body || '');
+const articleUrl = new URL(`/workbench/${post.id}`, Astro.site).href;
 ---
 
 <Base title={post.data.title} description={post.data.description} activePylon="/workbench" image={post.data.image}>
@@ -20,6 +24,8 @@ const dateStr = post.data.pubDate.toLocaleDateString('en-US', { year: 'numeric',
     <div class="mt-6 mb-2 flex items-center gap-3 font-mono text-[10px] tracking-widest">
       <span class="border border-terminal text-terminal px-1.5 py-0.5 font-bold">WORKBENCH</span>
       <span class="text-steel/50">{dateStr}</span>
+      <span class="text-steel/30">&middot;</span>
+      <span class="text-steel/40">{readTime}</span>
       {post.data.series && <span class="text-amber-400/60">SERIES: {post.data.series}</span>}
     </div>
     <h1 class="font-mono text-2xl font-bold text-chrome mb-6">{post.data.title}</h1>
@@ -39,9 +45,11 @@ const dateStr = post.data.pubDate.toLocaleDateString('en-US', { year: 'numeric',
     {post.data.tags && post.data.tags.length > 0 && (
       <div class="flex gap-2 mt-8 flex-wrap border-t border-gunmetal pt-4">
         {post.data.tags.map(tag => (
-          <span class="font-mono text-[9px] text-terminal/50 tracking-wider">#{tag}</span>
+          <a href={`/tags/${tag}`} class="font-mono text-[9px] text-terminal/50 hover:text-terminal tracking-wider transition-colors">#{tag}</a>
         ))}
       </div>
     )}
+
+    <ShareButtons title={post.data.title} url={articleUrl} />
   </article>
 </Base>
