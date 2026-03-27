@@ -3,6 +3,7 @@ title: "GTA 6 Enters the Endgame. I'm Probably Sitting This One Out."
 description: "Rockstar is hiring permanent QA testers in Bangalore, signaling the November 2026 release is locked in. But as a casual gamer dad, I have my reasons for sitting on the fence."
 pubDate: 2026-03-27
 tags: ["gta-6", "rockstar", "gaming", "opinion"]
+image: "/images/GTA-VI-Release-Sitting-This-One-Out.jpg"
 ---
 
 The finish line is finally in sight for Rockstar.
@@ -10,6 +11,8 @@ The finish line is finally in sight for Rockstar.
 We just got word that they're officially moving into the "endgame" phase for GTA 6. Rockstar has started a massive hiring push for permanent [Associate QA Testers at their Bangalore studio](https://www.rockstargames.com/careers/openings/position/5885793003), with a [recruitment event on April 18, 2026](https://mp1st.com/news/rockstar-hire-testers-for-gta-6-delay-unlikely).
 
 This isn't your typical seasonal contract work either. These are full-time roles, which tells me Rockstar is locking in the November 19, 2026 release date and building a team for the long haul to support whatever GTA Online becomes next.
+
+![Jason and Lucia, the protagonists of GTA 6](/images/Jason_and_Lucia_01_With_Logos_landscape.jpg)
 
 ## Why I'm Probably Sitting This One Out
 
@@ -34,6 +37,8 @@ This was my exact experience with GTA V. I'd sit down with my one hour of free t
 ## I Can't Buy Into the Story
 
 Rockstar writes solid stories. I know this objectively. Millions of people are deeply invested in the worlds they build.
+
+![Vice City postcard from the GTA 6 marketing](/images/Vice_City_Postcard_square.jpg)
 
 But for some reason, I just can't get immersed in Los Santos or Vice City the way I can with other RPGs. The satire is clever but it keeps me at arm's length. I never feel *in* the world the way I do with a Baldur's Gate or even a Slay the Spire run where the stakes feel personal.
 
