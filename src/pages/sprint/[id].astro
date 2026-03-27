@@ -34,14 +34,21 @@ const articleUrl = new URL(`/sprint/${post.id}`, Astro.site).href;
     <ArticleHero title={post.data.title} image={post.data.image} section="sprint" />
 
     {post.data.youtubeId && (
-      <div class="mb-8">
-        <CRTFrame youtubeId={post.data.youtubeId} title={post.data.title} />
+      <div class="mb-6 font-mono text-[10px] tracking-wider">
+        <a href="#video" class="text-octane hover:text-octane/80 transition-colors">&#9656; Skip the rambling, jump to the video</a>
       </div>
     )}
 
     <div class="article-body max-w-none font-sans text-steel text-sm leading-relaxed">
       <Content />
     </div>
+
+    {post.data.youtubeId && (
+      <div id="video" class="mt-10 mb-6">
+        <div class="font-mono text-[10px] text-steel/70 tracking-widest mb-3">&#9656; WATCH</div>
+        <CRTFrame youtubeId={post.data.youtubeId} title={post.data.title} />
+      </div>
+    )}
 
     {post.data.tags && post.data.tags.length > 0 && (
       <div class="flex gap-2 mt-8 flex-wrap border-t border-gunmetal pt-4">

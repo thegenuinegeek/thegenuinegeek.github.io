@@ -34,6 +34,8 @@ const paddock = defineCollection({
     pubDate: z.coerce.date(),
     guest: z.string(),
     guestTitle: z.string().optional(),
+    hosts: z.string().optional(),
+    hostShow: z.string().optional(),
     tags: z.array(z.string()).default([]),
     youtubeId: z.string().optional(),
     image: z.string().optional(),
