@@ -7,9 +7,9 @@ tags: ["gta-6", "rockstar", "gaming", "opinion"]
 
 The finish line is finally in sight for Rockstar.
 
-We just got word that they're officially moving into the "endgame" phase for GTA 6. Rockstar has started a [massive hiring push for permanent Associate QA Testers](https://gamefragger.com/multiplatform/grand-theft-auto/rockstar-games-qa-tester-jobs-in-bangalore-offer-select-fans-a-chance-to-play-gta-6-months-before-release-a28087) at their Bangalore studio, with a [recruitment event on April 18, 2026](https://mp1st.com/news/rockstar-hire-testers-for-gta-6-delay-unlikely).
+We just got word that they're officially moving into the "endgame" phase for GTA 6. Rockstar has started a massive hiring push for permanent [Associate QA Testers at their Bangalore studio](https://www.rockstargames.com/careers/openings/position/5885793003), with a [recruitment event on April 18, 2026](https://mp1st.com/news/rockstar-hire-testers-for-gta-6-delay-unlikely).
 
-This isn't your typical seasonal contract work either. These are full-time roles, which tells me Rockstar is locking in the [November 19, 2026 release date](https://tribune.com.pk/story/2599416/gta-6-testing-recruitment-announced-by-rockstar-ahead-of-november-2026-release) and building a team for the long haul to support whatever GTA Online becomes next.
+This isn't your typical seasonal contract work either. These are full-time roles, which tells me Rockstar is locking in the November 19, 2026 release date and building a team for the long haul to support whatever GTA Online becomes next.
 
 ## Why I'm Probably Sitting This One Out
 
@@ -41,7 +41,7 @@ Maybe GTA 6 will be the one that finally clicks. Maybe the characters will be mo
 
 ## The Genuine Geek Take
 
-The news that Rockstar is hiring permanent testers is a huge signal that the November 2026 window is the real deal. They're clearly done with the "concept" phase and are now just trying to break the game as much as possible before it hits shelves. [CBR reported](https://www.cbr.com/gta-6-rockstar-update-game-testers/) that the fan community is seriously hyped, and [the hiring was confirmed](https://khelnow.com/gaming/rockstar-games-hiring-testers-gta-6-bangalore-possible-final-testing-phase-202603) as likely being the final testing phase.
+The news that Rockstar is hiring permanent testers is a huge signal that the November 2026 window is the real deal. They're clearly done with the "concept" phase and are now just trying to break the game as much as possible before it hits shelves. [CBR reported](https://www.cbr.com/gta-6-rockstar-update-game-testers/) that the fan community is seriously hyped, and this is widely considered the final testing phase before the game goes gold.
 
 From a technical standpoint, I'm fascinated to see how they handle the scale. The trailer already showed a level of detail that's going to stress hardware in ways we haven't seen yet.
 
