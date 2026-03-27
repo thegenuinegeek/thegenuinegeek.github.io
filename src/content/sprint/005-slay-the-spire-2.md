@@ -3,6 +3,7 @@ title: "Slay the Spire 2: A Busy Dad's Take on the Early Access"
 description: "StS2 is here in early access and it feels like coming home. New characters, new engine, same addiction. Here's what changed and why I can't stop playing."
 pubDate: 2026-03-25
 tags: ["gaming", "slay-the-spire", "indie", "early-access"]
+image: "/images/slay-the-spire-2-my-early-review.jpg"
 ---
 
 I put an embarrassing number of hours into Slay the Spire 1. Not speedrunning. Not breaking the game with infinite combos. Just a dad on the couch after the kids are in bed, grinding one more run before sleep.
