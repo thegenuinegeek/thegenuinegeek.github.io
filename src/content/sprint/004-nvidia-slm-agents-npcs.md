@@ -3,6 +3,7 @@ title: "NVIDIA Thinks Small AI Could Make NPCs Actually Talk Like People"
 description: "NVIDIA's new research on Small Language Model agents could mean the end of canned NPC dialog trees. Here's what it means for gaming."
 pubDate: 2025-03-25
 tags: ["nvidia", "ai", "gaming", "npcs", "deep-dive"]
+image: "/images/nvidia-slm-npc-smart-ai.jpg"
 ---
 
 ## The Pitch
