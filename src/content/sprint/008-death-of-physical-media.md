@@ -3,6 +3,7 @@ title: "The Last Cartridge: Why Physical Media Is Dying and Why I'm Still Buying
 description: "Disc drives are disappearing, digital sales hit record highs, and the industry wants you to stop owning things. A collector's perspective on what we're about to lose."
 pubDate: 2026-03-26
 tags: ["gaming", "physical-media", "collecting", "industry", "opinion"]
+image: "/images/goodbye-to-physical-video-games.jpg"
 ---
 
 I have a shelf in my office with Game Boy cartridges lined up like little gray soldiers. A stack of PS1 jewel cases with cracked hinges. PS2 games I'll probably never play again but will never sell. Original Xbox titles still in their green cases. A row of Xbox 360 games that survived the Red Ring era.
