@@ -1,15 +1,25 @@
 ---
 import { nowPlaying } from '../data/nowPlaying';
+import { Gamepad2, Wrench, BookOpen } from 'lucide-astro';
+
+const iconMap: Record<string, any> = {
+  gamepad: Gamepad2,
+  wrench: Wrench,
+  book: BookOpen,
+};
 ---
 
 <section class="px-8 md:px-12 py-6 border-b border-gunmetal">
   <div class="flex flex-wrap items-center justify-center gap-6 md:gap-10">
-    {nowPlaying.map(item => (
-      <div class="flex items-center gap-2.5 font-mono text-xs">
-        <span class="text-octane text-[10px]">{item.icon}</span>
-        <span class="text-steel text-[10px] tracking-[0.2em] font-bold">{item.label}</span>
-        <span class="text-chrome">{item.value}</span>
-      </div>
-    ))}
+    {nowPlaying.map(item => {
+      const Icon = iconMap[item.icon];
+      return (
+        <div class="flex items-center gap-2.5 font-mono text-xs">
+          {Icon && <Icon class="w-3.5 h-3.5 text-octane" />}
+          <span class="text-steel text-[10px] tracking-[0.2em] font-bold">{item.label}</span>
+          <span class="text-chrome">{item.value}</span>
+        </div>
+      );
+    })}
   </div>
 </section>
