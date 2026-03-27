@@ -2,14 +2,14 @@
 title: "Good Playing With You: Crimson Desert, DLSS 5, and Sony Dropping PSN"
 description: "I joined the Good Playing With You podcast to talk Crimson Desert reviews, NVIDIA's DLSS 5 backlash, Sony retiring the PSN brand, and what we've been playing."
 pubDate: 2026-03-20
-guest: "Dan Whitehill, Matthew Maulding, Matt Lord"
+guest: "Dan Whitehill, Matt Lord"
 guestTitle: "Good Playing With You Podcast"
 tags: ["podcast", "crimson-desert", "dlss", "playstation", "slay-the-spire"]
 youtubeId: "nnNouRn-oqk"
 image: "/images/gpwy-podcast-episode.jpg"
 ---
 
-Had a great time joining Dan, Matthew, and Matt on the [Good Playing With You](https://www.goodplayingwithyou.com) podcast this week. These guys run a weekly gaming news show and they don't pull punches. Real takes, no fluff.
+Had a great time joining Dan and Matt on the [Good Playing With You](https://www.goodplayingwithyou.com) podcast this week. These guys run a weekly gaming news show and they don't pull punches. Real takes, no fluff.
 
 ## What We Covered
 
