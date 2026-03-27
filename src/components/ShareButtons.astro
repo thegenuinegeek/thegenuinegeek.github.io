@@ -9,8 +9,8 @@ const encodedTitle = encodeURIComponent(title);
 const encodedUrl = encodeURIComponent(url);
 ---
 
-<div class="flex items-center gap-4 font-mono text-[10px] tracking-wider mt-8 pt-4 border-t border-gunmetal">
-  <span class="text-steel/40">SHARE</span>
+<div class="flex items-center gap-3 font-mono text-[10px] tracking-widest">
+  <span class="text-steel/30">SHARE:</span>
 
   <a
     href={`https://twitter.com/intent/tweet?text=${encodedTitle}&url=${encodedUrl}`}
@@ -18,7 +18,7 @@ const encodedUrl = encodeURIComponent(url);
     rel="noopener noreferrer"
     class="text-steel/50 hover:text-octane transition-colors"
     aria-label="Share on X"
-  >X / TWITTER</a>
+  >X</a>
 
   <a
     href={`https://www.reddit.com/submit?url=${encodedUrl}&title=${encodedTitle}`}
@@ -32,7 +32,7 @@ const encodedUrl = encodeURIComponent(url);
     id="copy-link-btn"
     class="text-steel/50 hover:text-octane transition-colors cursor-pointer"
     aria-label="Copy link"
-  >COPY LINK</button>
+  >LINK</button>
 
   <span id="copy-confirm" class="text-terminal hidden">COPIED</span>
 </div>

@@ -21,12 +21,14 @@ const articleUrl = new URL(`/workbench/${post.id}`, Astro.site).href;
 <Base title={post.data.title} description={post.data.description} activePylon="/workbench" image={post.data.image}>
   <article class="px-8 md:px-12 py-14 max-w-4xl mx-auto">
     <a href="/workbench" class="font-mono text-[10px] text-steel hover:text-terminal transition-colors tracking-wider">&larr; BACK TO THE WORKBENCH</a>
-    <div class="mt-6 mb-2 flex items-center gap-3 font-mono text-[10px] tracking-widest">
+    <div class="mt-6 mb-2 flex items-center flex-wrap gap-3 font-mono text-[10px] tracking-widest">
       <span class="border border-terminal text-terminal px-1.5 py-0.5 font-bold">WORKBENCH</span>
       <span class="text-steel/50">{dateStr}</span>
       <span class="text-steel/30">&middot;</span>
       <span class="text-steel/40">{readTime}</span>
       {post.data.series && <span class="text-amber-400/60">SERIES: {post.data.series}</span>}
+      <span class="flex-1"></span>
+      <ShareButtons title={post.data.title} url={articleUrl} />
     </div>
     <h1 class="font-mono text-2xl font-bold text-chrome mb-6">{post.data.title}</h1>
 
@@ -50,6 +52,5 @@ const articleUrl = new URL(`/workbench/${post.id}`, Astro.site).href;
       </div>
     )}
 
-    <ShareButtons title={post.data.title} url={articleUrl} />
   </article>
 </Base>
