@@ -6,7 +6,7 @@ tags: ["ai", "anthropic", "claude", "tech", "opinion"]
 image: "/images/claude-limit-changes-5hour.jpg"
 ---
 
-I need to be upfront about something. This article was written with Claude. This entire website was built with Claude. I use it every day for work. I'm a fan of the product.
+I need to be upfront about something. This article was written alongside Claude. Claude helped build this site. I use it every day for programming and data analysis at work. I'm a fan of the product.
 
 And today, the product got me.
 
@@ -80,9 +80,9 @@ But they also timed it perfectly with a feature drop that guaranteed heavier usa
 
 I'm still a fan. I'm still using it. The product is legitimately great and keeps getting better.
 
-But I'm also now paying more for it. And I think it's worth noting that the decision to upgrade was engineered, not organic. The best product decisions make the user feel like it was their idea.
+But I'm also now paying more for it. And I didn't know the rules had changed when I made that call.
 
-This was one of those.
+Would've been nice to get the context about the changes to 5-hour limits in the message prompting me to upgrade. I probably still would've done it, but at least I would've been making an informed decision.
 
 ---
 
