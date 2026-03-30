@@ -1,0 +1,70 @@
+---
+import CardThumb from './CardThumb.astro';
+
+interface PostData {
+  title: string;
+  description: string;
+  pubDate: Date;
+  tags?: string[];
+  image?: string;
+}
+
+interface PostEntry {
+  id: string;
+  data: PostData;
+  section: 'sprint' | 'workbench' | 'paddock';
+}
+
+interface Props {
+  currentId: string;
+  tags: string[];
+  section: string;
+  allPosts: PostEntry[];
+}
+
+const { currentId, tags, section, allPosts } = Astro.props;
+
+const sectionColors: Record<string, string> = {
+  sprint: 'text-octane border-octane',
+  workbench: 'text-terminal border-terminal',
+  paddock: 'text-amber-400 border-amber-400',
+};
+
+const sectionLabels: Record<string, string> = {
+  sprint: 'SPRINT',
+  workbench: 'WORKBENCH',
+  paddock: 'PADDOCK',
+};
+
+const related = allPosts
+  .filter(p => p.id !== currentId)
+  .map(p => {
+    const shared = (p.data.tags || []).filter(t => tags.includes(t)).length;
+    return { ...p, shared };
+  })
+  .filter(p => p.shared > 0)
+  .sort((a, b) => b.shared - a.shared || b.data.pubDate.valueOf() - a.data.pubDate.valueOf())
+  .slice(0, 3);
+---
+
+{related.length > 0 && (
+  <div class="mt-10 border-t border-gunmetal pt-8">
+    <div class="font-mono text-[10px] tracking-widest text-steel/70 mb-6">RELATED</div>
+    <div class="grid md:grid-cols-3 gap-5">
+      {related.map(post => {
+        const color = sectionColors[post.section] || 'text-octane border-octane';
+        const label = sectionLabels[post.section] || 'SPRINT';
+        const href = `/${post.section}/${post.id}`;
+        return (
+          <a href={href} class="block border border-gunmetal bg-gunmetal/20 overflow-hidden hover:bg-gunmetal/40 hover:border-octane/30 transition-all group">
+            <CardThumb title={post.data.title} image={post.data.image} section={post.section} />
+            <div class="p-4">
+              <span class:list={['font-mono text-[10px] tracking-widest border px-1.5 py-0.5 font-bold', color]}>{label}</span>
+              <h3 class="font-mono font-bold text-chrome text-xs leading-snug mt-3 group-hover:text-octane transition-colors">{post.data.title}</h3>
+            </div>
+          </a>
+        );
+      })}
+    </div>
+  </div>
+)}

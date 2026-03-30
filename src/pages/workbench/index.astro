@@ -2,6 +2,7 @@
 import Base from '../../layouts/Base.astro';
 import EpisodeCard from '../../components/EpisodeCard.astro';
 import { getCollection } from 'astro:content';
+import { getReadingTime } from '../../utils/readingTime';
 
 const posts = (await getCollection('workbench')).sort((a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf());
 ---
@@ -22,6 +23,7 @@ const posts = (await getCollection('workbench')).sort((a, b) => b.data.pubDate.v
           tags={entry.data.tags}
           section="workbench"
           image={entry.data.image}
+          readTime={getReadingTime(entry.body || '')}
         />
       ))}
     </div>
