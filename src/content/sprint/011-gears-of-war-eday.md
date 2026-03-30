@@ -3,7 +3,7 @@ title: "Gears of War: E-Day is Coming and I've Never Been More Ready"
 description: "The Coalition is taking us back to Emergence Day. After six years away from Gears, this prequel might be the most important Xbox game in a generation."
 pubDate: 2026-03-29
 tags: ["gears-of-war", "xbox", "gaming", "preview"]
-image: "/images/Gears-of-War_E-Day_cityscape.jpg"
+image: "/images/Gears_of_War_EDAY_Hero_Image.jpg"
 ---
 
 I remember the first time I saw Gears of War.
