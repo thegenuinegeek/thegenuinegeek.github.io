@@ -58,7 +58,7 @@ This franchise does something that very few games manage. It makes you feel like
 
 The cover-based combat isn't just a mechanic. It's a statement. You *need* that wall between you and the Locust. Every push forward is earned.
 
-How much does this franchise mean to me? I have the Gears of War Crimson Omen tattooed on my chest, with a COG tag for each of my kids. It's not just a game I play. It's part of who I am.
+How much does this franchise mean to me? I have the Gears of War Omen tattooed on my chest in black, with a COG tag for each of my kids. It's not just a game I play. It's part of who I am.
 
 ## The Genuine Geek Take
 
