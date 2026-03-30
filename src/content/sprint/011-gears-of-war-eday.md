@@ -10,7 +10,7 @@ I remember the first time I saw Gears of War.
 
 It was that commercial. The one with "Mad World" by Gary Jules playing over footage of Marcus Fenix running through a destroyed city, encountering a Corpser for the first time. No gameplay breakdown. No feature list. Just atmosphere, dread, and a chainsaw on a rifle.
 
-I was hooked. That was 2006. Twenty years later, I'm still hooked.
+I was hooked. I'd always been a PlayStation guy, but that commercial and that game are what made me buy an Xbox 360. Twenty years later, I'm still hooked.
 
 ## What We Know
 
