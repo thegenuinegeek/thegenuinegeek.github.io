@@ -58,6 +58,8 @@ This franchise does something that very few games manage. It makes you feel like
 
 The cover-based combat isn't just a mechanic. It's a statement. You *need* that wall between you and the Locust. Every push forward is earned.
 
+How much does this franchise mean to me? I have the Gears of War Crimson Omen tattooed on my chest, with a COG tag for each of my kids. It's not just a game I play. It's part of who I am.
+
 ## The Genuine Geek Take
 
 I said in my [GTA 6 article](/sprint/009-gta6-endgame-phase) that I struggle with games where I play the villain. Gears is the opposite end of that spectrum. You're a soldier fighting for survival. The stakes are human extinction. The enemy is genuinely terrifying. The heroes are flawed but fighting for something that matters.
