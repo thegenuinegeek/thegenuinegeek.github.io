@@ -3,6 +3,7 @@ title: "I Don't Want to Be Famous. I Just Want My Life to Matter."
 description: "On burnout, fatherhood, faith, imposter syndrome, and trying to figure out what 'making it' actually looks like when you're a dad with too many hobbies and not enough hours."
 pubDate: 2026-03-31
 tags: ["personal", "fatherhood", "faith", "burnout", "opinion"]
+image: "/images/genuine-geek-self-reflections.jpg"
 ---
 
 I've been thinking about this for a while, and I'm not sure I have it figured out. But I think that's the point of writing it down.
