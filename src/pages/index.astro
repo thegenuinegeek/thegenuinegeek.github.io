@@ -59,7 +59,7 @@ const allPaddock = (await getCollection('paddock')).sort((a, b) => b.data.pubDat
       </div>
       <!-- Monitor stand -->
       <div class="flex justify-center">
-        <div class="h-3 w-24 md:w-32" style="background: linear-gradient(180deg, #2a2a2a, #1a1a1a); border-radius: 0 0 4px 4px;"></div>
+        <div class="h-3 w-24 md:w-32 bg-gradient-to-b from-[#2a2a2a] to-[#1a1a1a] rounded-b"></div>
       </div>
     </div>
   </div>
@@ -134,9 +134,18 @@ const allPaddock = (await getCollection('paddock')).sort((a, b) => b.data.pubDat
   </section>
 
   <!-- FOOTER -->
-  <footer class="border-t border-gunmetal px-8 md:px-12 py-10 font-mono text-[10px] text-steel/40 tracking-wider flex items-center justify-between">
-    <span>&copy; 2025 GENUINE GEEK MEDIA LLC</span>
-    <span>SILICON &amp; STEEL</span>
+  <footer class="border-t border-gunmetal px-8 md:px-12 py-10 font-mono text-[10px] text-steel/40 tracking-wider">
+    <div class="flex items-center justify-center gap-6 mb-4">
+      <a href="/about" class="text-steel/60 hover:text-octane transition-colors">ABOUT</a>
+      <span class="text-gunmetal">|</span>
+      <a href="/search" class="text-steel/60 hover:text-octane transition-colors">SEARCH</a>
+      <span class="text-gunmetal">|</span>
+      <a href="/rss.xml" class="text-steel/60 hover:text-octane transition-colors">RSS</a>
+    </div>
+    <div class="flex items-center justify-between">
+      <span>&copy; {new Date().getFullYear()} GENUINE GEEK MEDIA LLC</span>
+      <span>SILICON &amp; STEEL</span>
+    </div>
   </footer>
 </Base>
 

@@ -48,31 +48,47 @@ const allArticles = [...sprint, ...workbench, ...paddock].sort(
       />
     </div>
 
+    <script id="search-data" type="application/json" set:html={JSON.stringify(allArticles)}></script>
     <div id="search-results" class="space-y-3"></div>
     <div id="search-empty" class="hidden font-mono text-sm text-steel/50 tracking-wider">NO RESULTS FOUND.</div>
     <div id="search-prompt" class="font-mono text-sm text-steel/50 tracking-wider">ENTER A QUERY TO BEGIN.</div>
   </section>
 </Base>
 
-<script define:vars={{ allArticles }}>
-  const sectionColors = {
-    sprint: { text: 'color: #FF6600', border: 'border-color: #FF6600' },
-    workbench: { text: 'color: #00FF41', border: 'border-color: #00FF41' },
-    paddock: { text: 'color: #fbbf24', border: 'border-color: #fbbf24' },
+<script>
+  import Fuse from 'fuse.js';
+
+  const sectionColorClasses: Record<string, { text: string; border: string }> = {
+    sprint: { text: 'text-octane', border: 'border-octane' },
+    workbench: { text: 'text-terminal', border: 'border-terminal' },
+    paddock: { text: 'text-amber-400', border: 'border-amber-400' },
   };
 
-  const sectionLabels = {
+  const sectionLabels: Record<string, string> = {
     sprint: 'SPRINT',
     workbench: 'WORKBENCH',
     paddock: 'PADDOCK',
   };
 
-  const input = document.getElementById('search-input');
-  const resultsEl = document.getElementById('search-results');
-  const emptyEl = document.getElementById('search-empty');
-  const promptEl = document.getElementById('search-prompt');
+  const dataEl = document.getElementById('search-data');
+  const allArticles = JSON.parse(dataEl?.textContent || '[]');
 
-  function renderResults(query) {
+  const fuse = new Fuse(allArticles, {
+    keys: [
+      { name: 'title', weight: 0.4 },
+      { name: 'description', weight: 0.3 },
+      { name: 'tags', weight: 0.3 },
+    ],
+    threshold: 0.4,
+    includeScore: true,
+  });
+
+  const input = document.getElementById('search-input') as HTMLInputElement;
+  const resultsEl = document.getElementById('search-results')!;
+  const emptyEl = document.getElementById('search-empty')!;
+  const promptEl = document.getElementById('search-prompt')!;
+
+  function renderResults(query: string) {
     if (!query.trim()) {
       resultsEl.innerHTML = '';
       emptyEl.classList.add('hidden');
@@ -81,34 +97,28 @@ const allArticles = [...sprint, ...workbench, ...paddock].sort(
     }
 
     promptEl.classList.add('hidden');
-    const q = query.toLowerCase();
+    const results = fuse.search(query);
 
-    const matches = allArticles.filter(a =>
-      a.title.toLowerCase().includes(q) ||
-      a.description.toLowerCase().includes(q) ||
-      a.tags.some(t => t.toLowerCase().includes(q))
-    );
-
-    if (matches.length === 0) {
+    if (results.length === 0) {
       resultsEl.innerHTML = '';
       emptyEl.classList.remove('hidden');
       return;
     }
 
     emptyEl.classList.add('hidden');
-    resultsEl.innerHTML = matches.map(a => {
-      const colors = sectionColors[a.section];
+    resultsEl.innerHTML = results.map(({ item: a }) => {
+      const colors = sectionColorClasses[a.section];
       const label = sectionLabels[a.section];
-      return `<a href="${a.href}" class="block border border-gunmetal bg-gunmetal/20 p-5 hover:bg-gunmetal/40 hover:border-octane/30 transition-all" style="text-decoration:none;">
-        <div style="display:flex;align-items:center;gap:0.75rem;margin-bottom:0.5rem;font-family:'JetBrains Mono',monospace;font-size:10px;letter-spacing:0.1em;">
-          <span style="border:1px solid;padding:1px 6px;font-weight:700;${colors.text};${colors.border}">${label}</span>
+      return `<a href="${a.href}" class="block border border-gunmetal bg-gunmetal/20 p-5 hover:bg-gunmetal/40 hover:border-octane/30 transition-all no-underline">
+        <div class="flex items-center gap-3 mb-2 font-mono text-[10px] tracking-widest">
+          <span class="border px-1.5 py-0.5 font-bold ${colors.text} ${colors.border}">${label}</span>
         </div>
-        <div style="font-family:'JetBrains Mono',monospace;font-weight:700;color:#e5e5e5;font-size:0.875rem;line-height:1.4;">${a.title}</div>
-        <div style="color:rgba(163,163,163,0.7);font-size:0.75rem;margin-top:0.5rem;line-height:1.6;font-family:'Inter',sans-serif;">${a.description}</div>
+        <div class="font-mono font-bold text-chrome text-sm leading-snug">${a.title}</div>
+        <div class="text-steel/70 text-xs mt-2 leading-relaxed font-sans">${a.description}</div>
       </a>`;
     }).join('');
   }
 
-  input.addEventListener('input', (e) => renderResults(e.target.value));
+  input.addEventListener('input', (e) => renderResults((e.target as HTMLInputElement).value));
   input.focus();
 </script>
