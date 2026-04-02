@@ -30,7 +30,7 @@ const color = sectionColors[section] || 'text-octane border-octane';
 const dateStr = pubDate.toLocaleDateString('en-US', { year: 'numeric', month: 'short', day: '2-digit' });
 ---
 
-<a href={href} class="block border border-gunmetal bg-gunmetal/20 overflow-hidden hover:bg-gunmetal/40 hover:border-octane/30 transition-all group">
+<div class="block border border-gunmetal bg-gunmetal/20 overflow-hidden hover:bg-gunmetal/40 hover:border-octane/30 transition-all group cursor-pointer episode-card" data-href={href}>
   <CardThumb title={title} image={image} section={section} />
   <div class="p-5">
     <div class="flex items-center gap-3 mb-3 font-mono text-[10px] tracking-widest">
@@ -42,9 +42,19 @@ const dateStr = pubDate.toLocaleDateString('en-US', { year: 'numeric', month: 's
     {tags.length > 0 && (
       <div class="flex gap-2 mt-4 flex-wrap">
         {tags.map(tag => (
-          <a href={`/tags/${tag}`} class="font-mono text-[9px] text-terminal/50 hover:text-terminal tracking-wider transition-colors relative z-10" onclick="event.stopPropagation()">#{tag}</a>
+          <a href={`/tags/${tag}`} class="font-mono text-[9px] text-terminal/50 hover:text-terminal tracking-wider transition-colors relative z-10">#{tag}</a>
         ))}
       </div>
     )}
   </div>
-</a>
+</div>
+
+<script>
+  document.querySelectorAll('.episode-card').forEach(card => {
+    card.addEventListener('click', (e) => {
+      if ((e.target as HTMLElement).closest('a')) return;
+      const href = card.getAttribute('data-href');
+      if (href) window.location.href = href;
+    });
+  });
+</script>
