@@ -1,8 +1,9 @@
 ---
-title: "GG Tools: A Serverless Content Idea Capture System on AWS"
+title: "A Serverless Content Idea Capture System on AWS"
 description: "I built a serverless idea capture system on AWS for $0.40/month because good ideas don't wait for you to sit down at a desk."
 pubDate: 2026-04-02
 tags: ["aws", "serverless", "opentofu", "lambda", "side-project"]
+image: "/images/ggmedia-content-capture-tool.jpg"
 series: "GG Tools"
 ---
 
