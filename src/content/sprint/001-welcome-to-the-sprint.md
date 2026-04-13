@@ -3,6 +3,7 @@ title: "Welcome to The Sprint"
 description: "Why Genuine Geek Media exists, what The Sprint is, and what you can expect from a dad with too many hobbies and not enough hours."
 pubDate: 2025-03-25
 tags: ["announcement", "personal"]
+image: "/images/geunie-geek-media-welcome-sprint.jpg"
 ---
 
 This domain used to be a landing page for a web design and social media management business I ran. That version of genuinegeekmedia.com had a contact form, a portfolio, and not much else. It served its purpose and then it sat there, collecting dust, waiting for me to figure out what it was supposed to be.
