@@ -3,6 +3,7 @@ title: "Adding AI Enrichment to the Content Pipeline with Gemini"
 description: "I added a Gemini-powered Lambda to my idea capture tool. Not to write for me. To kill the tedium so I can focus on saying what I actually think."
 pubDate: 2026-04-02T14:00:00
 tags: ["aws", "ai", "gemini", "lambda", "side-project"]
+image: "/images/ai-is-a-tool-use-it-gemini-enrichment.jpg"
 series: "GG Tools"
 ---
 
