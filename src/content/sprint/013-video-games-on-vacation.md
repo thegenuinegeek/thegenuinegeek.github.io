@@ -8,7 +8,7 @@ image: "/images/gg-fatherhood-vacation-gaming.png"
 
 "Come on, get up. We're on vacation. We didn't come to lay around in the room all day."
 
-My dad said that every beach trip. If we were at the coast, we were expected to be out by the water, in the pool, walking the boardwalk, doing something. Sitting in the room watching TV or, in my case, playing Pokemon on a Gameboy? That wasn't vacation. That was wasting it.
+My dad said that every beach trip. If we were at the beach, we were expected to be out by the water, in the pool, walking the boardwalk, doing something. Sitting in the room watching TV or, in my case, playing Pokemon on a Gameboy? That wasn't vacation. That was wasting it.
 
 I heard that voice in my head this week. We took the boys to the beach for my oldest's senior trip. He's 17. His friends came along. My youngest, who's 11, tagged along too. And within an hour of arriving, the Switch 2 was docked to the condo TV and Smash Bros was running.
 
@@ -23,7 +23,7 @@ Here's what a day at the beach looked like for us this week.
 
 Morning: everybody sleeps in. No alarms. No schedule. That alone is a vacation for a family that runs on school buses and work standups.
 
-Late morning: the boys head to the beach or the pool. They swim, mess around, do the things you're supposed to do at the coast.
+Late morning: the boys head to the beach or the pool. They swim, mess around, do the things you're supposed to do at the beach.
 
 Afternoon: they come back to the condo, shower off, and fire up the Switch. Smash Bros tournaments. Mario Kart races. My youngest playing Pokemon on handheld while the older kids yell at each other about items. Beach Buggy Racing when they want something everybody can jump into.
 
