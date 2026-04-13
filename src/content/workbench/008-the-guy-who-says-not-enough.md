@@ -3,6 +3,7 @@ title: "The Guy Who Says I'm Not Enough"
 description: "I have a ton of people in my life who love and support me. Unfortunately I spend most of my time with the guy who thinks I'm not enough."
 pubDate: 2026-04-06T10:00:00
 tags: ["personal", "faith", "fatherhood", "opinion"]
+image: "/images/the-man-saying-i-am-not-enough.jpg"
 ---
 
 I need to talk about the guy I spend the most time with.
