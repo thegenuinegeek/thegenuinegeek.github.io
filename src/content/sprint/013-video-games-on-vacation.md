@@ -36,7 +36,7 @@ That mix of outside time, gaming, and just being together? That's what vacation 
 
 ## The Shift
 
-My dad wasn't wrong. He grew up in a time when vacation meant doing things you couldn't do at home. You drove eight hours to the beach, so you better be at the beach. The room was for sleeping. Everything else happened outside.
+My dad wasn't wrong. He grew up in a time when vacation meant doing things you couldn't do at home. You drove hours to get to the beach, so you better be at the beach. The room was for sleeping. Everything else happened outside.
 
 But here's the thing that changed: gaming isn't something my boys do instead of living. It's part of how they live. It's how they hang out with friends. It's how they compete, cooperate, trash-talk, and bond. When my oldest and his buddies are playing Smash in the condo, they're not avoiding vacation. They're doing what they'd do if they were hanging out anywhere. They just happen to be doing it with sand in their hair and sunburn on their shoulders.
 
