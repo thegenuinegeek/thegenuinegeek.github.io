@@ -9,6 +9,7 @@ hostShow: "Good Playing With You Podcast"
 tags: ["podcast", "crimson-desert", "dlss", "playstation", "slay-the-spire"]
 youtubeId: "nnNouRn-oqk"
 image: "/images/gpwy-podcast-episode.jpg"
+share: true
 ---
 
 Had a great time joining Dan and Matt on the [Good Playing With You](https://www.goodplayingwithyou.com) podcast this week. These guys run a weekly gaming news show and they don't pull punches. Real takes, no fluff.

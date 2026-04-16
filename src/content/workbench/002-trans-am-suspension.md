@@ -5,6 +5,7 @@ pubDate: 2025-03-18
 tags: ["trans-am", "build-log", "ls-swap", "f-body"]
 series: "Project TA"
 image: "/images/pontiac-1986-trans-am-firebird-thirdgen-fbody.JPG"
+share: true
 ---
 
 This car is older than me by a year. I've had it longer than I haven't. Twenty-three years and counting.

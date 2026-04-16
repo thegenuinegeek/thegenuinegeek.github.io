@@ -6,6 +6,7 @@ tags: ["ls-engine", "build-log", "valvetrain", "how-to"]
 series: "LS Build"
 youtubeId: "O7HOHwutF70"
 image: "/images/ls-trunion-upgrade-tick-performance.jpg"
+share: true
 ---
 
 If you're running an LS engine, the factory rocker arm trunions are a ticking time bomb.

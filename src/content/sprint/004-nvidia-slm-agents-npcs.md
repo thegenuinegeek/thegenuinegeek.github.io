@@ -4,6 +4,7 @@ description: "NVIDIA's new research on Small Language Model agents could mean th
 pubDate: 2025-03-25
 tags: ["nvidia", "ai", "gaming", "npcs", "deep-dive"]
 image: "/images/nvidia-slm-npc-smart-ai.jpg"
+share: true
 ---
 
 ## The Pitch

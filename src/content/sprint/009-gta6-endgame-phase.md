@@ -4,6 +4,7 @@ description: "Rockstar is hiring permanent QA testers in Bangalore, signaling th
 pubDate: 2026-03-27
 tags: ["gta-6", "rockstar", "gaming", "opinion"]
 image: "/images/GTA-VI-Release-Sitting-This-One-Out.jpg"
+share: true
 ---
 
 The finish line is finally in sight for Rockstar.

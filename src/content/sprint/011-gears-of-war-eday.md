@@ -4,6 +4,7 @@ description: "The Coalition is taking us back to Emergence Day. After six years 
 pubDate: 2026-03-29
 tags: ["gears-of-war", "xbox", "gaming", "preview"]
 image: "/images/Gears_of_War_EDAY_Hero_Image.jpg"
+share: true
 ---
 
 I remember the first time I saw Gears of War.

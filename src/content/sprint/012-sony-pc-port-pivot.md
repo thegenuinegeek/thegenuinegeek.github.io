@@ -4,6 +4,7 @@ description: "Sony called PC ports 'printing money.' Now they're slowing down. T
 pubDate: 2026-04-02T10:00:00
 tags: ["sony", "playstation", "pc-gaming", "industry", "opinion"]
 image: "/images/Sony-pc-ports-pump-the-brakes.jpg"
+share: true
 ---
 
 The kids are asleep. The house is quiet. I grab the Steam Deck off the nightstand, fire up a game, and get maybe an hour before my brain shuts down.

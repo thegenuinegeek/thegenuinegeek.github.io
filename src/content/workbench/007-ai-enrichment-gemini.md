@@ -5,6 +5,7 @@ pubDate: 2026-04-02T14:00:00
 tags: ["aws", "ai", "gemini", "lambda", "side-project"]
 image: "/images/ai-is-a-tool-use-it-gemini-enrichment.jpg"
 series: "GG Tools"
+share: true
 ---
 
 I built a content idea capture tool on AWS. You can read the [full build story here](/workbench/006-gg-tools-idea-capture). The short version: I type an idea into my phone, it lands in DynamoDB, and a dashboard shows me everything I haven't acted on yet.

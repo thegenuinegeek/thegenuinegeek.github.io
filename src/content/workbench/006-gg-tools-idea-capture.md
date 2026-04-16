@@ -5,6 +5,7 @@ pubDate: 2026-04-02T08:00:00
 tags: ["aws", "serverless", "opentofu", "lambda", "side-project"]
 image: "/images/ggmedia-content-capture-tool.jpg"
 series: "GG Tools"
+share: true
 ---
 
 Ideas don't care about your schedule.

@@ -4,6 +4,7 @@ description: "The PSN rebrand, a stablecoin backed by their own bank, Project Cr
 pubDate: 2026-03-26
 tags: ["sony", "playstation", "industry", "theory", "blockchain"]
 image: "/images/No-More-PS-Sony-Rebrand.jpg"
+share: true
 ---
 
 Sony just told developers to [stop using "PlayStation Network" and "PSN" branding by September 2026](https://insider-gaming.com/playstation-dropping-pc-network-branding/). The leaked email said the change is meant to "properly capture the breadth of our evolving digital services."

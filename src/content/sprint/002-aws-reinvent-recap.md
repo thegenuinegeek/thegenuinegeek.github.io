@@ -3,6 +3,7 @@ title: "AWS re:Invent 2025 Rapid Recap"
 description: "The biggest announcements from re:Invent 2025 that actually matter for your cloud bill."
 pubDate: 2025-12-15
 tags: ["aws", "cloud", "cost-optimization", "reinvent"]
+share: true
 ---
 
 Let's cut through the keynote fluff. re:Invent 2025 dropped a ton of announcements, but most of them won't change your monthly bill. These will.

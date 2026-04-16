@@ -4,6 +4,7 @@ description: "Nintendo just split digital and physical game prices for the first
 pubDate: 2026-03-26
 tags: ["nintendo", "switch-2", "gaming", "industry"]
 image: "/images/Digital-Discount-Nintendo-Cuts-Prices.jpg"
+share: true
 ---
 
 Nintendo of America just announced "Variable Pricing" for Switch 2 exclusives. For the first time in the company's history, digital downloads will be **$10 cheaper** than physical cartridges.

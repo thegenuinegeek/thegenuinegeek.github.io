@@ -4,6 +4,7 @@ description: "Blizzard won a lawsuit against the biggest WoW private server. The
 pubDate: 2026-04-13T14:00:00
 tags: ["gaming", "industry", "opinion"]
 image: "/images/world-of-warcraft-lawsuit-turtle-wow-shutdown.jpg"
+share: true
 ---
 
 Blizzard just won a permanent injunction against Turtle WoW, the largest World of Warcraft private server, shutting it down after an eight-month legal battle. The court ruled in Blizzard's favor on all seven counts of copyright infringement. The server operators have been ordered to stop everything. Development, hosting, maintenance, all of it. Done.

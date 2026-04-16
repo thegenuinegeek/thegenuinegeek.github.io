@@ -5,6 +5,7 @@ pubDate: 2025-03-22
 tags: ["aws", "ebs", "cost-optimization", "tutorial"]
 series: "Cloud Cost Masterclass"
 image: "/images/cloud-cost-ebs-optimization.jpg"
+share: true
 ---
 
 EBS volumes are the silent budget killer in most AWS environments.

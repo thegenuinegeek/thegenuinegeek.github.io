@@ -7,6 +7,7 @@ guestTitle: "Back to the Streets Competitor & Winner"
 tags: ["motorsport", "drag-racing", "drag-and-drive", "podcast", "back-to-the-streets"]
 youtubeId: "rncKoBEj9No"
 image: "/images/high-octane-dads-matt-walter-btts.jpg"
+share: true
 ---
 
 This one goes out to anyone who's ever tried to explain to their spouse why they need another set of tires.

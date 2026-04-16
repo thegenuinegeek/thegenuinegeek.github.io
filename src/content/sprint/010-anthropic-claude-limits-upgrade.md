@@ -4,6 +4,7 @@ description: "Sonnet 4.6, Claude Apps, computer use agents, and a massive featur
 pubDate: 2026-03-27
 tags: ["ai", "anthropic", "claude", "tech", "opinion"]
 image: "/images/claude-limit-changes-5hour.jpg"
+share: true
 ---
 
 I need to be upfront about something. This article was written alongside Claude. Claude helped build this site. I use it every day for programming and data analysis at work. I'm a fan of the product.
