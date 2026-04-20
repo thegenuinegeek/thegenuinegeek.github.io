@@ -3,6 +3,7 @@ title: "Three PS6 Consoles in 2027: Sony's Ecosystem Theory is Playing Out"
 description: "A PS6, a PS6 Lite, and a PlayStation handheld. All launching together in 2027. I called this. Here's what it means."
 pubDate: 2026-04-16T10:00:00
 tags: ["sony", "playstation", "gaming", "industry"]
+image: "/images/whats-next-sony-playstation.jpg"
 share: true
 ---
 
