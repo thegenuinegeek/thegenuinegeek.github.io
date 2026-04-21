@@ -25,3 +25,4 @@ pnpm-debug.log*
 
 # local templates and drafts
 .templates/
+.drafts/
