@@ -17,6 +17,9 @@ const { title, description = 'Genuine Geek Media - Silicon & Steel', activePylon
 const ogImage = image || '/favicon.svg';
 const canonicalUrl = Astro.url.href;
 const siteName = 'Genuine Geek Media';
+
+// Only show warm-up on the home page
+const isHomePage = Astro.url.pathname === '/' || Astro.url.pathname === '/index.html';
 ---
 
 <!DOCTYPE html>
@@ -52,7 +55,7 @@ const siteName = 'Genuine Geek Media';
   <!-- CRT MONITOR HOUSING -->
   <div class="crt-bezel">
     <!-- The "screen" area -->
-    <div class="crt-screen crt-warmup">
+    <div class:list={["crt-screen", { "crt-warmup": isHomePage }]}>
       <Scanlines />
       <div class="crt-vignette" aria-hidden="true" role="presentation"></div>
 
@@ -168,7 +171,7 @@ const siteName = 'Genuine Geek Media';
 
   /* CRT Startup Animation */
   .crt-warmup {
-    animation: crt-warmup 0.6s cubic-bezier(0.23, 1, 0.32, 1) both;
+    animation: crt-warmup 1.2s cubic-bezier(0.23, 1, 0.32, 1) both;
   }
 
   @keyframes crt-warmup {
