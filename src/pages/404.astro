@@ -2,14 +2,37 @@
 import Base from '../layouts/Base.astro';
 ---
 
-<Base title="404 - Signal Lost">
+<Base title="CRITICAL SYSTEM ERROR">
   <section class="flex items-center justify-center py-32 px-8">
-    <div class="text-center max-w-md">
-      <div class="font-mono text-terminal text-xs tracking-[0.3em] mb-4">// ERROR</div>
-      <h1 class="font-mono text-5xl font-bold text-octane mb-4">404</h1>
-      <p class="font-mono text-chrome text-sm tracking-wider mb-2">SIGNAL LOST</p>
-      <p class="text-steel text-sm font-sans mb-8">The page you're looking for doesn't exist or has been moved.</p>
-      <a href="/" class="font-mono text-xs text-octane border border-octane px-4 py-2 hover:bg-octane/10 transition-colors tracking-wider">RETURN TO MISSION CONTROL</a>
+    <div class="max-w-xl w-full font-mono text-sm leading-relaxed">
+      <div class="bg-red-950/20 border border-red-500/50 p-6 shadow-[0_0_30px_rgba(239,68,68,0.1)]">
+        <div class="text-red-500 font-bold mb-4 uppercase tracking-widest text-lg">
+          *** FATAL SYSTEM ERROR: 0x404_PAGE_NOT_FOUND ***
+        </div>
+        
+        <div class="space-y-4 text-chrome/80">
+          <p>A problem has been detected and the requested process has been terminated to prevent further data corruption.</p>
+          
+          <div class="py-4 space-y-1 text-steel/60 text-xs">
+            <div>DUMPING SYSTEM MEMORY... DONE</div>
+            <div>SECTOR_ID: 0x00FF41_GGM</div>
+            <div>THREAD_LOCK: CRITICAL_FAILURE</div>
+            <div>STATUS: SIGNAL_LOST</div>
+          </div>
+
+          <p class="text-octane">If this is the first time you've seen this stop error screen, try navigating back to the home directory.</p>
+          
+          <div class="pt-6">
+            <a href="/" class="inline-block text-xs bg-red-500 text-black font-bold px-4 py-2 hover:bg-chrome transition-colors tracking-tighter uppercase">
+              REBOOT SYSTEM (HOME)
+            </a>
+          </div>
+        </div>
+      </div>
+      
+      <div class="mt-8 text-[10px] text-steel/30 uppercase tracking-[0.4em] text-center">
+        Genuine Geek Media Hardware Abstraction Layer v2.0
+      </div>
     </div>
   </section>
 </Base>

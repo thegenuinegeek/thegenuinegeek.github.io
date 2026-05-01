@@ -1,0 +1,55 @@
+---
+---
+<div id="reading-progress-container" class="hidden fixed bottom-6 left-1/2 -translate-x-1/2 z-[100] font-mono text-[10px] tracking-widest text-terminal bg-matte-black/80 backdrop-blur-sm border border-gunmetal px-3 py-1.5 shadow-2xl">
+  <span class="mr-2 select-none text-steel/40">DATA_STREAM:</span>
+  <span id="progress-bar-text" class="text-terminal"></span>
+  <span id="progress-percentage" class="ml-2 text-octane">0%</span>
+</div>
+
+<script>
+  function updateProgress() {
+    const container = document.getElementById('reading-progress-container');
+    const barText = document.getElementById('progress-bar-text');
+    const percentageText = document.getElementById('progress-percentage');
+    
+    if (!container || !barText || !percentageText) return;
+
+    // Only show for articles (main content)
+    const main = document.querySelector('article');
+    if (!main) {
+      container.classList.add('hidden');
+      return;
+    }
+
+    const totalHeight = main.scrollHeight - window.innerHeight;
+    if (totalHeight <= 0) {
+      container.classList.add('hidden');
+      return;
+    }
+
+    const scrollPos = window.scrollY - main.offsetTop;
+    let progress = Math.min(Math.max((scrollPos / totalHeight) * 100, 0), 100);
+    
+    // Show container if we have scrolled into the article
+    if (scrollPos > 0) {
+      container.classList.remove('hidden');
+    } else {
+      container.classList.add('hidden');
+    }
+
+    // Build terminal bar: [##########----------]
+    const barWidth = 20;
+    const filledCount = Math.floor((progress / 100) * barWidth);
+    const emptyCount = barWidth - filledCount;
+    
+    const bar = '[' + '#'.repeat(filledCount) + '-'.repeat(emptyCount) + ']';
+    
+    barText.textContent = bar;
+    percentageText.textContent = `${Math.round(progress)}%`;
+  }
+
+  window.addEventListener('scroll', updateProgress);
+  window.addEventListener('resize', updateProgress);
+  document.addEventListener('astro:page-load', updateProgress);
+  updateProgress();
+</script>
