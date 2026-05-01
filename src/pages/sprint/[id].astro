@@ -6,7 +6,6 @@ import ShareButtons from '../../components/ShareButtons.astro';
 import RelatedArticles from '../../components/RelatedArticles.astro';
 import { getCollection, render } from 'astro:content';
 import { getReadingTime } from '../../utils/readingTime';
-import { generateAsciiArt } from '../../utils/ascii';
 
 export async function getStaticPaths() {
   const posts = await getCollection('sprint');
@@ -23,7 +22,6 @@ const { Content } = await render(post);
 const dateStr = post.data.pubDate.toLocaleDateString('en-US', { year: 'numeric', month: 'long', day: 'numeric' });
 const readTime = getReadingTime(post.body || '');
 const articleUrl = new URL(`/sprint/${post.id}`, Astro.site).href;
-const asciiArt = generateAsciiArt(post.data.title);
 
 const jsonLd = JSON.stringify({
   '@context': 'https://schema.org',
@@ -50,10 +48,6 @@ const jsonLd = JSON.stringify({
       <span class="flex-1"></span>
       <ShareButtons title={post.data.title} url={articleUrl} />
     </div>
-
-    <pre class="font-mono text-[10px] md:text-[12px] text-terminal/60 leading-none overflow-x-hidden mb-6 select-none pointer-events-none" aria-hidden="true">
-{asciiArt}
-    </pre>
 
     <h1 class="font-mono text-2xl font-bold text-chrome mb-6">{post.data.title}</h1>
 
