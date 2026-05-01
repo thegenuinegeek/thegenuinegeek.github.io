@@ -19,7 +19,8 @@ const canonicalUrl = Astro.url.href;
 const siteName = 'Genuine Geek Media';
 
 // Only show warm-up on the home page
-const isHomePage = Astro.url.pathname === '/' || Astro.url.pathname === '/index.html';
+const pathname = Astro.url.pathname.replace(/\/$/, "");
+const isHomePage = pathname === "" || pathname === "/index.html";
 ---
 
 <!DOCTYPE html>
