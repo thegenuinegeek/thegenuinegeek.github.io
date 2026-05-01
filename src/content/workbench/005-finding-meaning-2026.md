@@ -104,7 +104,10 @@ I don't have a five-step plan to fix burnout. I don't have a morning routine tha
 
 If you're reading this and you feel the same way, I don't have answers for you. But I see you. And I think the fact that we're asking the question means we're closer to the answer than we think.
 
+Update: I’ve started to find some of those answers. You can read about the next step in this journey in [The False Summit: Searching for a North Star](/workbench/011-the-false-summit).
+
 The life I want isn't complicated. Coffee with my wife. Time with my kids. Work that matters. Space to build things. A relationship with God that feels real instead of performative.
+
 
 That's it. That's the whole list.
 

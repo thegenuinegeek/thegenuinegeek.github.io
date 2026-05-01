@@ -8,6 +8,8 @@ image: "/images/false-summit-north-star.jpg"
 
 There is a specific kind of silence that happens when you finally stop climbing. 
 
+A few months ago, I wrote about [trying to find meaning](/workbench/005-finding-meaning-2026) in the middle of burnout and the constant pressure to do more. I was honest about the fact that I didn't have the answers; I just knew the current path wasn't sustainable. Since then, I've realized that the problem wasn't just the pace of the climb. It was the destination.
+
 For years, my life was defined by a checklist. Get the IT degree. Land the tech job. Move into management. Buy the house with a few acres. Build a family. I spent a decade with my head down, grinding through the "what's next" of a standard, successful life. 
 
 And then, I looked up. I was standing on the summit I had spent my 20s aiming for. I have a solid career, a resume I’m proud of, three incredible kids, a loving wife, and enough land to breathe. By every objective metric, I have arrived.
