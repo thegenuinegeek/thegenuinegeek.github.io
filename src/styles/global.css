@@ -5,6 +5,30 @@ html {
   scroll-behavior: smooth;
 }
 
+/* Custom Retro Scrollbar */
+::-webkit-scrollbar {
+  width: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: #0a0a0a;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #00FF41;
+  border-radius: 3px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #FF6600;
+}
+
+/* Firefox Support */
+* {
+  scrollbar-width: thin;
+  scrollbar-color: #00FF41 #0a0a0a;
+}
+
 @theme {
   --color-matte-black: #0a0a0a;
   --color-octane: #FF6600;
