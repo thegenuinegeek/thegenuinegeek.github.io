@@ -3,7 +3,6 @@ title: "PSSR 2.0: The $999 Bridge to GTA 6 at 60 FPS"
 description: "With PSSR 2.0 rolling out and Sony pulling back from PC, the PS5 Pro is positioning itself as the only place to play the decade's biggest game at 60 FPS. Is that enough to justify the 'Pro' tax?"
 pubDate: 2026-05-07
 tags: ["sony", "playstation", "gta6", "industry", "opinion"]
-image: "/images/sony-pssr-gta6.jpg"
 share: true
 ---
 

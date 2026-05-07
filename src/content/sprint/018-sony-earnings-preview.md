@@ -3,7 +3,6 @@ title: "Sony Earnings Call: Watching the Ecosystem Clock"
 description: "Sony reports its Q4 earnings tomorrow. Beyond the sales numbers, I'm looking for three specific signals that confirm where the platform is headed next."
 pubDate: 2026-05-07
 tags: ["sony", "playstation", "finance", "industry"]
-image: "/images/sony-earnings-preview.jpg"
 share: true
 ---
 
