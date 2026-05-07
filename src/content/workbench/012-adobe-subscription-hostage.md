@@ -3,7 +3,7 @@ title: "The Adobe Hostage Situation: When Shareholders Outweigh Service"
 description: "A $30 price jump, a 'full' cloud storage lockout, and the hollow victory of the retention discount. Why 'voting with your dollar' is the only lever left."
 pubDate: 2026-05-07
 tags: ["opinion", "tech", "subscription", "consumer-rights"]
-image: "/images/adobe-cloud-hostage.jpg"
+image: "/images/bye-adobe-neon.png"
 share: true
 ---
 
