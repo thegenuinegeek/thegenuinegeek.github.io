@@ -132,21 +132,6 @@ const allPaddock = (await getCollection('paddock')).sort((a, b) => b.data.pubDat
       ))}
     </div>
   </section>
-
-  <!-- FOOTER -->
-  <footer class="border-t border-gunmetal px-8 md:px-12 py-10 font-mono text-[10px] text-steel/40 tracking-wider">
-    <div class="flex items-center justify-center gap-6 mb-4">
-      <a href="/about" class="text-steel/60 hover:text-octane transition-colors">ABOUT</a>
-      <span class="text-gunmetal">|</span>
-      <a href="/search" class="text-steel/60 hover:text-octane transition-colors">SEARCH</a>
-      <span class="text-gunmetal">|</span>
-      <a href="/rss.xml" class="text-steel/60 hover:text-octane transition-colors">RSS</a>
-    </div>
-    <div class="flex items-center justify-between">
-      <span>&copy; {new Date().getFullYear()} GENUINE GEEK MEDIA LLC</span>
-      <span>SILICON &amp; STEEL</span>
-    </div>
-  </footer>
 </Base>
 
 <script>

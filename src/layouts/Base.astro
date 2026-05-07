@@ -72,6 +72,29 @@ const isHomePage = pathname === "/" || pathname === "/index.html" || pathname ==
           <main class="min-h-screen">
             <slot />
           </main>
+
+          <!-- FOOTER -->
+          <footer class="border-t border-gunmetal px-8 md:px-12 py-10 font-mono text-[10px] text-steel/40 tracking-wider">
+            <div class="flex flex-col items-center gap-6">
+              <div class="flex items-center gap-6">
+                <a href="/about" class="text-steel/60 hover:text-octane transition-colors">ABOUT</a>
+                <span class="text-gunmetal">|</span>
+                <a href="/search" class="text-steel/60 hover:text-octane transition-colors">SEARCH</a>
+                <span class="text-gunmetal">|</span>
+                <a href="/rss.xml" class="text-steel/60 hover:text-octane transition-colors">RSS</a>
+              </div>
+              
+              <p class="max-w-md text-center leading-relaxed">
+                Some links on this site may be affiliate links. If you purchase through them, I may earn a small commission at no extra cost to you. This helps support the site and keep the servers running.
+              </p>
+
+              <div class="flex items-center justify-between w-full border-t border-gunmetal/30 pt-6">
+                <span>&copy; {new Date().getFullYear()} GENUINE GEEK MEDIA LLC</span>
+                <span>SILICON &amp; STEEL</span>
+              </div>
+            </div>
+          </footer>
+
           <BackToTop />
         </div>
       </div>
