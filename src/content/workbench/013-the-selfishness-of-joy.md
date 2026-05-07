@@ -1,7 +1,7 @@
 ---
 title: "The Selfishness of Joy: Facing Hobby Fatigue"
 description: "When did having a hobby become a job search? On the guilt of being 'good' at things and the weight of the stalled projects in the driveway."
-pubDate: 2026-05-01
+pubDate: 2026-05-07
 tags: ["personal", "opinion", "growth"]
 image: "/images/hobby-fatigue-silverado.png"
 ---
