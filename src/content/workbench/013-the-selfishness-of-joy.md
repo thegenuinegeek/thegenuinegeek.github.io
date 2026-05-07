@@ -31,7 +31,7 @@ He passed away unexpectedly in June of 2024.
 
 Since that day, I haven’t been able to touch the truck. What was supposed to be a fun project has become a physical reminder of a timeline that was cut short. Every time I walk past it, I don't see a win; I see a list of things I haven't done. I see "wasted potential" sitting on four flat tires. 
 
-It’s not just the Silverado, either. I’ve found myself loathing even basic maintenance on my other cars. The spark is just gone.
+It’s not just the Silverado, either. I’ve found myself loathing even basic maintenance on my other cars—even the [1986 Trans Am](https://highoctanehq.com/garage/98058824-3a2d-4d4c-8eae-279072bb9860) that usually serves as my creative outlet. The spark is just gone.
 
 ## The Expectation of Joy
 
