@@ -1,5 +1,5 @@
 export const nowPlaying = [
-  { label: 'PLAYING', value: 'Slay the Spire 2', icon: 'gamepad' },
+  { label: 'PLAYING', value: 'Diablo IV: Vessel of Hatred', icon: 'gamepad' },
   { label: 'WRENCHING', value: '1986 Trans Am', icon: 'wrench' },
-  { label: 'READING', value: 'Iron Gold', icon: 'book' },
+  { label: 'READING', value: 'The Let Them Theory', icon: 'book', href: 'https://amzn.to/4cURfTI' },
 ];
