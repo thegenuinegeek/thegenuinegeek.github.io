@@ -34,3 +34,24 @@ body {
 .animate-blur-zoom {
   animation: blur-zoom 1.5s cubic-bezier(0.22, 1, 0.36, 1) forwards;
 }
+
+@keyframes reveal {
+  0% {
+    opacity: 0;
+    transform: translateY(40px);
+    filter: blur(10px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+    filter: blur(0);
+  }
+}
+
+.reveal-on-scroll {
+  opacity: 0;
+}
+
+.animate-reveal {
+  animation: reveal 1.2s cubic-bezier(0.22, 1, 0.36, 1) forwards;
+}
