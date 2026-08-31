@@ -4,7 +4,7 @@ description: "Sony's Q4 earnings call just confirmed our PSSR 2.0 theory, but th
 pubDate: 2026-05-12
 category: "sprint"
 tags: ["Sony", "PlayStation", "PSSR", "GTA6", "Gaming"]
-heroImage: "/images/whats-next-sony-playstation.jpg"
+heroimage: "../../assets/images/whats-next-sony-playstation.jpg"
 ---
 
 The dust has settled on Sony’s Q4 2025 earnings call, and if you were looking for confirmation that PlayStation is no longer "just a console company," you just got it. 

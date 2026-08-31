@@ -3,7 +3,7 @@ title: "Building High Octane HQ: A Car Community Platform from a Guy Who Isn't a
 description: "I'm building a platform to fix how car people find events, showcase builds, and connect with their local scene. Here's why, how, and what's next."
 pubDate: 2026-04-20T14:00:00
 tags: ["side-project", "cars", "app-development", "opinion"]
-image: "/images/highoctanehq-car-show-where.jpg"
+image: "../../assets/images/highoctanehq-car-show-where.jpg"
 share: true
 ---
 

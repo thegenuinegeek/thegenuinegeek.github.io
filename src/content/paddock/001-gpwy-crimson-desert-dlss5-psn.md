@@ -8,7 +8,7 @@ hosts: "Dan Whitehill, Matt Lord"
 hostShow: "Good Playing With You Podcast"
 tags: ["podcast", "crimson-desert", "dlss", "playstation", "slay-the-spire"]
 youtubeId: "nnNouRn-oqk"
-image: "/images/gpwy-podcast-episode.jpg"
+image: "../../assets/images/gpwy-podcast-episode.jpg"
 share: true
 ---
 

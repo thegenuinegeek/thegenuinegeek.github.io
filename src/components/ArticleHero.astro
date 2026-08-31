@@ -1,7 +1,9 @@
 ---
+import { Image } from 'astro:assets';
+
 interface Props {
   title: string;
-  image?: string;
+  image?: any;
   section: 'sprint' | 'workbench' | 'paddock';
 }
 
@@ -25,7 +27,7 @@ const label = sectionLabels[section];
 
 {image ? (
   <div class="relative w-full aspect-[21/9] overflow-hidden border border-gunmetal mb-8">
-    <img src={image} alt={title} class="w-full h-full object-cover" loading="eager" />
+    <Image src={image} alt={title} class="w-full h-full object-cover" loading="eager" />
     <div class="absolute inset-0 bg-gradient-to-t from-black/70 via-transparent to-transparent"></div>
     <div class="absolute bottom-0 left-0 right-0 p-4 font-mono">
       <span class="text-[10px] tracking-widest" style={`color: ${accent}`}>{label}</span>

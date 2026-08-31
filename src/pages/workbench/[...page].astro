@@ -1,10 +1,17 @@
 ---
+import type { GetStaticPaths } from 'astro';
 import Base from '../../layouts/Base.astro';
 import EpisodeCard from '../../components/EpisodeCard.astro';
+import Pagination from '../../components/Pagination.astro';
 import { getCollection } from 'astro:content';
 import { getReadingTime } from '../../utils/readingTime';
 
-const posts = (await getCollection('workbench')).sort((a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf());
+export const getStaticPaths = (async ({ paginate }) => {
+  const posts = (await getCollection('workbench')).sort((a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf());
+  return paginate(posts, { pageSize: 9 });
+}) satisfies GetStaticPaths;
+
+const { page } = Astro.props;
 ---
 
 <Base title="The Workbench" activePylon="/workbench">
@@ -14,7 +21,7 @@ const posts = (await getCollection('workbench')).sort((a, b) => b.data.pubDate.v
       <p class="font-mono text-xs text-steel mt-2 tracking-wider">Deep dives into technical builds, cloud optimization, and hands-on projects.</p>
     </div>
     <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-5">
-      {posts.map(entry => (
+      {page.data.map(entry => (
         <EpisodeCard
           title={entry.data.title}
           description={entry.data.description}
@@ -27,5 +34,8 @@ const posts = (await getCollection('workbench')).sort((a, b) => b.data.pubDate.v
         />
       ))}
     </div>
+    {page.lastPage > 1 && (
+      <Pagination page={page} sectionColor="text-terminal" />
+    )}
   </section>
 </Base>

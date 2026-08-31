@@ -32,11 +32,11 @@ const jsonLd = JSON.stringify({
   author: { '@type': 'Person', name: 'James Schoepf' },
   publisher: { '@type': 'Organization', name: 'Genuine Geek Media' },
   url: articleUrl,
-  ...(post.data.image ? { image: new URL(post.data.image, Astro.site).href } : {}),
+  ...(post.data.image ? { image: new URL(post.data.image.src, Astro.site).href } : {}),
 });
 ---
 
-<Base title={post.data.title} description={post.data.description} activePylon="/sprint" image={post.data.image}>
+<Base title={post.data.title} description={post.data.description} activePylon="/sprint" image={post.data.image?.src}>
   <script type="application/ld+json" set:html={jsonLd} />
   <article class="px-8 md:px-12 py-14 max-w-4xl mx-auto">
     <a href="/sprint" class="font-mono text-[10px] text-steel hover:text-octane transition-colors tracking-wider">&larr; BACK TO THE SPRINT</a>

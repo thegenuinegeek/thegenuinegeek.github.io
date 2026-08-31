@@ -1,7 +1,9 @@
 ---
+import { Image } from 'astro:assets';
+
 interface Props {
   title: string;
-  image?: string;
+  image?: any;
   section: 'sprint' | 'workbench' | 'paddock';
 }
 
@@ -18,7 +20,7 @@ const accent = sectionAccents[section];
 
 {image ? (
   <div class="w-full aspect-[16/9] overflow-hidden">
-    <img src={image} alt={title} class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300" loading="lazy" />
+    <Image src={image} alt={title} class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300" loading="lazy" />
   </div>
 ) : (
   <div class="w-full aspect-[16/9] overflow-hidden bg-matte-black relative flex items-center justify-center">

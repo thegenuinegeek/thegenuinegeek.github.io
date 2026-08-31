@@ -5,7 +5,7 @@ pubDate: 2026-03-25
 tags: ["ls-engine", "build-log", "valvetrain", "how-to"]
 series: "LS Build"
 youtubeId: "O7HOHwutF70"
-image: "/images/ls-trunion-upgrade-tick-performance.jpg"
+image: "../../assets/images/ls-trunion-upgrade-tick-performance.jpg"
 share: true
 ---
 

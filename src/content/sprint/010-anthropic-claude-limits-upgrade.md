@@ -3,7 +3,7 @@ title: "Anthropic Shipped the Best Claude Update Yet. Then Quietly Tightened the
 description: "Sonnet 4.6, Claude Apps, computer use agents, and a massive feature drop. Oh, and your 5-hour session limits now burn faster during peak hours. Guess who upgraded today."
 pubDate: 2026-03-27
 tags: ["ai", "anthropic", "claude", "tech", "opinion"]
-image: "/images/claude-limit-changes-5hour.jpg"
+image: "../../assets/images/claude-limit-changes-5hour.jpg"
 share: true
 ---
 

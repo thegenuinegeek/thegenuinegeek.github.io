@@ -3,7 +3,7 @@ title: "The PC Port Pivot: Why Sony is Pulling Back the Reins"
 description: "Sony called PC ports 'printing money.' Now they're slowing down. The strategy shift, the numbers behind it, and what it means for dad gamers who play on Steam Deck after bedtime."
 pubDate: 2026-04-02T10:00:00
 tags: ["sony", "playstation", "pc-gaming", "industry", "opinion"]
-image: "/images/Sony-pc-ports-pump-the-brakes.jpg"
+image: "../../assets/images/Sony-pc-ports-pump-the-brakes.jpg"
 share: true
 ---
 

@@ -3,7 +3,7 @@ title: "We Didn't Come Here to Play Video Games"
 description: "My dad wanted us outside on vacation. I let my boys play Smash Bros in the condo. Turns out we're both right."
 pubDate: 2026-04-13T10:00:00
 tags: ["gaming", "fatherhood", "opinion"]
-image: "/images/gg-fatherhood-vacation-gaming.png"
+image: "../../assets/images/gg-fatherhood-vacation-gaming.png"
 ---
 
 "Come on, get up. We're on vacation. We didn't come to lay around in the room all day."

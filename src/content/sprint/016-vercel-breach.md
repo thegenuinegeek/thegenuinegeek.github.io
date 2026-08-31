@@ -3,7 +3,7 @@ title: "The Vercel Breach Hit My Saturday Night"
 description: "Vercel got breached through a compromised AI tool. I spent my evening rotating API keys for a production app instead of gaming. Here's what happened and what you should do."
 pubDate: 2026-04-20T10:00:00
 tags: ["security", "aws", "industry", "opinion"]
-image: "/images/security-breach-vercel-hero.jpg"
+image: "../../assets/images/security-breach-vercel-hero.jpg"
 share: true
 ---
 

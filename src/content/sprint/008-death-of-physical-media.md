@@ -3,7 +3,7 @@ title: "The Last Cartridge: Why Physical Media Is Dying and Why I'm Still Buying
 description: "Disc drives are disappearing, digital sales hit record highs, and the industry wants you to stop owning things. A collector's perspective on what we're about to lose."
 pubDate: 2026-03-26
 tags: ["gaming", "physical-media", "collecting", "industry", "opinion"]
-image: "/images/goodbye-to-physical-video-games.jpg"
+image: "../../assets/images/goodbye-to-physical-video-games.jpg"
 share: true
 ---
 

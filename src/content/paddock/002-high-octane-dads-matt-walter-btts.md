@@ -6,7 +6,7 @@ guest: "Matt Walter"
 guestTitle: "Back to the Streets Competitor & Winner"
 tags: ["motorsport", "drag-racing", "drag-and-drive", "podcast", "back-to-the-streets"]
 youtubeId: "rncKoBEj9No"
-image: "/images/high-octane-dads-matt-walter-btts.jpg"
+image: "../../assets/images/high-octane-dads-matt-walter-btts.jpg"
 share: true
 ---
 

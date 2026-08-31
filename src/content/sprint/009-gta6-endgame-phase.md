@@ -3,7 +3,7 @@ title: "GTA 6 Enters the Endgame. I'm Probably Sitting This One Out."
 description: "Rockstar is hiring permanent QA testers in Bangalore, signaling the November 2026 release is locked in. But as a casual gamer dad, I have my reasons for sitting on the fence."
 pubDate: 2026-03-27
 tags: ["gta-6", "rockstar", "gaming", "opinion"]
-image: "/images/GTA-VI-Release-Sitting-This-One-Out.jpg"
+image: "../../assets/images/GTA-VI-Release-Sitting-This-One-Out.jpg"
 share: true
 ---
 

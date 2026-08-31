@@ -3,7 +3,7 @@ title: "The Guy Update: I Haven't Started Yet and That's the Point"
 description: "I wrote about fighting negative self-talk. Then I went on vacation and didn't do any of the things I said I'd try. Here's what I'm learning from that."
 pubDate: 2026-04-15T10:00:00
 tags: ["personal", "faith", "fatherhood", "opinion"]
-image: "/images/genuine-geek-still-figuring-out.jpg"
+image: "../../assets/images/genuine-geek-still-figuring-out.jpg"
 ---
 
 A couple weeks ago I wrote about [the guy in my head who tells me I'm not enough](/workbench/008-the-guy-who-says-not-enough). I laid out a plan. Quiet mornings. One true sentence per day. Scripture to hold onto. Prayer that names the lies specifically.

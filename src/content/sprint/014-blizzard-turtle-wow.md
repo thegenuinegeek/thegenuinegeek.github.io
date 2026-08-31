@@ -3,7 +3,7 @@ title: "Blizzard Killed Turtle WoW and I Get It. But Also, Come On."
 description: "Blizzard won a lawsuit against the biggest WoW private server. They're legally right. But when your game has $90 mounts and a new premium currency, maybe ask why people left in the first place."
 pubDate: 2026-04-13T14:00:00
 tags: ["gaming", "industry", "opinion"]
-image: "/images/world-of-warcraft-lawsuit-turtle-wow-shutdown.jpg"
+image: "../../assets/images/world-of-warcraft-lawsuit-turtle-wow-shutdown.jpg"
 share: true
 ---
 

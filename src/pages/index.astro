@@ -4,13 +4,14 @@ import EpisodeCard from '../components/EpisodeCard.astro';
 import NowPlaying from '../components/NowPlaying.astro';
 import { getCollection } from 'astro:content';
 import { getReadingTime } from '../utils/readingTime';
+import previewImage from '../assets/images/GGMEDIA-Site-main-preview-Image.jpg';
 
 const allSprint = (await getCollection('sprint')).sort((a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf()).slice(0, 3);
 const allWorkbench = (await getCollection('workbench')).sort((a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf()).slice(0, 3);
 const allPaddock = (await getCollection('paddock')).sort((a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf()).slice(0, 3);
 ---
 
-<Base title="Mission Control" description="Silicon & Steel. Tech, gaming, motorsport, and geek culture from James Schoepf." image="/images/GGMEDIA-Site-main-preview-Image.jpg">
+<Base title="Mission Control" description="Silicon & Steel. Tech, gaming, motorsport, and geek culture from James Schoepf." image={previewImage.src}>
   <!-- HERO -->
   <div class="px-4 md:px-8 pt-6 pb-2">
     <div class="crt-hero">

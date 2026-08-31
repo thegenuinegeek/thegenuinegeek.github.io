@@ -3,7 +3,7 @@ title: "Sony Doesn't Want to Be a Game Company Anymore"
 description: "The PSN rebrand, a stablecoin backed by their own bank, Project Cronos, Soneium blockchain, and PULSE hardware. Sony is building an ecosystem. Here's the theory."
 pubDate: 2026-03-26
 tags: ["sony", "playstation", "industry", "theory", "blockchain"]
-image: "/images/No-More-PS-Sony-Rebrand.jpg"
+image: "../../assets/images/No-More-PS-Sony-Rebrand.jpg"
 share: true
 ---
 

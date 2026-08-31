@@ -3,7 +3,7 @@ title: "The False Summit: Searching for a North Star"
 description: "I achieved the list. The career, the house, the family. So why does it feel like I'm still searching for the direction?"
 pubDate: 2026-05-01
 tags: ["personal", "opinion", "growth"]
-image: "/images/false-summit-north-star.jpg"
+image: "../../assets/images/false-summit-north-star.jpg"
 ---
 
 There is a specific kind of silence that happens when you finally stop climbing. 

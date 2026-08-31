@@ -6,6 +6,7 @@ import MobileNav from '../components/MobileNav.astro';
 import Scanlines from '../components/Scanlines.astro';
 import BackToTop from '../components/BackToTop.astro';
 import ReadingProgress from '../components/ReadingProgress.astro';
+import { ClientRouter } from 'astro:transitions';
 
 interface Props {
   title: string;
@@ -51,6 +52,7 @@ const isHomePage = pathname === "/" || pathname === "/index.html" || pathname ==
   <meta name="twitter:image" content={new URL(ogImage, Astro.site).href} />
 
   <title>{title} | {siteName}</title>
+  <ClientRouter />
 </head>
 <body class="bg-[#050505] text-chrome font-sans antialiased">
 

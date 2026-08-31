@@ -4,7 +4,7 @@ description: "My first car. Had it since I was 15. From a tired LG4 305 to an LS
 pubDate: 2025-03-18
 tags: ["trans-am", "build-log", "ls-swap", "f-body"]
 series: "Project TA"
-image: "/images/pontiac-1986-trans-am-firebird-thirdgen-fbody.JPG"
+image: "../../assets/images/pontiac-1986-trans-am-firebird-thirdgen-fbody.JPG"
 share: true
 ---
 
