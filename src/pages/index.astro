@@ -171,24 +171,24 @@ import Layout from '../layouts/Layout.astro';
         <p class="text-steel font-medium">Fill out the form below for a free audit of your current digital presence. No pressure, just actionable advice.</p>
       </div>
 
-      <form class="space-y-6" onsubmit="event.preventDefault(); alert('Form submission simulation successful!');">
+      <form class="space-y-6" action="https://formspree.io/f/YOUR_FORM_ID_HERE" method="POST">
         <div class="grid md:grid-cols-2 gap-6">
           <div class="space-y-2">
             <label for="name" class="block text-sm font-semibold text-chrome">Name</label>
-            <input type="text" id="name" required class="w-full bg-slate-900/80 border border-slate-700 rounded-xl px-4 py-3.5 text-chrome focus:outline-none focus:border-octane focus:ring-1 focus:ring-octane transition-all" placeholder="John Doe" />
+            <input type="text" id="name" name="name" required class="w-full bg-slate-900/80 border border-slate-700 rounded-xl px-4 py-3.5 text-chrome focus:outline-none focus:border-octane focus:ring-1 focus:ring-octane transition-all" placeholder="John Doe" />
           </div>
           <div class="space-y-2">
             <label for="email" class="block text-sm font-semibold text-chrome">Email</label>
-            <input type="email" id="email" required class="w-full bg-slate-900/80 border border-slate-700 rounded-xl px-4 py-3.5 text-chrome focus:outline-none focus:border-octane focus:ring-1 focus:ring-octane transition-all" placeholder="john@company.com" />
+            <input type="email" id="email" name="email" required class="w-full bg-slate-900/80 border border-slate-700 rounded-xl px-4 py-3.5 text-chrome focus:outline-none focus:border-octane focus:ring-1 focus:ring-octane transition-all" placeholder="john@company.com" />
           </div>
         </div>
         <div class="space-y-2">
           <label for="business" class="block text-sm font-semibold text-chrome">Business Name</label>
-          <input type="text" id="business" class="w-full bg-slate-900/80 border border-slate-700 rounded-xl px-4 py-3.5 text-chrome focus:outline-none focus:border-octane focus:ring-1 focus:ring-octane transition-all" placeholder="Acme Corp" />
+          <input type="text" id="business" name="business" class="w-full bg-slate-900/80 border border-slate-700 rounded-xl px-4 py-3.5 text-chrome focus:outline-none focus:border-octane focus:ring-1 focus:ring-octane transition-all" placeholder="Acme Corp" />
         </div>
         <div class="space-y-2">
           <label for="headache" class="block text-sm font-semibold text-chrome">What's your biggest digital headache right now?</label>
-          <textarea id="headache" rows="4" required class="w-full bg-slate-900/80 border border-slate-700 rounded-xl px-4 py-3.5 text-chrome focus:outline-none focus:border-octane focus:ring-1 focus:ring-octane transition-all resize-none" placeholder="My website is slow and doesn't get me any leads..."></textarea>
+          <textarea id="headache" name="headache" rows="4" required class="w-full bg-slate-900/80 border border-slate-700 rounded-xl px-4 py-3.5 text-chrome focus:outline-none focus:border-octane focus:ring-1 focus:ring-octane transition-all resize-none" placeholder="My website is slow and doesn't get me any leads..."></textarea>
         </div>
         <button type="submit" class="w-full bg-octane text-white font-bold rounded-xl py-4 text-lg hover:bg-orange-500 transition-all shadow-lg shadow-octane/20">
           Request Free Audit
