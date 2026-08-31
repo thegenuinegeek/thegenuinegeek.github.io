@@ -1,5 +1,5 @@
 {
-  "name": "thegenuinegeek.github.io",
+  "name": "shaky-spectrum",
   "type": "module",
   "version": "0.0.1",
   "engines": {
@@ -12,12 +12,11 @@
     "astro": "astro"
   },
   "dependencies": {
-    "@astrojs/rss": "^4.0.17",
-    "@astrojs/sitemap": "^3.7.2",
-    "@tailwindcss/vite": "^4.2.2",
-    "astro": "^6.0.8",
-    "fuse.js": "^7.1.0",
-    "lucide-astro": "^0.556.0",
-    "tailwindcss": "^4.2.2"
+    "@tailwindcss/vite": "^4.3.3",
+    "astro": "^7.2.9",
+    "tailwindcss": "^4.3.3"
+  },
+  "allowScripts": {
+    "esbuild": true
   }
 }

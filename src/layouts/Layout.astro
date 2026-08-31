@@ -1,0 +1,46 @@
+---
+import '../styles/global.css';
+
+interface Props {
+  title: string;
+  description?: string;
+}
+
+const { title, description = 'Genuine Geek Media - Web Design & Social Media for Local Business' } = Astro.props;
+---
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content={description} />
+  <title>{title} | Genuine Geek Media</title>
+</head>
+<body class="flex flex-col min-h-screen relative overflow-x-hidden">
+  <nav class="fixed top-0 w-full bg-matte-black/80 backdrop-blur-lg border-b border-slate-800 z-50 transition-all">
+    <div class="max-w-6xl mx-auto px-6 py-4 flex items-center justify-between">
+      <div class="font-sans font-black text-chrome tracking-tight text-xl md:text-2xl">
+        Genuine<span class="text-octane">Geek</span>
+      </div>
+      <div class="hidden md:flex gap-8 text-sm font-semibold text-steel">
+        <a href="#services" class="hover:text-octane hover:drop-shadow-[0_0_8px_rgba(255,102,0,0.8)] transition-all duration-300">Services</a>
+        <a href="#pricing" class="hover:text-octane hover:drop-shadow-[0_0_8px_rgba(255,102,0,0.8)] transition-all duration-300">Pricing</a>
+      </div>
+      <a href="#contact" class="bg-octane text-white font-bold rounded-full px-5 py-2 text-xs md:text-sm hover:bg-orange-500 transition-all shadow-[0_0_15px_rgba(255,102,0,0.3)]">
+        Get an Audit
+      </a>
+    </div>
+  </nav>
+
+  <main class="flex-grow pt-20 relative z-10">
+    <slot />
+  </main>
+
+  <footer class="bg-[#0b1120] border-t border-slate-800 py-16 relative z-10 mt-auto">
+    <div class="max-w-6xl mx-auto px-6 text-center text-slate-500 font-sans text-sm font-medium">
+      <div class="mb-4 text-chrome font-black tracking-tight text-xl">Genuine<span class="text-octane">Geek</span> Media</div>
+      <p>&copy; {new Date().getFullYear()} Genuine Geek Media LLC. All rights reserved.</p>
+    </div>
+  </footer>
+</body>
+</html>

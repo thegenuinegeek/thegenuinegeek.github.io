@@ -1,169 +1,199 @@
 ---
-import Base from '../layouts/Base.astro';
-import EpisodeCard from '../components/EpisodeCard.astro';
-import NowPlaying from '../components/NowPlaying.astro';
-import { getCollection } from 'astro:content';
-import { getReadingTime } from '../utils/readingTime';
-import previewImage from '../assets/images/GGMEDIA-Site-main-preview-Image.jpg';
-
-const allSprint = (await getCollection('sprint')).sort((a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf()).slice(0, 3);
-const allWorkbench = (await getCollection('workbench')).sort((a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf()).slice(0, 3);
-const allPaddock = (await getCollection('paddock')).sort((a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf()).slice(0, 3);
+import Layout from '../layouts/Layout.astro';
 ---
 
-<Base title="Mission Control" description="Silicon & Steel. Tech, gaming, motorsport, and geek culture from James Schoepf." image={previewImage.src}>
-  <!-- HERO -->
-  <div class="px-4 md:px-8 pt-6 pb-2">
-    <div class="crt-hero">
-      <!-- CRT bezel frame -->
-      <div class="crt-hero__bezel">
-        <!-- Screen area -->
-        <div class="crt-hero__screen">
-          <!-- Static fuzz -->
-          <div class="crt-hero__fuzz" aria-hidden="true"></div>
-          <!-- Scanlines -->
-          <div class="crt-hero__scanlines" aria-hidden="true"></div>
-          <!-- Vignette -->
-          <div class="crt-hero__vignette" aria-hidden="true"></div>
-          <!-- Content -->
-          <div class="crt-hero__content">
-            <div class="font-mono text-terminal text-xs tracking-[0.3em] mb-4">// BOOT SEQUENCE INITIATED</div>
+<Layout title="Web Design & Social Media for Local Business">
+  <!-- HERO SECTION -->
+  <section class="min-h-[65vh] flex items-center justify-center px-6 relative overflow-hidden">
+    <!-- Premium glow effect -->
+    <div class="absolute top-0 left-1/2 -translate-x-1/2 w-full max-w-4xl h-[500px] bg-octane/20 blur-[120px] rounded-full pointer-events-none"></div>
+    
+    <div class="max-w-4xl mx-auto text-center relative z-10 py-10 opacity-0 animate-blur-zoom">
+      <div class="inline-flex items-center gap-2 bg-gunmetal/50 border border-slate-700 rounded-full px-4 py-1.5 mb-4">
+        <span class="w-2 h-2 rounded-full bg-octane animate-pulse"></span>
+        <span class="font-mono text-[10px] md:text-xs tracking-wider text-steel font-medium uppercase">Accepting New Clients</span>
+      </div>
+      
+      <h1 class="text-5xl md:text-7xl lg:text-8xl font-black tracking-tight text-chrome mb-6 leading-[1.05]">
+        Stop losing customers to an <span class="text-transparent bg-clip-text bg-gradient-to-r from-octane to-orange-400">outdated</span> digital presence.
+      </h1>
+      <p class="text-lg md:text-xl text-steel max-w-2xl mx-auto mb-10 font-medium leading-relaxed">
+        Genuine Geek Media builds lightning-fast websites and manages social media for local businesses ready to dominate their market.
+      </p>
+      <div class="flex flex-col sm:flex-row gap-4 justify-center items-center">
+        <a href="#contact" class="bg-octane text-white font-bold rounded-full px-8 py-4 hover:bg-orange-500 transition-all shadow-[0_0_20px_rgba(255,102,0,0.4)] hover:shadow-[0_0_30px_rgba(255,102,0,0.6)] w-full sm:w-[250px] text-center">
+          Get a Free Digital Audit
+        </a>
+        <a href="#services" class="bg-gunmetal border border-slate-700 text-chrome font-semibold rounded-full px-8 py-4 hover:bg-slate-700 hover:border-slate-600 transition-all w-full sm:w-[250px] text-center">
+          See Our Services
+        </a>
+      </div>
+    </div>
+  </section>
 
-            <div id="typewriter" class="font-mono text-sm sm:text-xl md:text-3xl font-bold text-chrome leading-snug flex flex-col items-center justify-center">
-              <div id="tw-line1" class="min-h-[2.6em] sm:min-h-[1.4em] flex items-center">&nbsp;</div>
-              <div id="tw-line2" class="text-octane mt-2 min-h-[1.4em] flex items-center">&nbsp;</div>
-            </div>
+  <!-- SERVICES SECTION -->
+  <section id="services" class="pt-12 pb-24 px-6 bg-slate-900/50">
+    <div class="max-w-6xl mx-auto">
+      <div class="text-center mb-16">
+        <h2 class="font-mono text-octane tracking-widest text-lg md:text-2xl font-bold mb-3 uppercase">Our Expertise</h2>
+        <p class="text-3xl md:text-5xl font-bold text-chrome max-w-2xl mx-auto tracking-tight">We obsess over the technical details so you don't have to.</p>
+      </div>
 
-            <div class="mt-6 flex items-center justify-center gap-4 md:gap-8 font-mono text-[10px] md:text-xs text-steel">
-              <div class="flex items-center gap-2">
-                <span class="w-2 h-2 bg-octane inline-block"></span>
-                <span>HUSBAND</span>
-              </div>
-              <span class="text-gunmetal">|</span>
-              <div class="flex items-center gap-2">
-                <span class="w-2 h-2 bg-terminal inline-block animate-pulse"></span>
-                <span>DAD</span>
-              </div>
-              <span class="text-gunmetal">|</span>
-              <div class="flex items-center gap-2">
-                <span class="w-2 h-2 bg-amber-400 inline-block"></span>
-                <span>GAMER</span>
-              </div>
-              <span class="text-gunmetal">|</span>
-              <div class="flex items-center gap-2">
-                <span class="w-2 h-2 bg-terminal inline-block"></span>
-                <span>IT PRO</span>
-              </div>
-            </div>
+      <div class="grid md:grid-cols-3 gap-6">
+        <!-- Service 1 -->
+        <div class="bg-gunmetal/30 border border-slate-700/50 rounded-2xl p-8 hover:bg-gunmetal/50 hover:border-octane/50 transition-all group flex flex-col">
+          <div class="w-14 h-14 bg-octane/10 rounded-xl flex items-center justify-center text-octane mb-6 group-hover:scale-110 transition-transform">
+            <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect width="18" height="18" x="3" y="3" rx="2"/><path d="M3 9h18"/><path d="M9 21V9"/></svg>
           </div>
+          <h3 class="text-xl font-bold text-chrome mb-3">High-Performance Web Design</h3>
+          <p class="text-steel leading-relaxed text-sm mb-6 flex-grow">
+            Custom, mobile-optimized sites built for speed and conversions. Clean code that Google loves and customers trust.
+          </p>
+          <ul class="space-y-2 text-sm text-steel font-medium">
+            <li class="flex items-center gap-2"><svg class="w-4 h-4 text-octane" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg> Mobile-First Responsive Design</li>
+            <li class="flex items-center gap-2"><svg class="w-4 h-4 text-octane" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg> Technical SEO Built-In</li>
+            <li class="flex items-center gap-2"><svg class="w-4 h-4 text-octane" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg> Lightning Fast Load Times</li>
+          </ul>
+        </div>
+
+        <!-- Service 2 -->
+        <div class="bg-gunmetal/30 border border-slate-700/50 rounded-2xl p-8 hover:bg-gunmetal/50 hover:border-blue-400/50 transition-all group flex flex-col">
+          <div class="w-14 h-14 bg-blue-400/10 rounded-xl flex items-center justify-center text-blue-400 mb-6 group-hover:scale-110 transition-transform">
+            <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/></svg>
+          </div>
+          <h3 class="text-xl font-bold text-chrome mb-3">Social Media Management</h3>
+          <p class="text-steel leading-relaxed text-sm mb-6 flex-grow">
+            Consistent, brand-aligned content that engages your local community and drives foot traffic. Stop worrying about what to post today.
+          </p>
+          <ul class="space-y-2 text-sm text-steel font-medium">
+            <li class="flex items-center gap-2"><svg class="w-4 h-4 text-blue-400" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg> Done-For-You Content</li>
+            <li class="flex items-center gap-2"><svg class="w-4 h-4 text-blue-400" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg> Community Engagement</li>
+            <li class="flex items-center gap-2"><svg class="w-4 h-4 text-blue-400" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg> Growth Analytics & Reporting</li>
+          </ul>
+        </div>
+
+        <!-- Service 3 -->
+        <div class="bg-gunmetal/30 border border-slate-700/50 rounded-2xl p-8 hover:bg-gunmetal/50 hover:border-amber-400/50 transition-all group flex flex-col">
+          <div class="w-14 h-14 bg-amber-400/10 rounded-xl flex items-center justify-center text-amber-400 mb-6 group-hover:scale-110 transition-transform">
+            <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14.5 4h-5L7 7H4a2 2 0 0 0-2 2v9a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2V9a2 2 0 0 0-2-2h-3l-2.5-3z"/><circle cx="12" cy="13" r="3"/></svg>
+          </div>
+          <h3 class="text-xl font-bold text-chrome mb-3">Content & Photography</h3>
+          <p class="text-steel leading-relaxed text-sm mb-6 flex-grow">
+            Stop using generic stock photos. We provide professional photography to give your brand authentic, high-end visual appeal.
+          </p>
+          <ul class="space-y-2 text-sm text-steel font-medium">
+            <li class="flex items-center gap-2"><svg class="w-4 h-4 text-amber-400" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg> Real Estate Media</li>
+            <li class="flex items-center gap-2"><svg class="w-4 h-4 text-amber-400" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg> Event & Automotive Coverage</li>
+            <li class="flex items-center gap-2"><svg class="w-4 h-4 text-amber-400" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg> Custom Brand Photography</li>
+          </ul>
         </div>
       </div>
-      <!-- Monitor stand -->
-      <div class="flex justify-center">
-        <div class="h-3 w-24 md:w-32 bg-gradient-to-b from-[#2a2a2a] to-[#1a1a1a] rounded-b"></div>
+    </div>
+  </section>
+
+  <!-- PRICING SECTION -->
+  <section id="pricing" class="py-24 px-6">
+    <div class="max-w-6xl mx-auto">
+      <div class="text-center mb-16">
+        <h2 class="font-mono text-octane tracking-widest text-lg md:text-2xl font-bold mb-3 uppercase">Transparent Pricing</h2>
+        <p class="text-3xl md:text-5xl font-bold text-chrome max-w-2xl mx-auto tracking-tight">Invest in your business.</p>
+      </div>
+
+      <div class="grid md:grid-cols-3 gap-8 max-w-5xl mx-auto">
+        <!-- Tier 1 -->
+        <div class="bg-gunmetal/30 border border-slate-700/50 rounded-3xl p-8 flex flex-col">
+          <h3 class="text-chrome text-xl font-bold mb-2">The Foundation</h3>
+          <p class="text-steel text-sm mb-6">A completely new, high-converting website for your business.</p>
+          <div class="text-4xl font-black text-chrome mb-2">
+            $1,500 <span class="text-sm font-medium text-steel">starting</span>
+          </div>
+          <p class="text-xs text-steel font-mono uppercase tracking-widest mb-8 pb-8 border-b border-slate-700/50">One-Time Project</p>
+          <ul class="space-y-4 text-steel text-sm mb-8 flex-grow font-medium">
+            <li class="flex items-start gap-3"><svg class="w-5 h-5 text-octane shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg> Up to 5 Custom Pages</li>
+            <li class="flex items-start gap-3"><svg class="w-5 h-5 text-octane shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg> Contact & Lead Gen Forms</li>
+            <li class="flex items-start gap-3"><svg class="w-5 h-5 text-octane shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg> Google Business Profile Setup</li>
+            <li class="flex items-start gap-3"><svg class="w-5 h-5 text-octane shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg> Standard SEO Optimization</li>
+          </ul>
+          <a href="#contact" class="block w-full bg-gunmetal text-chrome text-center rounded-full py-4 hover:bg-slate-700 transition-colors font-bold text-sm">
+            Inquire Now
+          </a>
+        </div>
+
+        <!-- Tier 2 -->
+        <div class="bg-slate-800 border-2 border-octane rounded-3xl p-8 flex flex-col relative shadow-2xl shadow-octane/10 transform md:-translate-y-4 z-10">
+          <div class="absolute -top-4 left-1/2 -translate-x-1/2 bg-octane text-white font-bold text-xs px-4 py-1.5 rounded-full shadow-lg">
+            MOST POPULAR
+          </div>
+          <h3 class="text-chrome text-xl font-bold mb-2">The Engine</h3>
+          <p class="text-slate-300 text-sm mb-6">Keep your business relevant with consistent social media management.</p>
+          <div class="text-4xl font-black text-chrome mb-2">
+            $500<span class="text-sm font-medium text-slate-400">/mo starting</span>
+          </div>
+          <p class="text-xs text-octane font-mono uppercase tracking-widest mb-8 pb-8 border-b border-slate-600">Monthly Retainer</p>
+          <ul class="space-y-4 text-slate-200 text-sm mb-8 flex-grow font-medium">
+            <li class="flex items-start gap-3"><svg class="w-5 h-5 text-octane shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg> 3 Posts Per Week</li>
+            <li class="flex items-start gap-3"><svg class="w-5 h-5 text-octane shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg> Custom Graphics & Copy</li>
+            <li class="flex items-start gap-3"><svg class="w-5 h-5 text-octane shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg> Monthly Website Maintenance</li>
+            <li class="flex items-start gap-3"><svg class="w-5 h-5 text-octane shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg> Monthly Analytics Report</li>
+          </ul>
+          <a href="#contact" class="block w-full bg-octane text-white text-center rounded-full py-4 hover:bg-orange-500 shadow-lg shadow-octane/20 transition-all font-bold text-sm">
+            Get Started
+          </a>
+        </div>
+
+        <!-- Tier 3 -->
+        <div class="bg-gunmetal/30 border border-slate-700/50 rounded-3xl p-8 flex flex-col">
+          <h3 class="text-chrome text-xl font-bold mb-2">Custom Build</h3>
+          <p class="text-steel text-sm mb-6">For e-commerce, complex web apps, or massive content migrations.</p>
+          <div class="text-4xl font-black text-chrome mb-2">
+            Let's Talk
+          </div>
+          <p class="text-xs text-steel font-mono uppercase tracking-widest mb-8 pb-8 border-b border-slate-700/50">Bespoke Scope</p>
+          <ul class="space-y-4 text-steel text-sm mb-8 flex-grow font-medium">
+            <li class="flex items-start gap-3"><svg class="w-5 h-5 text-steel shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg> Shopify / E-Commerce</li>
+            <li class="flex items-start gap-3"><svg class="w-5 h-5 text-steel shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg> Custom Web Applications</li>
+            <li class="flex items-start gap-3"><svg class="w-5 h-5 text-steel shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg> Advanced Integrations</li>
+            <li class="flex items-start gap-3"><svg class="w-5 h-5 text-steel shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg> Dedicated Consulting</li>
+          </ul>
+          <a href="#contact" class="block w-full bg-transparent border-2 border-slate-700 text-chrome text-center rounded-full py-3.5 hover:border-steel transition-colors font-bold text-sm">
+            Contact Us
+          </a>
+        </div>
       </div>
     </div>
-  </div>
-
-  <!-- NOW PLAYING -->
-  <NowPlaying />
-
-  <!-- LATEST FROM THE SPRINT -->
-  <section class="px-8 md:px-12 py-14 border-b border-gunmetal">
-    <div class="flex items-center justify-between mb-8">
-      <h2 class="font-mono text-xs tracking-[0.2em] text-octane font-bold">&#9656; THE SPRINT &mdash; LATEST</h2>
-      <a href="/sprint" class="font-mono text-[10px] text-steel hover:text-octane transition-colors tracking-wider">VIEW ALL &rarr;</a>
-    </div>
-    <div class="grid md:grid-cols-3 gap-5">
-      {allSprint.map(entry => (
-        <EpisodeCard
-          title={entry.data.title}
-          description={entry.data.description}
-          pubDate={entry.data.pubDate}
-          href={`/sprint/${entry.id}`}
-          tags={entry.data.tags}
-          section="sprint"
-          image={entry.data.image}
-          readTime={getReadingTime(entry.body || '')}
-        />
-      ))}
-    </div>
   </section>
 
-  <!-- LATEST FROM THE WORKBENCH -->
-  <section class="px-8 md:px-12 py-14 border-b border-gunmetal">
-    <div class="flex items-center justify-between mb-8">
-      <h2 class="font-mono text-xs tracking-[0.2em] text-terminal font-bold">&#9656; THE WORKBENCH &mdash; LATEST</h2>
-      <a href="/workbench" class="font-mono text-[10px] text-steel hover:text-terminal transition-colors tracking-wider">VIEW ALL &rarr;</a>
-    </div>
-    <div class="grid md:grid-cols-3 gap-5">
-      {allWorkbench.map(entry => (
-        <EpisodeCard
-          title={entry.data.title}
-          description={entry.data.description}
-          pubDate={entry.data.pubDate}
-          href={`/workbench/${entry.id}`}
-          tags={entry.data.tags}
-          section="workbench"
-          image={entry.data.image}
-          readTime={getReadingTime(entry.body || '')}
-        />
-      ))}
-    </div>
-  </section>
+  <!-- CONTACT SECTION -->
+  <section id="contact" class="py-32 px-6 bg-slate-900/50">
+    <div class="max-w-4xl mx-auto bg-gunmetal/40 border border-slate-700/50 rounded-3xl p-8 md:p-14 shadow-2xl backdrop-blur-sm">
+      <div class="mb-12 text-center">
+        <h2 class="text-3xl md:text-4xl font-bold text-chrome mb-4 tracking-tight">Ready to upgrade your digital engine?</h2>
+        <p class="text-steel font-medium">Fill out the form below for a free audit of your current digital presence. No pressure, just actionable advice.</p>
+      </div>
 
-  <!-- LATEST FROM THE PADDOCK -->
-  <section class="px-8 md:px-12 py-14">
-    <div class="flex items-center justify-between mb-8">
-      <h2 class="font-mono text-xs tracking-[0.2em] text-amber-400 font-bold">&#9656; THE PADDOCK &mdash; LATEST</h2>
-      <a href="/paddock" class="font-mono text-[10px] text-steel hover:text-amber-400 transition-colors tracking-wider">VIEW ALL &rarr;</a>
-    </div>
-    <div class="grid md:grid-cols-3 gap-5">
-      {allPaddock.map(entry => (
-        <EpisodeCard
-          title={entry.data.title}
-          description={entry.data.description}
-          pubDate={entry.data.pubDate}
-          href={`/paddock/${entry.id}`}
-          tags={entry.data.tags}
-          section="paddock"
-          image={entry.data.image}
-          readTime={getReadingTime(entry.body || '')}
-        />
-      ))}
+      <form class="space-y-6" onsubmit="event.preventDefault(); alert('Form submission simulation successful!');">
+        <div class="grid md:grid-cols-2 gap-6">
+          <div class="space-y-2">
+            <label for="name" class="block text-sm font-semibold text-chrome">Name</label>
+            <input type="text" id="name" required class="w-full bg-slate-900/80 border border-slate-700 rounded-xl px-4 py-3.5 text-chrome focus:outline-none focus:border-octane focus:ring-1 focus:ring-octane transition-all" placeholder="John Doe" />
+          </div>
+          <div class="space-y-2">
+            <label for="email" class="block text-sm font-semibold text-chrome">Email</label>
+            <input type="email" id="email" required class="w-full bg-slate-900/80 border border-slate-700 rounded-xl px-4 py-3.5 text-chrome focus:outline-none focus:border-octane focus:ring-1 focus:ring-octane transition-all" placeholder="john@company.com" />
+          </div>
+        </div>
+        <div class="space-y-2">
+          <label for="business" class="block text-sm font-semibold text-chrome">Business Name</label>
+          <input type="text" id="business" class="w-full bg-slate-900/80 border border-slate-700 rounded-xl px-4 py-3.5 text-chrome focus:outline-none focus:border-octane focus:ring-1 focus:ring-octane transition-all" placeholder="Acme Corp" />
+        </div>
+        <div class="space-y-2">
+          <label for="headache" class="block text-sm font-semibold text-chrome">What's your biggest digital headache right now?</label>
+          <textarea id="headache" rows="4" required class="w-full bg-slate-900/80 border border-slate-700 rounded-xl px-4 py-3.5 text-chrome focus:outline-none focus:border-octane focus:ring-1 focus:ring-octane transition-all resize-none" placeholder="My website is slow and doesn't get me any leads..."></textarea>
+        </div>
+        <button type="submit" class="w-full bg-octane text-white font-bold rounded-xl py-4 text-lg hover:bg-orange-500 transition-all shadow-lg shadow-octane/20">
+          Request Free Audit
+        </button>
+      </form>
     </div>
   </section>
-</Base>
-
-<script>
-  function typewrite(el: HTMLElement, text: string, speed: number): Promise<void> {
-    return new Promise((resolve) => {
-      let i = 0;
-      const interval = setInterval(() => {
-        el.textContent = text.slice(0, i + 1) + '\u2588';
-        i++;
-        if (i >= text.length) {
-          clearInterval(interval);
-          el.textContent = text;
-          resolve();
-        }
-      }, speed);
-    });
-  }
-
-  async function boot() {
-    const line1 = document.getElementById('tw-line1');
-    const line2 = document.getElementById('tw-line2');
-    if (!line1 || !line2) return;
-
-    line1.textContent = '\u2588';
-    line2.textContent = '';
-    await new Promise(r => setTimeout(r, 400));
-    await typewrite(line1, 'IDENTIFYING: GENUINE GEEK...', 45);
-    await new Promise(r => setTimeout(r, 300));
-    line2.textContent = '\u2588';
-    await typewrite(line2, 'STATUS: AUTHENTIC.', 55);
-  }
-
-  boot();
-</script>
+</Layout>
